@@ -1,0 +1,119 @@
+.wrapper {
+  margin: 70px 0 98px;
+  background: transparent;
+}
+.wrapper .container {
+  width: 1180px;
+  margin: 0 auto;
+}
+.wrapper .container .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+.wrapper .container .inner .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 19px;
+}
+.wrapper .container .inner .nav .search {
+  width: 250px;
+  height: 32px;
+  position: relative;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #5CC11F;
+}
+.wrapper .container .inner .nav .search img {
+  width: 29px;
+  height: 25px;
+  position: absolute;
+  left: 20px;
+}
+.wrapper .container .inner .nav .search input {
+  border: none;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  padding-left: 61px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #FFFFFF;
+  outline: none;
+}
+.wrapper .container .inner .nav .search input::-webkit-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #FFFFFF;
+}
+.wrapper .container .inner .nav .search input::-moz-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #FFFFFF;
+}
+.wrapper .container .inner .nav .search input:-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #FFFFFF;
+}
+.wrapper .container .inner .nav .search input::-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #FFFFFF;
+}
+.wrapper .container .inner .nav .search input::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #FFFFFF;
+}
+.wrapper .container .inner .nav .auth {
+  border-radius: 10px;
+  background: #5CC11F;
+  text-decoration: none;
+  width: 200px;
+  height: 42px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #fff;
+}

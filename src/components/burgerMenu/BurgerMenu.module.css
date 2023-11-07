@@ -1,0 +1,29 @@
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+.wrapper .menu {
+  width: 51px;
+  height: 41px;
+  text-decoration: none;
+  display: inline-block;
+}
+.wrapper .menu img {
+  width: 100%;
+  height: 100%;
+}
+.wrapper .logo {
+  width: 118px;
+  height: 42px;
+  text-decoration: none;
+  display: inline-block;
+}
+.wrapper .logo img {
+  width: 100%;
+  height: 100%;
+}

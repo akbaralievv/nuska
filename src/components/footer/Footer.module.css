@@ -1,0 +1,136 @@
+.wrapper .darkGray {
+  height: 57px;
+  background: #313131;
+}
+.wrapper .container {
+  width: 1180px;
+  margin: 0 auto;
+}
+.wrapper .container .inner {
+  border-top: 1px solid #5CC11F;
+  padding: 51px 0 21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 154px;
+}
+.wrapper .container .inner .genreFilters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 107px;
+}
+.wrapper .container .inner .genreFilters .nav {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+.wrapper .container .inner .genreFilters .nav h3 {
+  color: #B1B1B1;
+  font-family: Roboto, sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.wrapper .container .inner .genreFilters .nav a {
+  text-decoration: none;
+  color: #636363;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.wrapper .container .inner .genreFilters .nav a:hover {
+  color: #B1B1B1;
+}
+.wrapper .container .inner .infoLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .container .inner .infoLinks .playMarket {
+  width: 234px;
+  height: 84px;
+  border-radius: 4px;
+  background: #636363;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.wrapper .container .inner .infoLinks .playMarket img {
+  width: 55px;
+  height: 58px;
+}
+.wrapper .container .inner .infoLinks .playMarket .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .container .inner .infoLinks .playMarket .text p {
+  color: #000;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.wrapper .container .inner .infoLinks .playMarket .text h4 {
+  color: #000;
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.wrapper .container .inner .infoLinks .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+.wrapper .container .inner .infoLinks .footer a {
+  text-decoration: none;
+  color: #636363;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.wrapper .container .inner .infoLinks .footer a:hover {
+  color: #B1B1B1;
+}

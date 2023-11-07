@@ -1,0 +1,55 @@
+.wrapper
+    display: none
+    width: 500px
+    height: 1024px
+    background: #262626
+    justify-content: center
+    position: absolute
+    left: -96px
+    top: -70px
+    z-index: 10
+    padding-top: 70px
+    .inner
+        display: flex
+        flex-direction: column
+        gap: 60px
+        .navbar
+            display: flex
+            flex-direction: column
+            gap: 381px
+            .nav
+                display: flex
+                flex-direction: column
+                list-style: none
+                gap: 24px
+                a
+                    text-decoration: none
+                    display: inline-flex
+                    gap: 20px
+                    align-items: center
+                    img
+                        width: 24px
+                        height: 24px
+                    span
+                        color: #FFF
+                        font-family: Montserrat
+                        font-size: 20px
+                        font-style: normal
+                        font-weight: 500
+                        line-height: normal
+.openMenu
+    display: flex
+    animation: slide-in 0.8s ease-in-out
+    @keyframes slide-in
+        0%
+            transform: translateX(-100%)
+        100%
+            transform: translateX(0%)
+.closeMenu
+    // display: none
+    animation: slide-out 0.8s ease-in-out
+    @keyframes slide-out
+        0%
+            transform: translateX(0%)
+        100%
+            transform: translateX(-100%)
