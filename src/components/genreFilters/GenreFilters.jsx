@@ -1,29 +1,25 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import styles from './GenreFilters.module.css';
 
 function GenreFilters() {
+  const [activeGenre, setActiveGenre] = useState(null);
+
+  const genres = ['Драма', 'Триллер', 'Комедия', 'Фантастика', 'Романтика', 'Хоррор'];
+
+  const handleGenreClick = (genre) => {
+    setActiveGenre(genre);
+  };
+
   return (
-    <nav className={styles.genreFilters}>
-      <li>
-        <a href="">Драма</a>
-      </li>
-      <li>
-        <a href="">Триллер</a>
-      </li>
-      <li>
-        <a href="">Комедия</a>
-      </li>
-      <li>
-        <a href="">Фантастика</a>
-      </li>
-      <li>
-        <a href="">Романтика</a>
-      </li>
-      <li>
-        <a href="">Хоррор</a>
-      </li>
-    </nav>
+    <ul className={styles.genreFilters}>
+      {genres.map((genre, index) => (
+        <li key={index} className={activeGenre === genre ? styles.active : ''}>
+          <a href="#" onClick={() => handleGenreClick(genre)}>
+            {genre}
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 }
 

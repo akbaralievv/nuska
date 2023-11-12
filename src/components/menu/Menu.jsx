@@ -24,7 +24,7 @@ function Menu() {
         <div className={styles.navbar}>
           <nav className={styles.nav}>
             <li>
-              <NavLink>
+              <NavLink to="/account">
                 <img src={account} alt="account" />
                 <span>Account</span>
               </NavLink>

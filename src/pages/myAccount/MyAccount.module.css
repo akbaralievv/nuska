@@ -1,0 +1,107 @@
+.container {
+  width: 1180px;
+  margin: 0 auto 162px;
+  padding: 31px 0 64px;
+  border-radius: 20px;
+  background: rgba(92, 193, 31, 0.2);
+}
+.container .inner h2 {
+  color: #5CC11F;
+  font-family: Montserrat, sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+}
+.container .inner p {
+  color: #BBB;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.container .inner .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 58px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 44px;
+}
+.container .inner .cards .card {
+  width: 245px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 44px;
+}
+.container .inner .cards .card .cardImage {
+  width: 100%;
+  height: 354px;
+}
+.container .inner .cards .card .cardImage img {
+  width: 100%;
+  height: 100%;
+}
+.container .inner .cards .card .info {
+  border-radius: 8px;
+  background: #5CC11F;
+  width: 150px;
+  height: 102px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 9px;
+}
+.container .inner .cards .card .info .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.container .inner .cards .card .info .title img {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+.container .inner .cards .card .info h3 {
+  color: #FFF;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.container .inner .cards .card .info p {
+  color: #FFF;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

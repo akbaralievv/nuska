@@ -1,0 +1,331 @@
+.wrapper {
+  margin: 98px 0 117px;
+}
+.wrapper .container {
+  width: 1180px;
+  margin: 0 auto;
+}
+.wrapper .container .inner .home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .container .inner .home .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 597px;
+}
+.wrapper .container .inner .home .title .text h2 {
+  color: #FFF;
+  font-family: Montserrat, sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 478px;
+}
+.wrapper .container .inner .home .title .text p {
+  color: #FFF;
+  font-family: Montserrat, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.wrapper .container .inner .home .title .infoNumbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .container .inner .home .title .infoNumbers .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5.85px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .container .inner .home .title .infoNumbers .info img {
+  width: 33px;
+  height: 50.5px;
+}
+.wrapper .container .inner .home .title .infoNumbers .info p {
+  color: #FFF;
+  font-family: Montserrat, sans-serif;
+  font-size: 24.822px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.wrapper .container .inner .home .title .infoNumbers .info span {
+  color: #F90;
+  font-family: Montserrat, sans-serif;
+  font-size: 41.369px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.wrapper .container .inner .home .image {
+  width: 290px;
+}
+.wrapper .container .inner .home .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+.wrapper .container .inner .about {
+  margin-top: 140px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .container .inner .about h3 {
+  color: #F90;
+  font-family: Montserrat;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  margin-bottom: 23px;
+}
+.wrapper .container .inner .about .this .aboutBook p {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 607px;
+  margin-bottom: 61px;
+}
+.wrapper .container .inner .about .this .aboutBook .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 23px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .container .inner .about .this .aboutBook .buttons button {
+  width: 172.5px;
+  height: 46px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 6.9px;
+  border: 1.15px solid #5CC11F;
+  color: #5CC11F;
+  font-family: Montserrat;
+  font-size: 18.4px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background: transparent;
+  gap: 5px;
+}
+.wrapper .container .inner .about .this .aboutBook .buttons button img {
+  width: 13px;
+  height: 16px;
+}
+.wrapper .container .inner .about .this .aboutBook .buttons .green {
+  background: #5CC11F;
+  color: #FFF;
+}
+.wrapper .container .inner .about .this .reviews {
+  margin-top: 108px;
+}
+.wrapper .container .inner .about .this .reviews h3 {
+  color: #B1B1B1;
+  text-align: start;
+  margin-bottom: 27px;
+}
+.wrapper .container .inner .about .this .reviews .users {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 49px;
+}
+.wrapper .container .inner .about .this .reviews .users .user {
+  width: 457px;
+}
+.wrapper .container .inner .about .this .reviews .users .user .title {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.wrapper .container .inner .about .this .reviews .users .user .title .name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+}
+.wrapper .container .inner .about .this .reviews .users .user .title .name .img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: white;
+}
+.wrapper .container .inner .about .this .reviews .users .user .title .name h4 {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrapper .container .inner .about .this .reviews .users .user .title .date {
+  color: #9C9C9C;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: inline-block;
+  margin-left: auto;
+}
+.wrapper .container .inner .about .this .reviews .users .user .description {
+  margin-top: 12px;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrapper .container .inner .about .this .reviews .send {
+  margin-top: 16px;
+  width: 451px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 27px;
+}
+.wrapper .container .inner .about .this .reviews .send textarea {
+  width: 100%;
+  height: 153px;
+  border-radius: 5px;
+  border: 1px solid #5CC11F;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background: transparent;
+  outline: none;
+  padding: 9px 18px;
+}
+.wrapper .container .inner .about .this .reviews .send button {
+  width: 150px;
+  height: 40px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  border-radius: 4px;
+  background: #5CC11F;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: auto;
+}
+.wrapper .container .inner .about .other .books {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 45px;
+}
+.wrapper .container .inner .about .other .books .book {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 53px;
+}
+.wrapper .container .inner .about .other .books .book .image {
+  width: 180px;
+  height: 280px;
+}
+.wrapper .container .inner .about .other .books .book .image img {
+  width: 100%;
+  height: 100%;
+}
+.wrapper .container .inner .about .other .books .book .title h4 {
+  width: 290px;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 49px;
+}
+.wrapper .container .inner .about .other .books .book .title p {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}

@@ -24,7 +24,7 @@ function BurgerMenu() {
           <img src={burger} alt="burger" onClick={handleOpenClick} />
         </a>
       </div>
-      <NavLink className={styles.logo}>
+      <NavLink to="/" className={styles.logo}>
         <img src={logo} alt="logo" />
       </NavLink>
     </div>
