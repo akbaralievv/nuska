@@ -133,7 +133,10 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.wrapper .container .inner .about .this .aboutBook .buttons button {
+.wrapper .container .inner .about .this .aboutBook .buttons a {
+  text-decoration: none;
+}
+.wrapper .container .inner .about .this .aboutBook .buttons button, .wrapper .container .inner .about .this .aboutBook .buttons a {
   width: 172.5px;
   height: 46px;
   display: -webkit-box;
@@ -160,7 +163,7 @@
   background: transparent;
   gap: 5px;
 }
-.wrapper .container .inner .about .this .aboutBook .buttons button img {
+.wrapper .container .inner .about .this .aboutBook .buttons button img, .wrapper .container .inner .about .this .aboutBook .buttons a img {
   width: 13px;
   height: 16px;
 }

@@ -5,15 +5,21 @@ import Layout from './components/hoc/Layout';
 import Auth from './pages/auth/Auth';
 import MyAccount from './pages/myAccount/MyAccount';
 import Detail from './pages/detail/Detail';
+import Inside from './pages/inside/Inside';
+import MyBooks from './pages/myBooks/MyBooks';
+import MyWishlist from './pages/myWishlist/MyWishlist';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<Main />} />
-        <Route path="/account" element={<MyAccount />} />
+        <Route path="/myAccount" element={<MyAccount />} />
         <Route path="/detail" element={<Detail />} />
+        <Route path="/myBooks" element={<MyBooks />} />
+        <Route path="/myWishlist" element={<MyWishlist />} />
       </Route>
+      <Route path="/inside" element={<Inside />} />
       <Route path="/auth" element={<Auth />} />
     </Routes>
   );

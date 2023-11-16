@@ -1,0 +1,210 @@
+.wrapper {
+  padding: 70px 0 79px;
+}
+.wrapper .container {
+  width: 1180px;
+  margin: 0 auto;
+}
+.wrapper .container .inner .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .container .inner .header .zoom {
+  border-radius: 10px;
+  background: rgba(83, 163, 46, 0.2);
+  width: 499px;
+  height: 46px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 34px;
+  position: relative;
+}
+.wrapper .container .inner .header .zooms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 17px;
+}
+.wrapper .container .inner .header .zooms_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 7px;
+}
+.wrapper .container .inner .header .zooms_inner img {
+  width: 30px;
+  height: 30px;
+}
+.wrapper .container .inner .header .zooms_inner p {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 18.4px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrapper .container .inner .header .zoom .bookmark {
+  width: 37.419px;
+  height: 74.839px;
+  position: absolute;
+  top: 0;
+  left: 331px;
+}
+.wrapper .container .inner .header .zoom .bookmark img {
+  width: 100%;
+  height: 100%;
+}
+.wrapper .container .inner .header .zoom .count {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 18.4px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrapper .container .inner .header .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 23px;
+}
+.wrapper .container .inner .header .navbar button, .wrapper .container .inner .header .navbar a {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  border: 1.15px solid #5CC11F;
+  background: #5CC11F;
+  width: 172.5px;
+  height: 46px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Montserrat;
+  font-size: 18.4px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 6.9px;
+}
+.wrapper .container .inner .header .navbar button {
+  color: #5CC11F;
+  background: transparent;
+  gap: 5px;
+}
+.wrapper .container .inner .header .navbar a {
+  text-decoration: none;
+  color: #fff;
+  background: #5CC11F;
+}
+.wrapper .container .inner .header .navbar a img {
+  width: 13.372px;
+  height: 16.1px;
+}
+.wrapper .container .inner .content {
+  margin-top: 89px;
+}
+.wrapper .container .inner .content .reader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+.wrapper .container .inner .content .reader p {
+  width: 542px;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrapper .container .inner .content .reader hr {
+  border: none;
+  border: 1px solid #5CC11F;
+  height: 719px;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 0;
+}
+.wrapper .container .inner .content .paginate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 47px;
+}
+.wrapper .container .inner .content .paginate .previous, .wrapper .container .inner .content .paginate .next {
+  width: 542px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .container .inner .content .paginate .previous button, .wrapper .container .inner .content .paginate .next button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  width: 180px;
+  height: 40px;
+  border-radius: 5px;
+  background: #5CC11F;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrapper .container .inner .content .paginate .previous p, .wrapper .container .inner .content .paginate .next p {
+  color: #5CC11F;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

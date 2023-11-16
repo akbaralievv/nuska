@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import styles from './Detail.module.css';
 import eBook from '../../assets/icons/detail/e-book.svg';
@@ -49,7 +50,7 @@ function Detail() {
                   officia deserunt mollit anim id est laborum."
                 </p>
                 <div className={styles.buttons}>
-                  <button>Читать 15 стр</button>
+                  <NavLink to="/inside">Читать 15 стр</NavLink>
                   <button className={styles.green}>Buy this book</button>
                   <button>
                     <img src={favoriteDet} alt="favorite" />

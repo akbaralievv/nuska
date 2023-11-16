@@ -24,7 +24,7 @@ function Menu() {
         <div className={styles.navbar}>
           <nav className={styles.nav}>
             <li>
-              <NavLink to="/account">
+              <NavLink to="/myAccount">
                 <img src={account} alt="account" />
                 <span>Account</span>
               </NavLink>
@@ -36,13 +36,13 @@ function Menu() {
               </NavLink>
             </li>
             <li>
-              <NavLink>
+              <NavLink to="/myBooks">
                 <img src={books} alt="books" />
                 <span>My books</span>
               </NavLink>
             </li>
             <li>
-              <NavLink>
+              <NavLink to="/myWishlist">
                 <img src={wishlist} alt="wishlist" />
                 <span>My wishlist</span>
               </NavLink>
