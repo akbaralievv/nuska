@@ -9,9 +9,11 @@ import { setIsAuth } from '../../redux/slices/isTrue';
 import BurgerMenu from '../burgerMenu/BurgerMenu';
 import Menu from '../menu/Menu';
 
-function Header() {
+function Header()
+{
   const dispatch = useDispatch();
-  const handleAuthClick = (e) => {
+  const handleAuthClick = (e) =>
+  {
     dispatch(setIsAuth(e));
   };
   return (

@@ -1,4 +1,6 @@
-import React, { startTransition } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './Menu.module.css';
 
@@ -12,18 +14,37 @@ import help from '../../assets/icons/menu/help.svg';
 import logout from '../../assets/icons/menu/logout.svg';
 
 import BurgerMenu from '../burgerMenu/BurgerMenu';
-import { NavLink, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { setIsOpenMenu } from '../../redux/slices/isTrue';
 
 function Menu() {
   const { isOpenMenu } = useSelector((state) => state.isTrue);
+
   const location = useLocation();
+  const menuRef = useRef(null);
+  const dispatch = useDispatch();
+
   const isLocation = location.pathname === '/inside';
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      dispatch(setIsOpenMenu(false));
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [dispatch]);
+
   return (
     <div
       className={`${styles.wrapper} ${isOpenMenu ? styles.openMenu : styles.closeMenu} ${
         isLocation ? styles.locationInside : ''
-      }`}>
+      }`}
+      ref={menuRef}>
       <div className={styles.inner}>
         <BurgerMenu />
         <div className={styles.navbar}>
