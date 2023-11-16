@@ -1,23 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { setIsOpenMenu } from '../../redux/slices/isTrue';
 
 import logo from '../../assets/images/logo.png';
 import burger from '../../assets/icons/burger menu.svg';
-
 import styles from './BurgerMenu.module.css';
 import { NavLink } from 'react-router-dom';
 
-function BurgerMenu() {
+function BurgerMenu()
+{
   const { isOpenMenu } = useSelector((state) => state.isTrue);
   const dispatch = useDispatch();
 
-  const handleOpenClick = (e) => {
+  const handleOpenClick = (e) =>
+  {
     e.preventDefault();
     dispatch(setIsOpenMenu(!isOpenMenu));
   };
+
   return (
+
     <div className={styles.wrapper}>
       <div className={styles.menu}>
         <a href="">
@@ -28,6 +31,7 @@ function BurgerMenu() {
         <img src={logo} alt="logo" />
       </NavLink>
     </div>
+
   );
 }
 
