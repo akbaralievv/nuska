@@ -12,13 +12,18 @@ import help from '../../assets/icons/menu/help.svg';
 import logout from '../../assets/icons/menu/logout.svg';
 
 import BurgerMenu from '../burgerMenu/BurgerMenu';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 function Menu() {
   const { isOpenMenu } = useSelector((state) => state.isTrue);
+  const location = useLocation();
+  const isLocation = location.pathname === '/inside';
   return (
-    <div className={`${styles.wrapper} ${isOpenMenu ? styles.openMenu : styles.closeMenu}`}>
+    <div
+      className={`${styles.wrapper} ${isOpenMenu ? styles.openMenu : styles.closeMenu} ${
+        isLocation ? styles.locationInside : ''
+      }`}>
       <div className={styles.inner}>
         <BurgerMenu />
         <div className={styles.navbar}>

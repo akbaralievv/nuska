@@ -9,6 +9,9 @@
     top: -70px
     z-index: 10
     padding-top: 70px
+    &.locationInside
+        left: 147px
+        top: 2px
     .inner
         display: flex
         flex-direction: column
@@ -46,7 +49,6 @@
         100%
             transform: translateX(0%)
 .closeMenu
-    // display: none
     animation: slide-out 0.8s ease-in-out
     @keyframes slide-out
         0%
