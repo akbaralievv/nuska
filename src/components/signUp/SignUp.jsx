@@ -19,7 +19,7 @@ function SignUp() {
         <a href="">Катталуу</a>
         <div className={styles.checkbox}>
           <input type="checkbox" name="" id="checkbox" />
-          <label for="checkbox">Соглашение об использовании приложения и купленных книг</label>
+          <label htmlFor="checkbox">Соглашение об использовании приложения и купленных книг</label>
         </div>
       </div>
     </form>

@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import SkeletonCard from '../skeletonCard/SkeletonCard';
 import BookCard from '../bookCard/BookCard';
 
 import ads from '../../assets/images/ads.png';
 import styles from './BookLists.module.css';
+import { getBooks } from '../../redux/slices/getBooks';
 
 function BookLists() {
+  const { data, loading, error } = useSelector((state) => state.getBooks);
+  const dispatch = useDispatch();
+
   const books = [...new Array(6)].map((_, index) => <BookCard key={index} />);
+
+  useEffect(() => {
+    dispatch(getBooks());
+  }, [dispatch]);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
