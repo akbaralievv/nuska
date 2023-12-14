@@ -2,7 +2,7 @@
   display: none;
   width: 500px;
   height: 1024px;
-  background: #262626;
+  background: #3B3B3B;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -33,7 +33,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 381px;
+  gap: 145px;
 }
 .wrapper .inner .navbar .nav {
   display: -webkit-box;

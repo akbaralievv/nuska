@@ -10,6 +10,7 @@ import { getBooks } from '../../redux/slices/getBooks';
 
 function BookLists() {
   const { data, loading, error } = useSelector((state) => state.getBooks);
+  const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
   const dispatch = useDispatch();
 
   const books = [...new Array(6)].map((_, index) => <BookCard key={index} />);
@@ -23,26 +24,26 @@ function BookLists() {
       <div className={styles.container}>
         <div className={styles.inner}>
           <section className={styles.catalog}>
-            <h2>Популярные</h2>
+            <h2 style={currentThemeColor}>Популярные</h2>
             <div className={styles.bookCards}>{books}</div>
           </section>
           <section className={styles.catalog}>
-            <h2>Бестселлеры</h2>
+            <h2 style={currentThemeColor}>Бестселлеры</h2>
             <div className={styles.bookCards}>{books}</div>
           </section>
           <section className={styles.catalog}>
-            <h2>Новые</h2>
+            <h2 style={currentThemeColor}>Новые</h2>
             <div className={styles.bookCards}>{books}</div>
           </section>
           <section className={styles.ads}>
             <img src={ads} alt="ads" />
           </section>
           <section className={styles.catalog}>
-            <h2>Триллеры</h2>
+            <h2 style={currentThemeColor}>Триллеры</h2>
             <div className={styles.bookCards}>{books}</div>
           </section>
           <section className={styles.catalog}>
-            <h2>Фантастика</h2>
+            <h2 style={currentThemeColor}>Фантастика</h2>
             <div className={styles.bookCards}>{books}</div>
           </section>
         </div>

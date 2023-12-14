@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import search from '../../assets/icons/search icon.svg';
@@ -9,13 +9,14 @@ import { setIsAuth } from '../../redux/slices/isTrue';
 import BurgerMenu from '../burgerMenu/BurgerMenu';
 import Menu from '../menu/Menu';
 
-function Header()
-{
+function Header() {
+  const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
   const dispatch = useDispatch();
-  const handleAuthClick = (e) =>
-  {
+
+  const handleAuthClick = (e) => {
     dispatch(setIsAuth(e));
   };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -25,12 +26,20 @@ function Header()
           <nav className={styles.nav}>
             <div className={styles.search}>
               <img src={search} alt="search" />
-              <input type="text" placeholder="Поиск" />
+              <input type="text" placeholder="Поиск" style={currentThemeColor} />
             </div>
-            <NavLink to="/auth" className={styles.auth} onClick={() => handleAuthClick(true)}>
+            <NavLink
+              to="/auth"
+              className={styles.auth}
+              onClick={() => handleAuthClick(true)}
+              style={currentThemeColor}>
               Log in
             </NavLink>
-            <NavLink to="/auth" className={styles.auth} onClick={() => handleAuthClick(false)}>
+            <NavLink
+              to="/auth"
+              className={styles.auth}
+              onClick={() => handleAuthClick(false)}
+              style={currentThemeColor}>
               Sign up
             </NavLink>
           </nav>

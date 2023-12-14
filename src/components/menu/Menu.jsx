@@ -12,16 +12,29 @@ import about from '../../assets/icons/menu/about.svg';
 import privacy from '../../assets/icons/menu/privacy.svg';
 import help from '../../assets/icons/menu/help.svg';
 import logout from '../../assets/icons/menu/logout.svg';
+import light from '../../assets/icons/menu/light.svg';
+import dark from '../../assets/icons/menu/dark.svg';
 
 import BurgerMenu from '../burgerMenu/BurgerMenu';
 import { setIsOpenMenu } from '../../redux/slices/isTrue';
+import { setTheme } from '../../redux/slices/changeTheme';
 
 function Menu() {
   const { isOpenMenu } = useSelector((state) => state.isTrue);
+  const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
 
   const location = useLocation();
   const menuRef = useRef(null);
   const dispatch = useDispatch();
+
+  const themeLight = (e) => {
+    e.preventDefault();
+    dispatch(setTheme({ key: 'light', color: '#000' }));
+  };
+  const themeDark = (e) => {
+    e.preventDefault();
+    dispatch(setTheme({ key: 'dark', color: '#fff' }));
+  };
 
   const isLocation = location.pathname === '/inside';
 
@@ -71,6 +84,20 @@ function Menu() {
               <NavLink to="/myWishlist">
                 <img src={wishlist} alt="wishlist" />
                 <span>My wishlist</span>
+              </NavLink>
+            </li>
+          </nav>
+          <nav className={styles.nav}>
+            <li>
+              <NavLink onClick={themeLight}>
+                <img src={light} alt="light" />
+                <span>Light</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink onClick={themeDark}>
+                <img src={dark} alt="dark" />
+                <span>Dark</span>
               </NavLink>
             </li>
           </nav>

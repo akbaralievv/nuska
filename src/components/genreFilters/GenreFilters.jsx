@@ -6,6 +6,7 @@ import { getGenres } from '../../redux/slices/getGenres';
 
 function GenreFilters() {
   const { data, loading, error } = useSelector((state) => state.getGenres);
+  const { theme, currentThemeColor } = useSelector((state) => state.changeTheme);
   const [activeGenre, setActiveGenre] = useState(null);
   const dispatch = useDispatch();
 
@@ -21,7 +22,7 @@ function GenreFilters() {
     <ul className={styles.genreFilters}>
       {data?.map((genre) => (
         <li key={genre.id} className={activeGenre === genre.name ? styles.active : ''}>
-          <a href="#" onClick={() => handleGenreClick(genre.name)}>
+          <a href="#" onClick={() => handleGenreClick(genre.name)} style={currentThemeColor}>
             {genre.name}
           </a>
         </li>

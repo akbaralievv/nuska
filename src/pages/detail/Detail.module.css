@@ -171,6 +171,73 @@
   background: #5CC11F;
   color: #FFF;
 }
+.wrapper .container .inner .about .this .available {
+  width: 582px;
+  height: 276px;
+  position: relative;
+  border-radius: 6px;
+  border: 3px solid #404040;
+  padding-left: 32px;
+  margin-top: 79px;
+}
+.wrapper .container .inner .about .this .available h4 {
+  color: #404040;
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 28px 0 48px;
+}
+.wrapper .container .inner .about .this .available .infos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 14px;
+}
+.wrapper .container .inner .about .this .available .infos .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.wrapper .container .inner .about .this .available .infos .info p {
+  color: #404040;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrapper .container .inner .about .this .available img {
+  width: 213px;
+  height: 213px;
+  position: absolute;
+  bottom: -2px;
+  right: -1px;
+  z-index: 3;
+}
+.wrapper .container .inner .about .this .available span {
+  color: #B1B1B1;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  bottom: 34px;
+  display: inline-block;
+  width: 116px;
+}
 .wrapper .container .inner .about .this .reviews {
   margin-top: 108px;
 }

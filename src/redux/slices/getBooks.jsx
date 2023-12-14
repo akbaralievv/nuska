@@ -42,7 +42,6 @@ const getBooksSlice = createSlice({
       state.error = false;
     });
     builder.addCase(getBooks.rejected, (state, action) => {
-      console.log(action);
       state.data = [];
       state.loading = false;
       state.error = action.error.message;
