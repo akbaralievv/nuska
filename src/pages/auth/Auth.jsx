@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import styles from './Auth.module.css';
 import image from '../../assets/images/auth-image.png';
 import logo from '../../assets/images/logo.png';
-import LogIn from '../../components/login/Login';
+import LogIn from '../../components/logIn/LogIn';
 import SignUp from '../../components/signUp/SignUp';
 
 function Auth() {
