@@ -3,22 +3,16 @@ import axios from 'axios';
 
 import API_URLS from '../../config/api';
 
-const api = API_URLS.library + '/book_list';
-
-axios.interceptors.response.use(
-  (response) => {
-    if (response && response.data) {
-      return response.data.results;
-    }
-    throw new Error('No data in response');
-  },
-  (error) => {
-    throw new Error(`Error ${error.response.status}`);
-  },
-);
+const api = API_URLS.library;
 
 export const getBooks = createAsyncThunk('getBooks', async () => {
-  return await axios.get(api);
+  try {
+    const response = await fetch(api);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching books:', error);
+  }
 });
 
 const initialState = {

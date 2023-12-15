@@ -4,6 +4,7 @@ import isTrue from './slices/isTrue';
 import getBooks from './slices/getBooks';
 import getGenres from './slices/getGenres';
 import changeTheme from './slices/changeTheme';
+import getBestsellingBooks from './slices/getBestsellingBooks';
 
 export const store = configureStore({
   reducer: {
@@ -11,5 +12,6 @@ export const store = configureStore({
     getBooks,
     getGenres,
     changeTheme,
+    getBestsellingBooks,
   },
 });
