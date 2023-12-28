@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 import './App.module.css';
+import './App.css';
+import 'react-credit-cards/es/styles-compiled.css';
 
 import Main from './pages/main/Main';
 import Layout from './components/hoc/Layout';
@@ -12,6 +14,7 @@ import Detail from './pages/detail/Detail';
 import Inside from './pages/inside/Inside';
 import MyBooks from './pages/myBooks/MyBooks';
 import MyWishlist from './pages/myWishlist/MyWishlist';
+import PaymentForm from './pages/payment/Payment';
 
 function App() {
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
@@ -30,6 +33,7 @@ function App() {
   useEffect(() => {
     setBodyClass();
   }, [key]);
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -38,6 +42,7 @@ function App() {
         <Route path="/detail" element={<Detail />} />
         <Route path="/myBooks" element={<MyBooks />} />
         <Route path="/myWishlist" element={<MyWishlist />} />
+        <Route path="/myBooks/payment" element={<PaymentForm />} />
       </Route>
       <Route path="/inside" element={<Inside />} />
       <Route path="/auth" element={<Auth />} />

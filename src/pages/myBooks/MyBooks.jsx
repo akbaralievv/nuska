@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import styles from './MyBooks.module.css';
 import image from '../../assets/images/detail/imageBook.png';
+import { NavLink } from 'react-router-dom';
 
 function MyBooks() {
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
@@ -11,9 +12,11 @@ function MyBooks() {
       <div className={styles.container}>
         <ul className={styles.inner}>
           <li className={styles.book}>
-            <div className={styles.image}>
-              <img src={image} alt="image" />
-            </div>
+            <NavLink to="payment">
+              <div className={styles.image}>
+                <img src={image} alt="image" />
+              </div>
+            </NavLink>
             <div className={styles.title}>
               <h3 style={currentThemeColor}>
                 A Mersey Killing: When Liverpool Rocked and the Music died

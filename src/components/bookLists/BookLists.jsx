@@ -54,7 +54,7 @@ function BookLists() {
           <section className={styles.catalog}>
             <h2 style={currentThemeColor}>Популярные</h2>
             <Slider {...settings}>
-              {data.map((book) => (
+              {data?.map((book) => (
                 <BookCard key={book.id} data={book} />
               ))}
             </Slider>
@@ -62,7 +62,7 @@ function BookLists() {
           <section className={styles.catalog}>
             <h2 style={currentThemeColor}>Бестселлеры</h2>
             <Slider {...settings}>
-              {bestselling.map((book) => (
+              {bestselling?.map((book) => (
                 <BookCard key={book.id} data={book} />
               ))}
             </Slider>

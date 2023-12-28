@@ -1,0 +1,46 @@
+
+.input
+    display: flex
+    flex-direction: column
+    gap: 5px
+.container
+    width: 1180px
+    margin: 0 auto
+
+.form
+    transform: scale(1.5)
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 20px
+    margin: 120px auto 80px
+    .dateCVC
+        display: flex
+        align-items: center
+        justify-content: space-between
+    input
+        border: none
+        outline: none
+        padding: 15px
+        border-radius: 8px
+        width: 290px
+        &[name="expiry"], input [name="cvc"]
+    .dateCVC
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 290px
+        input
+            width: 130px
+    .error
+        color: red
+    .btnSubmit
+        appearance: none
+        border: none
+        background: #5CC11F
+        color: black
+        padding: 15px
+        border-radius: 8px
+        width: 290px
+        cursor: pointer
+        font-size: 18px
