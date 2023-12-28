@@ -6,23 +6,26 @@ import API_URLS from '../../config/api';
 const api = API_URLS.library + '/jenre_list';
 
 axios.interceptors.response.use(
-  (response) => {
+  (response) =>
+  {
     if (response) {
       return response;
     }
     throw new Error('No data in response');
   },
-  (error) => {
+  (error) =>
+  {
     throw new Error(`Error ${error}`);
   },
 );
 
-export const getGenres = createAsyncThunk('getGenres', async () => {
+export const getGenres = createAsyncThunk('getGenres', async () =>
+{
   return await axios.get(api);
 });
 
 const initialState = {
-  data: [],
+  jenres: [],
   loading: false,
   error: false,
 };
@@ -30,19 +33,23 @@ const initialState = {
 const getGenresSlice = createSlice({
   name: 'getGenres',
   initialState,
-  extraReducers: (builder) => {
-    builder.addCase(getGenres.fulfilled, (state, action) => {
-      state.data = action.payload;
+  extraReducers: (builder) =>
+  {
+    builder.addCase(getGenres.fulfilled, (state, action) =>
+    {
+      state.jenres = action.payload;
       state.loading = false;
       state.error = false;
     });
-    builder.addCase(getGenres.pending, (state) => {
-      state.data = [];
+    builder.addCase(getGenres.pending, (state) =>
+    {
+      state.jenres = [];
       state.loading = true;
       state.error = false;
     });
-    builder.addCase(getGenres.rejected, (state, action) => {
-      state.data = [];
+    builder.addCase(getGenres.rejected, (state, action) =>
+    {
+      state.jenres = [];
       state.loading = false;
       state.error = action.error.message;
     });

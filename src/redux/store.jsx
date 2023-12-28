@@ -5,6 +5,7 @@ import getBooks from './slices/getBooks';
 import getGenres from './slices/getGenres';
 import changeTheme from './slices/changeTheme';
 import getBestsellingBooks from './slices/getBestsellingBooks';
+import getAuthors from './slices/getAuthors';
 
 export const store = configureStore({
   reducer: {
@@ -13,5 +14,6 @@ export const store = configureStore({
     getGenres,
     changeTheme,
     getBestsellingBooks,
+    getAuthors
   },
 });

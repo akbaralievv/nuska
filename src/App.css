@@ -1,7 +1,12 @@
-
 .rccs {
     transform: scale(1.5);
 }
-form{
+
+form {
     width: 435px;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
 }

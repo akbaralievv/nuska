@@ -1,7 +1,6 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-
+import React, { useEffect, useState } from 'react';
+import { NavLink, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './Detail.module.css';
 import eBook from '../../assets/icons/detail/e-book.svg';
 import imageBook from '../../assets/images/detail/imageBook.png';
@@ -9,9 +8,43 @@ import imageHome from '../../assets/images/card.png';
 import favoriteDet from '../../assets/icons/detail/favoriteDet.svg';
 import triangle from '../../assets/images/detail/triangle.png';
 import triangleDark from '../../assets/images/detail/triangleDark.png';
+import API_URLS from '../../config/api';
+import getBooks, { getOneBook } from '../../redux/slices/getBooks';
+import { getAuthors } from '../../redux/slices/getAuthors';
 
-function Detail() {
+function Detail()
+{
+  const [infoData, setInfoData] = useState(null)
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
+  const api = API_URLS.oneBook;
+  const { id } = useParams()
+  const { data, loading, error, info } = useSelector((state) => state.getBooks);
+  const { authors } = useSelector((state) => state.getAuthors);
+  const dispatch = useDispatch()
+  useEffect(() =>
+  {
+    window.scrollTo(0, 0);
+
+  }, [])
+  useEffect(() =>
+  {
+    console.log(data);
+    if (data) {
+      const newApi = api + id;
+      dispatch(getOneBook(newApi));
+      dispatch(getAuthors())
+    }
+    else {
+      dispatch(getBooks())
+    }
+  }, [data])
+  useEffect(() =>
+  {
+    if (info) {
+      setInfoData(info)
+      console.log(info);
+    }
+  }, [info])
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -20,17 +53,17 @@ function Detail() {
             <div className={styles.title}>
               <div className={styles.text}>
                 <h2 style={currentThemeColor}>
-                  A Mersey Killing: When Liverpool Rocked and the Music died
+                  {infoData?.name}
                 </h2>
-                <p style={currentThemeColor}>Brian L. Porter</p>
+                <p style={currentThemeColor}>{infoData?.author && authors && authors[infoData?.author]}</p>
               </div>
               <div className={styles.infoNumbers}>
                 <div className={styles.info}>
-                  <img src={eBook} alt="eBook" />
+                  <img src={infoData?.avatar} alt="eBook" />
                   <p style={currentThemeColor}>e-book</p>
                 </div>
                 <div className={styles.info}>
-                  <span>300</span>
+                  <span>{infoData?.amount_pages}</span>
                   <p style={currentThemeColor}>Количество страниц</p>
                 </div>
                 <div className={styles.info}>
@@ -40,7 +73,7 @@ function Detail() {
               </div>
             </div>
             <div className={styles.image}>
-              <img src={imageHome} alt="imageHome" />
+              <img src={infoData?.cover_image} alt="imageHome" />
             </div>
           </section>
           <section className={styles.about}>
@@ -48,20 +81,18 @@ function Detail() {
               <div className={styles.aboutBook}>
                 <h3>About this book</h3>
                 <p style={currentThemeColor}>
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum."
+                  {infoData?.description}
                 </p>
                 <div className={styles.buttons}>
-                  <NavLink to="/inside">Читать 15 стр</NavLink>
+                  {
+                    infoData?.short_book_file &&
+                    <a target='_blank' href={infoData?.short_book_file}>Читать 15 стр</a>
+                  }
                   <button className={styles.green} style={currentThemeColor}>
                     Buy this book
                   </button>
                   <button>
-                    <img src={favoriteDet} alt="favorite" />
+                    <img src={infoData?.cover_image} alt="favorite" />
                     <span>Add to wishlist</span>
                   </button>
                 </div>

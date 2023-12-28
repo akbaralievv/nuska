@@ -12,13 +12,15 @@ import styles from './BookLists.module.css';
 import { getBooks } from '../../redux/slices/getBooks';
 import { getBestsellingBooks } from '../../redux/slices/getBestsellingBooks';
 
-function BookLists() {
+function BookLists()
+{
   const { data, loading, error } = useSelector((state) => state.getBooks);
   const { data: bestselling } = useSelector((state) => state.getBestsellingBooks);
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  useEffect(() =>
+  {
     dispatch(getBooks());
     dispatch(getBestsellingBooks());
   }, [dispatch]);
