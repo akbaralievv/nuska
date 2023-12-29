@@ -12,39 +12,31 @@ import API_URLS from '../../config/api';
 import getBooks, { getOneBook } from '../../redux/slices/getBooks';
 import { getAuthors } from '../../redux/slices/getAuthors';
 
-function Detail()
-{
-  const [infoData, setInfoData] = useState(null)
+function Detail() {
+  const [infoData, setInfoData] = useState(null);
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
   const api = API_URLS.oneBook;
-  const { id } = useParams()
+  const { id } = useParams();
   const { data, loading, error, info } = useSelector((state) => state.getBooks);
   const { authors } = useSelector((state) => state.getAuthors);
-  const dispatch = useDispatch()
-  useEffect(() =>
-  {
+  const dispatch = useDispatch();
+  useEffect(() => {
     window.scrollTo(0, 0);
-
-  }, [])
-  useEffect(() =>
-  {
-    console.log(data);
+  }, []);
+  useEffect(() => {
     if (data) {
       const newApi = api + id;
       dispatch(getOneBook(newApi));
-      dispatch(getAuthors())
+      dispatch(getAuthors());
+    } else {
+      dispatch(getBooks());
     }
-    else {
-      dispatch(getBooks())
-    }
-  }, [data])
-  useEffect(() =>
-  {
+  }, [data]);
+  useEffect(() => {
     if (info) {
-      setInfoData(info)
-      console.log(info);
+      setInfoData(info);
     }
-  }, [info])
+  }, [info]);
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -52,10 +44,10 @@ function Detail()
           <section className={styles.home}>
             <div className={styles.title}>
               <div className={styles.text}>
-                <h2 style={currentThemeColor}>
-                  {infoData?.name}
-                </h2>
-                <p style={currentThemeColor}>{infoData?.author && authors && authors[infoData?.author]}</p>
+                <h2 style={currentThemeColor}>{infoData?.name}</h2>
+                <p style={currentThemeColor}>
+                  {infoData?.author && authors && authors[infoData?.author]}
+                </p>
               </div>
               <div className={styles.infoNumbers}>
                 <div className={styles.info}>
@@ -80,14 +72,13 @@ function Detail()
             <div className={styles.this}>
               <div className={styles.aboutBook}>
                 <h3>About this book</h3>
-                <p style={currentThemeColor}>
-                  {infoData?.description}
-                </p>
+                <p style={currentThemeColor}>{infoData?.description}</p>
                 <div className={styles.buttons}>
-                  {
-                    infoData?.short_book_file &&
-                    <a target='_blank' href={infoData?.short_book_file}>Читать 15 стр</a>
-                  }
+                  {infoData?.short_book_file && (
+                    <a target="_blank" href={infoData?.short_book_file}>
+                      Читать 15 стр
+                    </a>
+                  )}
                   <button className={styles.green} style={currentThemeColor}>
                     Buy this book
                   </button>

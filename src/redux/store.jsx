@@ -6,6 +6,8 @@ import getGenres from './slices/getGenres';
 import changeTheme from './slices/changeTheme';
 import getBestsellingBooks from './slices/getBestsellingBooks';
 import getAuthors from './slices/getAuthors';
+import register from './slices/auth/register';
+import authorization from './slices/auth/authorization';
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +16,8 @@ export const store = configureStore({
     getGenres,
     changeTheme,
     getBestsellingBooks,
-    getAuthors
+    getAuthors,
+    register,
+    authorization,
   },
 });

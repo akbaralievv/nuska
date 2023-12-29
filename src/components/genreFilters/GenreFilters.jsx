@@ -4,21 +4,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './GenreFilters.module.css';
 import { getGenres } from '../../redux/slices/getGenres';
 
-function GenreFilters()
-{
+function GenreFilters() {
   const { jenres, loading, error } = useSelector((state) => state.getGenres);
   const { theme, currentThemeColor } = useSelector((state) => state.changeTheme);
   const [activeGenre, setActiveGenre] = useState(null);
   const dispatch = useDispatch();
 
-  useEffect(() =>
-  {
-    console.log(jenres);
+  useEffect(() => {
     dispatch(getGenres());
   }, [dispatch]);
 
-  const handleGenreClick = (genre) =>
-  {
+  const handleGenreClick = (genre) => {
     setActiveGenre(genre);
   };
 

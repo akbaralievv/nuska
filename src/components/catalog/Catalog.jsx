@@ -12,7 +12,6 @@ const Catalog = () => {
     swipeToSlide: true,
     afterChange: (index) => {
       setCurrentSlide(index);
-      console.log(`Slider Changed to: ${index + 1}`);
     },
   };
 
