@@ -83,3 +83,8 @@
   width: 123px;
   height: 41px;
 }
+.wrapper .buttons .createAcc {
+  width: auto;
+  height: auto;
+  padding: 10px 12px;
+}

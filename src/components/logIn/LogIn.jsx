@@ -8,7 +8,7 @@ import Password from '../inputs/password/Password';
 import { authorization, clearDataLogin } from '../../redux/slices/auth/authorization';
 import PreloadBtn from '../PreloadBtn/PreloadBtn';
 import ModalWindow from '../modalWindow/ModalWindow';
-import { setIsOpenModal } from '../../redux/slices/isTrue';
+import { setIsAuth, setIsOpenModal } from '../../redux/slices/isTrue';
 
 function LogIn() {
   const { data, loading, error } = useSelector((state) => state.authorization);
@@ -79,10 +79,17 @@ function LogIn() {
         </div>
         <div className={styles.buttons}>
           <a href="" style={currentThemeColor}>
-            Forgot password ?
+            Забыли пароль?
           </a>
           <button type="submit" style={currentThemeColor} disabled={loading}>
             {loading ? <PreloadBtn /> : 'Кирүү'}
+          </button>
+          <button
+            type="button"
+            className={styles.createAcc}
+            style={currentThemeColor}
+            onClick={() => dispatch(setIsAuth(false))}>
+            Создать аккаунт
           </button>
         </div>
         {isOpenModal && <ModalWindow message={error ? error : data} />}

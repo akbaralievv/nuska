@@ -10,7 +10,7 @@ import Password from '../inputs/password/Password';
 import { clearDataRegister, register } from '../../redux/slices/auth/register';
 import { setRefreshToken } from '../helpers/tokens';
 import ModalWindow from '../modalWindow/ModalWindow';
-import { setIsOpenModal } from '../../redux/slices/isTrue';
+import { setIsAuth, setIsOpenModal } from '../../redux/slices/isTrue';
 import PreloadBtn from '../PreloadBtn/PreloadBtn';
 
 function SignUp() {
@@ -115,6 +115,13 @@ function SignUp() {
       <div className={styles.buttons}>
         <button type="submit" style={currentThemeColor} disabled={loading}>
           {loading ? <PreloadBtn /> : 'Катталуу'}
+        </button>
+        <button
+          type="button"
+          className={styles.createAcc}
+          style={currentThemeColor}
+          onClick={() => dispatch(setIsAuth(true))}>
+          Есть аккаунт? Войти
         </button>
         <div className={styles.checkbox}>
           <input type="checkbox" name="" id="checkbox" onChange={handleCheck} />

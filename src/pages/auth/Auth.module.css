@@ -48,6 +48,7 @@
   height: 89px;
   display: inline-block;
   margin-top: 56px;
+  cursor: pointer;
 }
 .wrapper .inner .title .image {
   width: 415px;

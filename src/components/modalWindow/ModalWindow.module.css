@@ -14,6 +14,7 @@
       -ms-flex-align: center;
           align-items: center;
   background: rgba(0, 0, 0, 0.368627451);
+  z-index: 10;
 }
 .window .closeBtn {
   position: absolute;
@@ -41,4 +42,29 @@
       -ms-flex-align: center;
           align-items: center;
   background: #398e3c;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+.window .content .authBtn {
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #5CC11F;
+  color: #000;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+}
+.window .content h2 {
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }

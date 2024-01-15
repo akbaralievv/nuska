@@ -17,10 +17,13 @@ import Header from '../../components/header/Header';
 import { getComments } from '../../redux/slices/book/getComments';
 import { postComment } from '../../redux/slices/book/postComment';
 import { getRefreshToken } from '../../components/helpers/tokens';
+import ModalWindow from '../../components/modalWindow/ModalWindow';
+import { setIsOpenModal } from '../../redux/slices/isTrue';
 
 function Detail() {
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
   const { data: commentList } = useSelector((state) => state.getComments);
+  const { isOpenModal } = useSelector((state) => state.isTrue);
 
   const api = API_URLS.oneBook;
   const [infoData, setInfoData] = useState(null);
@@ -32,13 +35,16 @@ function Detail() {
   const { authors } = useSelector((state) => state.getAuthors);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(getComments(id));
     if (!getRefreshToken()) {
-      navigate('/auth');
+      dispatch(setIsOpenModal(true));
+      document.body.style.overflow = 'hidden';
+    } else {
+      dispatch(setIsOpenModal(false));
+      document.body.style.overflow = '';
     }
   }, []);
 
@@ -77,6 +83,7 @@ function Detail() {
 
   return (
     <div className={styles.wrapper}>
+      {isOpenModal && <ModalWindow message={'Вы не авторизованы!'} elementBtn={true} />}
       <div className={styles.container}>
         <div className={styles.inner}>
           <Header />

@@ -112,6 +112,11 @@
   line-height: normal;
   cursor: pointer;
 }
+.wrapper .buttons .createAcc {
+  width: auto;
+  height: auto;
+  padding: 10px 12px;
+}
 .wrapper .buttons .checkbox {
   display: -webkit-box;
   display: -ms-flexbox;
