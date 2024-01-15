@@ -1,106 +1,203 @@
-.container {
-  width: 1180px;
-  margin: 0 auto 162px;
-  padding: 31px 0 64px;
-  border-radius: 20px;
-  background: rgba(187, 187, 187, 0.3);
+.wrapper {
+  margin: 61px 0 96px;
 }
-.container .inner h2 {
+.wrapper .container {
+  width: 1180px;
+  margin: 0 auto;
+}
+.wrapper .container .inner {
+  position: relative;
+}
+.wrapper .container .inner .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .container .inner .header > span {
+  color: #5CC11F;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrapper .container .inner .content .username {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 106px;
+  margin-bottom: 60px;
+}
+.wrapper .container .inner .content .username h2 {
   color: #5CC11F;
   font-family: Montserrat, sans-serif;
   font-size: 30px;
   font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  text-align: center;
-}
-.container .inner p {
-  color: #BBB;
-  text-align: center;
-  font-family: Montserrat, sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
-.container .inner .cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 58px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 44px;
-}
-.container .inner .cards .card {
-  width: 245px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 44px;
-}
-.container .inner .cards .card .cardImage {
-  width: 100%;
-  height: 354px;
-}
-.container .inner .cards .card .cardImage img {
-  width: 100%;
-  height: 100%;
-}
-.container .inner .cards .card .info {
-  border-radius: 8px;
-  background: #5CC11F;
-  width: 150px;
-  height: 102px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 9px;
-}
-.container .inner .cards .card .info .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 10px;
-}
-.container .inner .cards .card .info .title img {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-}
-.container .inner .cards .card .info h3 {
-  color: #FFF;
-  font-family: Montserrat, sans-serif;
-  font-size: 20px;
-  font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
-.container .inner .cards .card .info p {
-  color: #FFF;
+.wrapper .container .inner .content .username p {
+  color: #000;
   font-family: Montserrat, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrapper .container .inner .content .editProfile .title {
+  color: #000;
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 17px;
+}
+.wrapper .container .inner .content .editProfile .forms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .container .inner .content .editProfile .forms .form {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 60px 50px 73px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 36px;
+}
+.wrapper .container .inner .content .editProfile .forms .form li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 34px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .container .inner .content .editProfile .forms .form li input {
+  width: 284px;
+  height: 33px;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 10px 0 20px;
+  border-radius: 6px;
+  border: 1px solid #000;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #000;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.wrapper .container .inner .content .editProfile .forms .form li p {
+  color: #000;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .container .inner .content .editProfile .forms .form li p img {
+  width: 20px;
+  height: 20px;
+}
+.wrapper .container .inner .content .editProfile .forms .form li .change {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+.wrapper .container .inner .content .editProfile .forms .form li .change button {
+  width: 249px;
+  height: 42px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 6px;
+  background: #5CC11F;
+  color: #000;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+}
+.wrapper .container .inner .content .editProfile .forms .form .changeLi {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+.wrapper .container .inner .content .editProfile .buttons {
+  margin-top: 92px;
+  padding: 0 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .container .inner .content .editProfile .buttons button {
+  width: 249px;
+  height: 42px;
+  border-radius: 6px;
+  background: #5CC11F;
+  border: none;
+  color: #000;
+  font-family: Montserrat;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

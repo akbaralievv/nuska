@@ -23,7 +23,7 @@ function BurgerMenu() {
         <img src={burger} alt="burger" />
       </a>
       <NavLink to="/" className={styles.logo}>
-        <img src={logo} alt="logo" />
+        <img src={logo} alt="logo" onClick={() => dispatch(setIsOpenMenu(false))} />
       </NavLink>
     </div>
   );

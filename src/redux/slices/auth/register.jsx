@@ -1,25 +1,23 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 import API_URLS from '../../../config/api';
 import { setRefreshToken, setAccessToken, setUser } from '../../../components/helpers/tokens';
 
 const api = API_URLS.register;
 
-export const register = createAsyncThunk('register', async (body) => {
+export const register = createAsyncThunk('register', async (body, { rejectWithValue }) => {
   try {
-    const response = await fetch(api, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    });
-    const data = await response.json();
+    const response = await axios.post(api, body);
+    const data = await response.data;
     const user = JSON.stringify(data.user);
     handleSuccessfulSignIn(data.tokens.access, data.tokens.refresh, user);
     return data;
   } catch (error) {
-    console.error('Error fetching books:', error);
+    if (error.response && error.response.data && error.response.data.error) {
+      return rejectWithValue(error.response.data.error);
+    }
+    return rejectWithValue('Каттоо учурунда белгисиз ката кетти');
   }
 });
 
@@ -38,6 +36,12 @@ const initialState = {
 const registerSlice = createSlice({
   name: 'registerSlice',
   initialState,
+  reducers: {
+    clearDataRegister: (state) => {
+      state.data = {};
+      state.error = '';
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(register.fulfilled, (state, action) => {
       state.data = action.payload;
@@ -52,9 +56,10 @@ const registerSlice = createSlice({
     builder.addCase(register.rejected, (state, action) => {
       state.data = {};
       state.loading = false;
-      state.error = action.error.message;
+      state.error = action.payload;
     });
   },
 });
 
+export const { clearDataRegister } = registerSlice.actions;
 export default registerSlice.reducer;

@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   isOpenMenu: false,
   isAuth: false,
+  isOpenModal: false,
 };
 
 const isTrueSlice = createSlice({
@@ -15,8 +16,11 @@ const isTrueSlice = createSlice({
     setIsAuth: (state, action) => {
       state.isAuth = action.payload;
     },
+    setIsOpenModal: (state, action) => {
+      state.isOpenModal = action.payload;
+    },
   },
 });
 
-export const { setIsOpenMenu, setIsAuth } = isTrueSlice.actions;
+export const { setIsOpenMenu, setIsAuth, setIsOpenModal } = isTrueSlice.actions;
 export default isTrueSlice.reducer;

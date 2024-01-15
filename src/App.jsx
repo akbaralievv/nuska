@@ -16,12 +16,10 @@ import MyBooks from './pages/myBooks/MyBooks';
 import MyWishlist from './pages/myWishlist/MyWishlist';
 import PaymentForm from './pages/payment/Payment';
 
-function App()
-{
+function App() {
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
 
-  function setBodyClass()
-  {
+  function setBodyClass() {
     const body = document.querySelector('body');
     if (key === 'light') {
       body.style.background = '#DDD';
@@ -32,8 +30,7 @@ function App()
     }
   }
 
-  useEffect(() =>
-  {
+  useEffect(() => {
     setBodyClass();
   }, [key]);
 
@@ -41,11 +38,11 @@ function App()
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<Main />} />
-        <Route path="/myAccount" element={<MyAccount />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/myBooks" element={<MyBooks />} />
         <Route path="/myWishlist" element={<MyWishlist />} />
         <Route path="/myBooks/payment" element={<PaymentForm />} />
+        <Route path="/myAccount" element={<MyAccount />} />
       </Route>
       <Route path="/inside" element={<Inside />} />
       <Route path="/auth" element={<Auth />} />

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+
 import styles from './Detail.module.css';
+
 import eBook from '../../assets/icons/detail/e-book.svg';
 import imageBook from '../../assets/images/detail/imageBook.png';
 import imageHome from '../../assets/images/card.png';
@@ -9,20 +11,37 @@ import favoriteDet from '../../assets/icons/detail/favoriteDet.svg';
 import triangle from '../../assets/images/detail/triangle.png';
 import triangleDark from '../../assets/images/detail/triangleDark.png';
 import API_URLS from '../../config/api';
-import getBooks, { getOneBook } from '../../redux/slices/getBooks';
+import { getBooks, getOneBook } from '../../redux/slices/book/getBooks';
 import { getAuthors } from '../../redux/slices/getAuthors';
+import Header from '../../components/header/Header';
+import { getComments } from '../../redux/slices/book/getComments';
+import { postComment } from '../../redux/slices/book/postComment';
+import { getRefreshToken } from '../../components/helpers/tokens';
 
 function Detail() {
-  const [infoData, setInfoData] = useState(null);
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
+  const { data: commentList } = useSelector((state) => state.getComments);
+
   const api = API_URLS.oneBook;
+  const [infoData, setInfoData] = useState(null);
+  const [commentValue, setCommentValue] = useState('');
+  const [isErrorComment, setIsErrorComment] = useState(false);
+
   const { id } = useParams();
   const { data, loading, error, info } = useSelector((state) => state.getBooks);
   const { authors } = useSelector((state) => state.getAuthors);
+
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    dispatch(getComments(id));
+    if (!getRefreshToken()) {
+      navigate('/auth');
+    }
   }, []);
+
   useEffect(() => {
     if (data) {
       const newApi = api + id;
@@ -32,22 +51,40 @@ function Detail() {
       dispatch(getBooks());
     }
   }, [data]);
+
   useEffect(() => {
     if (info) {
       setInfoData(info);
     }
   }, [info]);
+
+  const handleCommentChange = (e) => {
+    setCommentValue(e.target.value);
+  };
+
+  const handleSubmitComment = (e) => {
+    e.preventDefault();
+    if (commentValue.length > 2) {
+      dispatch(postComment({ id, commentValue }));
+      setCommentValue('');
+      setIsErrorComment(false);
+    } else {
+      setIsErrorComment(true);
+    }
+  };
+
+  const authorName = infoData?.author?.map((author) => `${author.first_name} ${author.last_name}`);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.inner}>
+          <Header />
           <section className={styles.home}>
             <div className={styles.title}>
               <div className={styles.text}>
                 <h2 style={currentThemeColor}>{infoData?.name}</h2>
-                <p style={currentThemeColor}>
-                  {infoData?.author && authors && authors[infoData?.author]}
-                </p>
+                <p style={currentThemeColor}>{authorName}</p>
               </div>
               <div className={styles.infoNumbers}>
                 <div className={styles.info}>
@@ -132,41 +169,49 @@ function Detail() {
               <div className={styles.reviews}>
                 <h3>Отзывы</h3>
                 <div className={styles.users}>
-                  <div className={styles.user}>
-                    <div className={styles.title}>
-                      <div className={styles.name}>
-                        <div className={styles.img}></div>
-                        <h4 style={currentThemeColor}>Lorem Ipsum</h4>
+                  {commentList.results?.map((comment, id) => (
+                    <div className={styles.user} key={id}>
+                      <div className={styles.title}>
+                        <div className={styles.name}>
+                          <div className={styles.img}></div>
+                          {(comment.user_name && (
+                            <h4 style={currentThemeColor}>{comment.user_name}</h4>
+                          )) || <h4 style={currentThemeColor}>Lorem ipsum</h4>}
+                        </div>
+                        {comment.date && (
+                          <span className={styles.date}>
+                            {(() => {
+                              const dateParts = comment.date.split('-');
+                              return dateParts[2] + '.' + dateParts[1] + '.' + dateParts[0];
+                            })()}
+                          </span>
+                        )}
                       </div>
-                      <span className={styles.date}>29.09.2023</span>
+                      {comment.comment && (
+                        <p className={styles.description} style={currentThemeColor}>
+                          {comment.comment}
+                        </p>
+                      )}
                     </div>
-                    <p className={styles.description} style={currentThemeColor}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                      incididunt ut labore et dolore magna aliqua.
-                    </p>
-                  </div>
-                  <div className={styles.user}>
-                    <div className={styles.title}>
-                      <div className={styles.name}>
-                        <div className={styles.img}></div>
-                        <h4 style={currentThemeColor}>Lorem Ipsum</h4>
-                      </div>
-                      <span className={styles.date}>29.09.2023</span>
-                    </div>
-                    <p className={styles.description} style={currentThemeColor}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                      incididunt ut labore et dolore magna aliqua.
-                    </p>
-                  </div>
+                  ))}
                 </div>
-                <form className={styles.send}>
-                  <textarea
-                    id="review"
-                    name="review"
-                    rows="4"
-                    cols="50"
-                    placeholder="Оставить отзыв..."
-                    style={currentThemeColor}></textarea>
+                <form className={styles.send} onSubmit={handleSubmitComment}>
+                  <>
+                    <textarea
+                      id="review"
+                      name="review"
+                      rows="4"
+                      cols="50"
+                      placeholder="Оставить отзыв..."
+                      style={currentThemeColor}
+                      onChange={handleCommentChange}
+                      value={commentValue}></textarea>
+                    {isErrorComment && (
+                      <p className={styles.errorComment}>
+                        Комментарийлер кеминде 2 белгиден турушу керек
+                      </p>
+                    )}
+                  </>
                   <button type="submit" style={currentThemeColor}>
                     Отправить
                   </button>

@@ -3,25 +3,16 @@ import axios from 'axios';
 
 import API_URLS from '../../config/api';
 
-const api = API_URLS.library + '/jenre_list';
+const api = API_URLS.genres;
 
-axios.interceptors.response.use(
-  (response) =>
-  {
-    if (response) {
-      return response;
-    }
-    throw new Error('No data in response');
-  },
-  (error) =>
-  {
-    throw new Error(`Error ${error}`);
-  },
-);
-
-export const getGenres = createAsyncThunk('getGenres', async () =>
-{
-  return await axios.get(api);
+export const getGenres = createAsyncThunk('getGenres', async () => {
+  try {
+    const response = await axios.get(api);
+    const data = response.data;
+    return data;
+  } catch (error) {
+    console.error('Error fetching books:', error);
+  }
 });
 
 const initialState = {
@@ -33,22 +24,18 @@ const initialState = {
 const getGenresSlice = createSlice({
   name: 'getGenres',
   initialState,
-  extraReducers: (builder) =>
-  {
-    builder.addCase(getGenres.fulfilled, (state, action) =>
-    {
+  extraReducers: (builder) => {
+    builder.addCase(getGenres.fulfilled, (state, action) => {
       state.jenres = action.payload;
       state.loading = false;
       state.error = false;
     });
-    builder.addCase(getGenres.pending, (state) =>
-    {
+    builder.addCase(getGenres.pending, (state) => {
       state.jenres = [];
       state.loading = true;
       state.error = false;
     });
-    builder.addCase(getGenres.rejected, (state, action) =>
-    {
+    builder.addCase(getGenres.rejected, (state, action) => {
       state.jenres = [];
       state.loading = false;
       state.error = action.error.message;

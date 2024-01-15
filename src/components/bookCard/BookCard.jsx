@@ -5,30 +5,31 @@ import styles from './BookCard.module.css';
 import book from '../../assets/images/card.png';
 import favorite from '../../assets/icons/favorite.svg';
 import favoriteLight from '../../assets/icons/favorite light.svg';
+import favoriteSelect from '../../assets/icons/favoriteSelect.svg';
+import favoriteSelectLight from '../../assets/icons/favoriteSelect light.svg';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-function BookCard({ data })
-{
+function BookCard({ data }) {
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
 
   return (
     <div className={styles.wrapper} style={currentThemeColor}>
-      <NavLink to={`/detail/${data.id}`}>
-        <div className={styles.inner}>
+      <div className={styles.inner}>
+        <NavLink to={`/detail/${data.id}`}>
           <div className={styles.images}>
             <img src={data.cover_image ?? book} alt="book" />
           </div>
-          <div className={styles.title}>
-            <h3 style={currentThemeColor}>{data.name ?? 'Lorem ipsum'}</h3>
-            <img src={key === 'dark' ? favorite : favoriteLight} alt="favorite" />
-          </div>
-          <div className={styles.description}>
-            <p style={currentThemeColor}>Lorem ipsum</p>
-            <span>300c</span>
-          </div>
+        </NavLink>
+        <div className={styles.title}>
+          <h3 style={currentThemeColor}>{data.name ?? 'Lorem ipsum'}</h3>
+          <img src={key === 'dark' ? favoriteSelectLight : favoriteSelect} alt="favorite" />
         </div>
-      </NavLink>
+        <div className={styles.description}>
+          <p style={currentThemeColor}>Lorem ipsum</p>
+          <span>300c</span>
+        </div>
+      </div>
     </div>
   );
 }

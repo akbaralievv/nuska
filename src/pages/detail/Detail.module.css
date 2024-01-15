@@ -1,5 +1,5 @@
 .wrapper {
-  margin: 98px 0 117px;
+  margin: 0 0 117px;
 }
 .wrapper .container {
   width: 1180px;
@@ -337,6 +337,14 @@
   outline: none;
   padding: 9px 18px;
 }
+.wrapper .container .inner .about .this .reviews .send .errorComment {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: red;
+}
 .wrapper .container .inner .about .this .reviews .send button {
   width: 150px;
   height: 40px;
@@ -353,6 +361,7 @@
   font-weight: 500;
   line-height: normal;
   margin-left: auto;
+  cursor: pointer;
 }
 .wrapper .container .inner .about .other .books {
   display: -webkit-box;

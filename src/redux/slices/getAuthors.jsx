@@ -5,20 +5,14 @@ import API_URLS from '../../config/api';
 
 const api = API_URLS.authors;
 
-axios.interceptors.response.use(
-  (response) => {
-    if (response) {
-      return response;
-    }
-    throw new Error('No data in response');
-  },
-  (error) => {
-    throw new Error(`Error ${error}`);
-  },
-);
-
 export const getAuthors = createAsyncThunk('getAuthors', async () => {
-  return await axios.get(api);
+  try {
+    const response = await axios.get(api);
+    const data = response.data;
+    return data;
+  } catch (error) {
+    console.error('Error fetching books:', error);
+  }
 });
 
 const initialState = {

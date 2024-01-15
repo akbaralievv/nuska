@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import BurgerMenu from '../../components/burgerMenu/BurgerMenu';
@@ -15,6 +15,9 @@ import { useSelector } from 'react-redux';
 
 function Inside() {
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <main className={styles.wrapper}>
       <div className={styles.container}>

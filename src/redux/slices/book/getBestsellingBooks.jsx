@@ -1,14 +1,14 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-import API_URLS from '../../config/api';
+import API_URLS from '../../../config/api';
 
 const api = API_URLS.bestselling;
 
 export const getBestsellingBooks = createAsyncThunk('getBestsellingBooks', async () => {
   try {
-    const response = await fetch(api);
-    const data = await response.json();
+    const response = await axios.get(api);
+    const data = response.data;
     return data;
   } catch (error) {
     console.error('Error fetching books:', error);

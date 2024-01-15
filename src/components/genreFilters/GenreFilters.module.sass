@@ -9,14 +9,20 @@
     background: rgba(187, 187, 187, 0.30)
     margin: 98px auto 40px
     padding: 0 17px
+    overflow: auto
+    scrollbar-width: none
+    gap: 22px
+    &::-webkit-scrollbar
+        display: none
     li
         height: 100%
         display: flex
-        padding: 0 8px
         justify-content: center
         align-items: center
+        padding: 0 8px
         a
-            font-family: Montserrat, sans-serif
+            color: #000
+            font-family: 'Montserrat',sans-serif
             font-size: 26px
             font-style: normal
             font-weight: 300

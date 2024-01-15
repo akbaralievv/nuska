@@ -31,11 +31,14 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .wrapper .inner .title h2 {
   color: #5CC11F;
   font-family: Roboto;
-  font-size: 100px;
+  font-size: 60px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -44,14 +47,29 @@
   width: 249px;
   height: 89px;
   display: inline-block;
-  margin: 73px auto 12px;
+  margin-top: 56px;
 }
 .wrapper .inner .title .image {
-  width: 536px;
-  height: 400px;
+  width: 415px;
+  height: 519px;
+  margin-top: -37px;
 }
 .wrapper .inner .form {
+  width: 580px;
+  height: auto;
+  max-height: 800px;
+  padding: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 20px;
-  background: rgba(187, 187, 187, 0.3);
-  padding: 120px 125px 0 135px;
+  background: rgba(187, 187, 187, 0.5);
+  -webkit-box-shadow: -13px 22px 20px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: -13px 22px 20px 0px rgba(0, 0, 0, 0.25);
 }

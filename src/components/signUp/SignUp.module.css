@@ -73,6 +73,7 @@
           flex-direction: column;
   gap: 35px;
   margin: 52px 0 40px;
+  max-width: 320px;
 }
 .wrapper .buttons {
   display: -webkit-box;

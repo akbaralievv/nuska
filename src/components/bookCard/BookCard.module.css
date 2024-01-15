@@ -39,6 +39,10 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 154px;
 }
 .wrapper .inner .title img {
   width: 20px;

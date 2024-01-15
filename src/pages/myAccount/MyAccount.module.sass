@@ -1,72 +1,132 @@
-.container
-    width: 1180px
-    margin: 0 auto 162px
-    padding: 31px 0 64px
-    border-radius: 20px
-    background: rgba(187, 187, 187, 0.30)
-    .inner
-        h2
-            color: #5CC11F
-            font-family: Montserrat, sans-serif
-            font-size: 30px
-            font-style: normal
-            font-weight: 500
-            line-height: normal
-            text-align: center
-        p
-            color: #BBB
-            text-align: center
-            font-family: Montserrat, sans-serif
-            font-size: 20px
-            font-style: normal
-            font-weight: 500
-            line-height: normal
-        .cards
-            display: flex
-            gap: 58px
-            justify-content: center
-            margin-top: 44px
-            .card
-                width: 245px
+.wrapper
+    margin: 61px 0 96px
+    .container
+        width: 1180px
+        margin: 0 auto
+        .inner
+            position: relative
+            .header
                 display: flex
-                flex-direction: column
+                justify-content: space-between
                 align-items: center
-                gap: 44px
-                .cardImage
-                    width: 100%
-                    height: 354px
-                    img
-                        width: 100%
-                        height: 100%
-                .info
-                    border-radius: 8px
-                    background: #5CC11F
-                    width: 150px
-                    height: 102px
-                    display: inline-flex
+                &>span
+                    color: #5CC11F
+                    font-family: 'Montserrat',sans-serif
+                    font-size: 32px
+                    font-style: normal
+                    font-weight: 500
+                    line-height: normal
+            .content
+                .username
+                    display: flex
                     flex-direction: column
                     justify-content: center
                     align-items: center
-                    gap: 9px
-                    .title
-                        display: flex
-                        align-items: center
-                        gap: 10px
-                        img
-                            width: 20px
-                            height: 20px
-                            display: inline-block
-                    h3
-                        color: #FFF
-                        font-family: Montserrat, sans-serif
-                        font-size: 20px
+                    margin-top: 106px
+                    margin-bottom: 60px
+                    h2
+                        color: #5CC11F
+                        font-family: Montserrat,sans-serif
+                        font-size: 30px
                         font-style: normal
                         font-weight: 600
                         line-height: normal
                     p
-                        color: #FFF
-                        font-family: Montserrat, sans-serif
-                        font-size: 16px
+                        color: #000
+                        font-family: Montserrat,sans-serif
+                        font-size: 20px
                         font-style: normal
-                        font-weight: 400
+                        font-weight: 500
                         line-height: normal
+                .editProfile
+                    .title
+                        color: #000
+                        font-family: Montserrat,sans-serif
+                        font-size: 24px
+                        font-style: normal
+                        font-weight: 500
+                        line-height: normal
+                        margin-bottom: 17px
+                    .forms
+                        display: flex
+                        justify-content: space-between
+                        .form
+                            border-top: 1px solid #000
+                            border-bottom: 1px solid #000
+                            padding: 60px 50px 73px
+                            display: flex
+                            flex-direction: column
+                            justify-content: space-between
+                            gap: 36px
+                            li
+                                display: flex
+                                gap: 34px
+                                align-items: center
+                                input
+                                    width: 284px
+                                    height: 33px
+                                    border: none
+                                    outline: none
+                                    background: transparent
+                                    padding: 0 10px 0 20px
+                                    border-radius: 6px
+                                    border: 1px solid #000
+                                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
+                                    color: #000
+                                    font-family: Montserrat,sans-serif
+                                    font-size: 20px
+                                    font-style: normal
+                                    font-weight: 400
+                                    line-height: normal
+                                p
+                                    color: #000
+                                    font-family: Montserrat,sans-serif
+                                    font-size: 20px
+                                    font-style: normal
+                                    font-weight: 400
+                                    line-height: normal
+                                    display: flex
+                                    gap: 8px
+                                    align-items: center
+                                    img
+                                        width: 20px
+                                        height: 20px
+                                .change
+                                    display: flex
+                                    flex-direction: column
+                                    gap: 10px
+                                    button
+                                        width: 249px
+                                        height: 42px
+                                        display: flex
+                                        align-items: center
+                                        justify-content: center
+                                        border-radius: 6px
+                                        background: #5CC11F
+                                        color: #000
+                                        font-family: Montserrat,sans-serif
+                                        font-size: 20px
+                                        font-style: normal
+                                        font-weight: 400
+                                        line-height: normal
+                                        border: none
+                            .changeLi
+                                align-items: start
+                    .buttons
+                        margin-top: 92px
+                        padding: 0 55px
+                        display: flex
+                        align-items: center
+                        justify-content: space-between
+                        button
+                            width: 249px
+                            height: 42px
+                            border-radius: 6px
+                            background: #5CC11F
+                            border: none
+                            color: #000
+                            font-family: Montserrat
+                            font-size: 20px
+                            font-style: normal
+                            font-weight: 400
+                            line-height: normal

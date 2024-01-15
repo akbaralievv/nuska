@@ -1,50 +1,138 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './MyAccount.module.css';
-import images from '../../assets/images/myAccount.png';
-import favorites from '../../assets/icons/favorite.svg';
-import readed from '../../assets/icons/readed.svg';
+import languages from '../../assets/icons/menu/language.svg';
+import user from '../../assets/icons/menu/account.svg';
+import email from '../../assets/icons/menu/emailAcc.svg';
+import lock from '../../assets/icons/menu/lockAcc.svg';
+import author from '../../assets/icons/menu/authorAcc.svg';
+import phone from '../../assets/icons/menu/phoneAcc.svg';
+
+import Menu from '../../components/menu/Menu';
+import BurgerMenu from '../../components/burgerMenu/BurgerMenu';
+import { getUser } from '../../redux/slices/user/getUser';
 
 function MyAccount() {
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
+  const { data } = useSelector((state) => state.getUser);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUser());
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className={styles.container}>
-      <div className={styles.inner}>
-        <h2>Lorem Ipsum</h2>
-        <p>loremipsum@gmail.com</p>
-        <div className={styles.cards}>
-          <div className={styles.card}>
-            <div className={styles.cardImage}>
-              <img src={images} alt="images" />
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <div className={styles.inner}>
+          <header className={styles.header}>
+            <div className={styles.menuHeader}>
+              <Menu />
+              <BurgerMenu />
             </div>
-            <div className={styles.info}>
-              <h3 style={currentThemeColor}>20</h3>
-              <p style={currentThemeColor}>Мои книги</p>
+            <span>My account</span>
+          </header>
+          <div className={styles.content}>
+            <div className={styles.username}>
+              {(data.lastname || data.first_name) && (
+                <h2>
+                  {data.last_name} {data.first_name}
+                </h2>
+              )}
+              {data.email && <p style={currentThemeColor}>{data.email}</p>}
             </div>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.cardImage}>
-              <img src={images} alt="images" />
-            </div>
-            <div className={styles.info}>
-              <div className={styles.title}>
-                <img src={favorites} alt="favorites" />
-                <h3 style={currentThemeColor}>20</h3>
+            <div className={styles.editProfile}>
+              <p className={styles.title} style={currentThemeColor}>
+                Редактировать профиль
+              </p>
+              <div className={styles.forms}>
+                <ul
+                  className={styles.form}
+                  style={{
+                    borderTop: `${key === 'light' ? '1px solid #000' : '1px solid #fff'}`,
+                    borderBottom: `${key === 'light' ? '1px solid #000' : '1px solid #fff'}`,
+                  }}>
+                  <li>
+                    <p style={currentThemeColor}>
+                      <img src={user} alt="user" />
+                      Username
+                    </p>
+                    <input
+                      type="text"
+                      defaultValue={
+                        data.lastname || data.first_name
+                          ? `${data.last_name} ${data.first_name}`
+                          : ''
+                      }
+                      style={{
+                        border: `${key === 'light' ? '1px solid #000' : '1px solid #fff'}`,
+                        color: `${key === 'light' ? '#000' : '#fff'}`,
+                      }}
+                    />
+                  </li>
+                  <li>
+                    <p style={currentThemeColor}>
+                      <img src={email} alt="email" />
+                      Email address
+                    </p>
+                    {data.email && <p style={currentThemeColor}>{data.email}</p>}
+                  </li>
+                  <li className={styles.changeLi}>
+                    <p style={currentThemeColor}>
+                      <img src={lock} alt="lock" />
+                      Password
+                    </p>
+                    <div className={styles.change}>
+                      <p style={currentThemeColor}>XXXXXXXX</p>
+                      <button style={currentThemeColor}>Change password</button>
+                    </div>
+                  </li>
+                </ul>
+                <ul
+                  className={styles.form}
+                  style={{
+                    borderTop: `${key === 'light' ? '1px solid #000' : '1px solid #fff'}`,
+                    borderBottom: `${key === 'light' ? '1px solid #000' : '1px solid #fff'}`,
+                  }}>
+                  <li className={styles.changeLi}>
+                    <p style={currentThemeColor}>
+                      <img src={languages} alt="languages" />
+                      Language
+                    </p>
+                    <div className={styles.change}>
+                      <p style={currentThemeColor}>English</p>
+                      <button style={currentThemeColor}>Change language</button>
+                    </div>
+                  </li>
+                  <li className={styles.changeLi}>
+                    <p style={currentThemeColor}>
+                      <img src={phone} alt="phone" />
+                      Phone number
+                    </p>
+                    <div className={styles.change}>
+                      <p style={currentThemeColor}>+000000000000</p>
+                      <button style={currentThemeColor}>Change number</button>
+                    </div>
+                  </li>
+                  <li className={styles.changeLi}>
+                    <p style={currentThemeColor}>
+                      <img src={author} alt="author" />
+                      Account
+                    </p>
+                    <div className={styles.change}>
+                      <p></p>
+                      <button style={currentThemeColor}>Delete account</button>
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <p style={currentThemeColor}>Сохраненные</p>
-            </div>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.cardImage}>
-              <img src={images} alt="images" />
-            </div>
-            <div className={styles.info}>
-              <div className={styles.title}>
-                <img src={readed} alt="favorites" />
-                <h3 style={currentThemeColor}>20</h3>
+              <div className={styles.buttons}>
+                <button style={currentThemeColor}>Log out</button>
+                <button style={currentThemeColor}>Save changes</button>
               </div>
-              <p style={currentThemeColor}>Прочитанные</p>
             </div>
           </div>
         </div>

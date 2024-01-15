@@ -14,8 +14,10 @@ import help from '../../assets/icons/menu/help.svg';
 import logout from '../../assets/icons/menu/logout.svg';
 import light from '../../assets/icons/menu/light.svg';
 import dark from '../../assets/icons/menu/dark.svg';
+import darkLight from '../../assets/icons/menu/darkLight.svg';
 
 import BurgerMenu from '../burgerMenu/BurgerMenu';
+
 import { setIsOpenMenu } from '../../redux/slices/isTrue';
 import { setTheme } from '../../redux/slices/changeTheme';
 
@@ -27,6 +29,8 @@ function Menu() {
   const menuRef = useRef(null);
   const dispatch = useDispatch();
 
+  const isLocation = location.pathname === '/inside';
+
   const themeLight = (e) => {
     e.preventDefault();
     dispatch(setTheme({ key: 'light', color: '#000' }));
@@ -35,8 +39,6 @@ function Menu() {
     e.preventDefault();
     dispatch(setTheme({ key: 'dark', color: '#fff' }));
   };
-
-  const isLocation = location.pathname === '/inside';
 
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -57,13 +59,14 @@ function Menu() {
       className={`${styles.wrapper} ${isOpenMenu ? styles.openMenu : styles.closeMenu} ${
         isLocation ? styles.locationInside : ''
       }`}
-      ref={menuRef}>
+      ref={menuRef}
+      style={{ background: key === 'light' ? '#595959' : '#3B3B3B' }}>
       <div className={styles.inner}>
         <BurgerMenu />
         <div className={styles.navbar}>
           <nav className={styles.nav}>
             <li>
-              <NavLink to="/myAccount">
+              <NavLink to="/myAccount" onClick={() => dispatch(setIsOpenMenu(false))}>
                 <img src={account} alt="account" />
                 <span>Account</span>
               </NavLink>
@@ -75,13 +78,13 @@ function Menu() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/myBooks">
+              <NavLink to="/myBooks" onClick={() => dispatch(setIsOpenMenu(false))}>
                 <img src={books} alt="books" />
                 <span>My books</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to="/myWishlist">
+              <NavLink to="/myWishlist" onClick={() => dispatch(setIsOpenMenu(false))}>
                 <img src={wishlist} alt="wishlist" />
                 <span>My wishlist</span>
               </NavLink>
@@ -96,8 +99,8 @@ function Menu() {
             </li>
             <li>
               <NavLink onClick={themeDark}>
-                <img src={dark} alt="dark" />
-                <span>Dark</span>
+                <img src={key === 'light' ? dark : darkLight} alt="dark" />
+                <span style={{ color: key === 'light' ? '#000' : '#BBB' }}>Dark</span>
               </NavLink>
             </li>
           </nav>
