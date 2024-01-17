@@ -4,6 +4,9 @@ const initialState = {
   isOpenMenu: false,
   isAuth: false,
   isOpenModal: false,
+  isForgoutPassword: false,
+  isConfirmCode: false,
+  isLogout: false,
 };
 
 const isTrueSlice = createSlice({
@@ -16,11 +19,27 @@ const isTrueSlice = createSlice({
     setIsAuth: (state, action) => {
       state.isAuth = action.payload;
     },
+    setIsLogout: (state, action) => {
+      state.isLogout = action.payload;
+    },
     setIsOpenModal: (state, action) => {
       state.isOpenModal = action.payload;
+    },
+    setIsForgoutPassword: (state, action) => {
+      state.isForgoutPassword = action.payload;
+    },
+    setIsConfirmCode: (state, action) => {
+      state.isConfirmCode = action.payload;
     },
   },
 });
 
-export const { setIsOpenMenu, setIsAuth, setIsOpenModal } = isTrueSlice.actions;
+export const {
+  setIsOpenMenu,
+  setIsLogout,
+  setIsAuth,
+  setIsOpenModal,
+  setIsForgoutPassword,
+  setIsConfirmCode,
+} = isTrueSlice.actions;
 export default isTrueSlice.reducer;

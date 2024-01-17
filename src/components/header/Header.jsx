@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
@@ -12,7 +12,9 @@ import { isUserAuthenticated } from '../helpers/isUserAuthenticated';
 
 function Header() {
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
+  const { isLogout } = useSelector((state) => state.isTrue);
   const [searchValue, setSearchValue] = useState('');
+  const [isAuthLog, setIsAuthLog] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
 
   const dispatch = useDispatch();
@@ -34,7 +36,9 @@ function Header() {
   };
 
   const styleInput = { ...currentThemeColor, paddingLeft: isFocused ? '0' : '61px' };
-  const isAuth = isUserAuthenticated();
+  useEffect(() => {
+    setIsAuthLog(isUserAuthenticated());
+  }, [isLogout]);
 
   return (
     <div className={styles.wrapper}>
@@ -43,7 +47,7 @@ function Header() {
           <Menu />
           <BurgerMenu />
           <nav className={styles.nav}>
-            {!isAuth && (
+            {!isAuthLog && (
               <>
                 <NavLink
                   to="/auth"

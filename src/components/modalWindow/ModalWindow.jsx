@@ -1,5 +1,5 @@
 import React from 'react';
-import { setIsOpenModal } from '../../redux/slices/isTrue';
+import { setIsLogout, setIsOpenModal } from '../../redux/slices/isTrue';
 
 import styles from './ModalWindow.module.css';
 import { useDispatch } from 'react-redux';
@@ -17,6 +17,7 @@ function ModalWindow({ message, elementBtn }) {
       dispatch(clearDataRegister());
       dispatch(clearDataLogin());
       document.body.style.overflow = '';
+      dispatch(setIsLogout(false));
     }
   };
 
@@ -26,6 +27,7 @@ function ModalWindow({ message, elementBtn }) {
     dispatch(clearDataRegister());
     dispatch(clearDataLogin());
     document.body.style.overflow = '';
+    dispatch(setIsLogout(false));
   };
 
   return (

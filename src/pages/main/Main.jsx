@@ -25,7 +25,7 @@ function Main() {
     error: loginError,
   } = useSelector((state) => state.authorization);
 
-  const { isOpenModal } = useSelector((state) => state.isTrue);
+  const { isOpenModal, isLogout } = useSelector((state) => state.isTrue);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -40,6 +40,7 @@ function Main() {
           <BookLists />
         </div>
       </div>
+      {isLogout && <ModalWindow message={'Вы успешно вышли из аккаунта'} />}
       {isOpenModal && (
         <ModalWindow
           message={registerData.message || registerError || loginData || loginError || ''}

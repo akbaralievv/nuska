@@ -14,6 +14,8 @@ import getFavoriteBooks from './slices/book/getFavoriteBooks';
 import postFavoriteBook from './slices/book/postFavoriteBook';
 import getComments from './slices/book/getComments';
 import postComment from './slices/book/postComment';
+import forgoutPassword from './slices/auth/forgoutPassword';
+import codeConfirm from './slices/auth/codeConfirm';
 
 export const store = configureStore({
   reducer: {
@@ -31,5 +33,7 @@ export const store = configureStore({
     getFavoriteBooks,
     getComments,
     postComment,
+    forgoutPassword,
+    codeConfirm,
   },
 });

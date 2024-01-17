@@ -14,5 +14,7 @@ const API_URLS = {
   commentList: 'https://nuska.kg/api/v1/library/comment_list_create/',
   createComment: 'https://nuska.kg/api/v1/library/comment_list_create/',
   refresh_token: 'https://nuska.kg/api/v1/authentication/token/refresh/',
+  reset_password: 'https://nuska.kg/api/v1/authentication/users/reset/password/',
+  code_confirm: 'https://nuska.kg/api/v1/authentication/users/reset/code/confirm/',
 };
 export default API_URLS;

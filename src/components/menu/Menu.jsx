@@ -18,11 +18,13 @@ import darkLight from '../../assets/icons/menu/darkLight.svg';
 
 import BurgerMenu from '../burgerMenu/BurgerMenu';
 
-import { setIsOpenMenu } from '../../redux/slices/isTrue';
+import { setIsLogout, setIsOpenMenu, setIsOpenModal } from '../../redux/slices/isTrue';
 import { setTheme } from '../../redux/slices/changeTheme';
+import { removeAccessToken, removeRefreshToken } from '../helpers/tokens';
+import ModalWindow from '../modalWindow/ModalWindow';
 
 function Menu() {
-  const { isOpenMenu } = useSelector((state) => state.isTrue);
+  const { isOpenMenu, isOpenModal } = useSelector((state) => state.isTrue);
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
 
   const location = useLocation();
@@ -53,6 +55,14 @@ function Menu() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [dispatch]);
+
+  const handleClickLogout = () => {
+    dispatch(setIsOpenMenu(false));
+    dispatch(setIsLogout(true));
+    removeAccessToken();
+    removeRefreshToken();
+    window.scrollTo(0, 0);
+  };
 
   return (
     <div
@@ -124,7 +134,7 @@ function Menu() {
               </NavLink>
             </li>
             <li>
-              <NavLink>
+              <NavLink onClick={handleClickLogout}>
                 <img src={logout} alt="logout" />
                 <span>Log out</span>
               </NavLink>
