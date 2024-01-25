@@ -34,7 +34,7 @@ function Code({ setValueSignUp, setValidSignUp, errorValid }) {
         className={errorValid ? styles.invalid : ''}
       />
       {errorValid && (
-        <p className={styles.error}>Please enter a valid code (six digit number only).</p>
+        <p className={styles.error}>Жарактуу кодду киргизиңиз (алты орундуу сан гана).</p>
       )}
     </div>
   );

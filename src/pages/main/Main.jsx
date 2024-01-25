@@ -26,9 +26,14 @@ function Main() {
   } = useSelector((state) => state.authorization);
 
   const { isOpenModal, isLogout } = useSelector((state) => state.isTrue);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    // return () => {
+    //   dispatch(setIsOpenModal(false));
+    //   document.body.style.overflow = '';
+    // };
   }, []);
 
   return (
@@ -40,7 +45,7 @@ function Main() {
           <BookLists />
         </div>
       </div>
-      {isLogout && <ModalWindow message={'Вы успешно вышли из аккаунта'} />}
+      {isLogout && <ModalWindow message={'Сиз аккаунтуңуздан ийгиликтүү чыктыңыз'} />}
       {isOpenModal && (
         <ModalWindow
           message={registerData.message || registerError || loginData || loginError || ''}

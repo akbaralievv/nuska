@@ -43,15 +43,17 @@ function GenreFilters() {
   };
 
   return (
-    <ul className={styles.genreFilters} ref={genreFiltersRef}>
-      {jenres?.map((genre) => (
-        <li key={genre.id} className={activeGenre === genre.id ? styles.active : ''}>
-          <a href="#" onClick={(e) => handleGenreClick(genre.id, e)} style={currentThemeColor}>
-            {genre.name}
-          </a>
-        </li>
-      ))}
-    </ul>
+    <div className={styles.wrapper}>
+      <ul className={styles.genreFilters} ref={genreFiltersRef}>
+        {jenres?.map((genre) => (
+          <li key={genre.id} className={activeGenre === genre.id ? styles.active : ''}>
+            <a href="#" onClick={(e) => handleGenreClick(genre.id, e)} style={currentThemeColor}>
+              {genre.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

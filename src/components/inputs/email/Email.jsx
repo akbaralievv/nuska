@@ -27,7 +27,7 @@ function Email({ setValueSignUp, setValidSignUp, errorValid }) {
     <div className={styles.wrapper}>
       <div className={styles.title}>
         <img src={icon} alt="icon" />
-        <span style={currentThemeColor}>Email address</span>
+        <span style={currentThemeColor}>Email дарек</span>
       </div>
       <input
         type="text"
@@ -35,7 +35,7 @@ function Email({ setValueSignUp, setValidSignUp, errorValid }) {
         className={errorValid ? styles.invalid : ''}
         style={currentThemeColor}
       />
-      {errorValid && <p className={styles.error}>Please enter a valid email address.</p>}
+      {errorValid && <p className={styles.error}>Жарактуу электрондук почта дарегин киргизиңиз.</p>}
     </div>
   );
 }

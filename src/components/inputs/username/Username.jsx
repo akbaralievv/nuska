@@ -25,7 +25,7 @@ function Username({ setValueSignUp, setValidSignUp, errorValid }) {
     <div className={styles.wrapper}>
       <div className={styles.title}>
         <img src={icon} alt="icon" />
-        <span style={currentThemeColor}>Username</span>
+        <span style={currentThemeColor}>Аты-жөнү</span>
       </div>
       <input
         style={currentThemeColor}
@@ -34,7 +34,7 @@ function Username({ setValueSignUp, setValidSignUp, errorValid }) {
         className={errorValid ? styles.invalid : ''}
       />
       {errorValid && (
-        <p className={styles.error}>Please enter a valid name (Lastname Firstname).</p>
+        <p className={styles.error}>Сураныч, жарактуу атын киргизиңиз (Фамилиясы Аты).</p>
       )}
     </div>
   );

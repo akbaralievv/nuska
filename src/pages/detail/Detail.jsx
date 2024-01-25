@@ -8,6 +8,10 @@ import eBook from '../../assets/icons/detail/e-book.svg';
 import imageBook from '../../assets/images/detail/imageBook.png';
 import imageHome from '../../assets/images/card.png';
 import favoriteDet from '../../assets/icons/detail/favoriteDet.svg';
+import favorite from '../../assets/icons/favorite.svg';
+import favoriteLight from '../../assets/icons/favorite light.svg';
+import favoriteSelect from '../../assets/icons/favoriteSelect.svg';
+import favoriteSelectLight from '../../assets/icons/favoriteSelect light.svg';
 import triangle from '../../assets/images/detail/triangle.png';
 import triangleDark from '../../assets/images/detail/triangleDark.png';
 import API_URLS from '../../config/api';
@@ -46,6 +50,10 @@ function Detail() {
       dispatch(setIsOpenModal(false));
       document.body.style.overflow = '';
     }
+    return () => {
+      dispatch(setIsOpenModal(false));
+      document.body.style.overflow = '';
+    };
   }, []);
 
   useEffect(() => {
@@ -96,15 +104,15 @@ function Detail() {
               <div className={styles.infoNumbers}>
                 <div className={styles.info}>
                   <img src={infoData?.avatar} alt="eBook" />
-                  <p style={currentThemeColor}>e-book</p>
+                  <p style={currentThemeColor}>e-китеп</p>
                 </div>
                 <div className={styles.info}>
                   <span>{infoData?.amount_pages}</span>
-                  <p style={currentThemeColor}>Количество страниц</p>
+                  <p style={currentThemeColor}>Барактардын саны</p>
                 </div>
                 <div className={styles.info}>
                   <span>300c</span>
-                  <p style={currentThemeColor}>Цена</p>
+                  <p style={currentThemeColor}>Баасы</p>
                 </div>
               </div>
             </div>
@@ -115,20 +123,20 @@ function Detail() {
           <section className={styles.about}>
             <div className={styles.this}>
               <div className={styles.aboutBook}>
-                <h3>About this book</h3>
+                <h3>Китеп жонундо</h3>
                 <p style={currentThemeColor}>{infoData?.description}</p>
                 <div className={styles.buttons}>
                   {infoData?.short_book_file && (
                     <a target="_blank" href={infoData?.short_book_file}>
-                      Читать 15 стр
+                      15 бет үзүндүү
                     </a>
                   )}
                   <button className={styles.green} style={currentThemeColor}>
-                    Buy this book
+                    Сатып алуу
                   </button>
                   <button>
                     <img src={infoData?.cover_image} alt="favorite" />
-                    <span>Add to wishlist</span>
+                    <span>Тандоо</span>
                   </button>
                 </div>
               </div>
@@ -140,23 +148,23 @@ function Detail() {
                     : { border: '3px solid #5CC11F' }
                 }>
                 <h4 style={key === 'light' ? { color: '#404040' } : { color: '#5CC11F' }}>
-                  Здесь можно купить бумажный вариант:
+                  Бул жерде нускасы сатылат:
                 </h4>
                 <div className={styles.infos}>
                   <div className={styles.info}>
                     <p style={key === 'light' ? { color: '#404040' } : { color: '#5CC11F' }}>
-                      Адрес:
+                      Дарек:
                     </p>
                     <p style={key === 'light' ? { color: '#404040' } : { color: 'white' }}>
-                      Lorem ipsum, 1
+                      Бишкек, 1
                     </p>
                   </div>
                   <div className={styles.info}>
                     <p style={key === 'light' ? { color: '#404040' } : { color: '#5CC11F' }}>
-                      Контакты:
+                      Телефон:
                     </p>
                     <p style={key === 'light' ? { color: '#404040' } : { color: 'white' }}>
-                      996700123456
+                      +996700123456
                     </p>
                   </div>
                   <div className={styles.info}>
@@ -170,11 +178,11 @@ function Detail() {
                 </div>
                 <img src={key === 'light' ? triangle : triangleDark} alt="triangle" />
                 <span style={key === 'light' ? { color: '#B1B1B1' } : { color: 'black' }}>
-                  Нет в наличии
+                  Жеткиликтүү эмес
                 </span>
               </div>
               <div className={styles.reviews}>
-                <h3>Отзывы</h3>
+                <h3>Пикирлер</h3>
                 <div className={styles.users}>
                   {commentList.results?.map((comment, id) => (
                     <div className={styles.user} key={id}>
@@ -209,24 +217,24 @@ function Detail() {
                       name="review"
                       rows="4"
                       cols="50"
-                      placeholder="Оставить отзыв..."
+                      placeholder="Пикир калтыруу..."
                       style={currentThemeColor}
                       onChange={handleCommentChange}
                       value={commentValue}></textarea>
                     {isErrorComment && (
                       <p className={styles.errorComment}>
-                        Комментарийлер кеминде 2 белгиден турушу керек
+                        Комментарийлер кеминде 2 же андан ашык белгиден турушу керек
                       </p>
                     )}
                   </>
                   <button type="submit" style={currentThemeColor}>
-                    Отправить
+                    Жөнөтүү
                   </button>
                 </form>
               </div>
             </div>
             <div className={styles.other}>
-              <h3>Other recommended books</h3>
+              <h3>Сунуштоо</h3>
               <div className={styles.books}>
                 <div className={styles.book}>
                   <div className={styles.image}>
@@ -234,9 +242,16 @@ function Detail() {
                   </div>
                   <div className={styles.title}>
                     <h4 style={currentThemeColor}>
-                      A Mersey Killing: When Liverpool Rocked and the Music died
+                      Ак кеме{' '}
+                      <img
+                        src={key === 'dark' ? favoriteSelectLight : favoriteSelect}
+                        alt="favorite"
+                      />
                     </h4>
-                    <p style={currentThemeColor}>Brian L. Porter</p>
+                    <div>
+                      <p style={currentThemeColor}>Чыңгыз Айтматов</p>
+                      <span>300c</span>
+                    </div>
                   </div>
                 </div>
                 <div className={styles.book}>
@@ -245,9 +260,16 @@ function Detail() {
                   </div>
                   <div className={styles.title}>
                     <h4 style={currentThemeColor}>
-                      A Mersey Killing: When Liverpool Rocked and the Music died
+                      Ак кеме{' '}
+                      <img
+                        src={key === 'dark' ? favoriteSelectLight : favoriteSelect}
+                        alt="favorite"
+                      />
                     </h4>
-                    <p style={currentThemeColor}>Brian L. Porter</p>
+                    <div>
+                      <p style={currentThemeColor}>Чыңгыз Айтматов</p>
+                      <span>300c</span>
+                    </div>
                   </div>
                 </div>
                 <div className={styles.book}>
@@ -256,9 +278,16 @@ function Detail() {
                   </div>
                   <div className={styles.title}>
                     <h4 style={currentThemeColor}>
-                      A Mersey Killing: When Liverpool Rocked and the Music died
+                      Ак кеме{' '}
+                      <img
+                        src={key === 'dark' ? favoriteSelectLight : favoriteSelect}
+                        alt="favorite"
+                      />
                     </h4>
-                    <p style={currentThemeColor}>Brian L. Porter</p>
+                    <div>
+                      <p style={currentThemeColor}>Чыңгыз Айтматов</p>
+                      <span>300c</span>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -26,7 +26,9 @@ function BookCard({ data }) {
           <img src={key === 'dark' ? favoriteSelectLight : favoriteSelect} alt="favorite" />
         </div>
         <div className={styles.description}>
-          <p style={currentThemeColor}>Lorem ipsum</p>
+          <p style={currentThemeColor}>
+            {data.author[0].first_name} {data.author[0].last_name}
+          </p>
           <span>300c</span>
         </div>
       </div>

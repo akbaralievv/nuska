@@ -78,25 +78,25 @@ function Menu() {
             <li>
               <NavLink to="/myAccount" onClick={() => dispatch(setIsOpenMenu(false))}>
                 <img src={account} alt="account" />
-                <span>Account</span>
+                <span>Аккаунт</span>
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink>
                 <img src={language} alt="language" />
                 <span>Choose another language</span>
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink to="/myBooks" onClick={() => dispatch(setIsOpenMenu(false))}>
                 <img src={books} alt="books" />
-                <span>My books</span>
+                <span>Менин китептерим</span>
               </NavLink>
             </li>
             <li>
               <NavLink to="/myWishlist" onClick={() => dispatch(setIsOpenMenu(false))}>
                 <img src={wishlist} alt="wishlist" />
-                <span>My wishlist</span>
+                <span>Тандалгандар</span>
               </NavLink>
             </li>
           </nav>
@@ -104,13 +104,13 @@ function Menu() {
             <li>
               <NavLink onClick={themeLight}>
                 <img src={light} alt="light" />
-                <span>Light</span>
+                <span>Ачык</span>
               </NavLink>
             </li>
             <li>
               <NavLink onClick={themeDark}>
                 <img src={key === 'light' ? dark : darkLight} alt="dark" />
-                <span style={{ color: key === 'light' ? '#000' : '#BBB' }}>Dark</span>
+                <span style={{ color: key === 'light' ? '#000' : '#BBB' }}>Күңүрт</span>
               </NavLink>
             </li>
           </nav>
@@ -118,25 +118,25 @@ function Menu() {
             <li>
               <NavLink>
                 <img src={about} alt="about" />
-                <span>About this app</span>
+                <span>Тиркеме жөнүндө</span>
               </NavLink>
             </li>
             <li>
               <NavLink>
                 <img src={privacy} alt="privacy" />
-                <span>Privacy</span>
+                <span>Купуялык</span>
               </NavLink>
             </li>
             <li>
               <NavLink>
                 <img src={help} alt="help" />
-                <span>Help and support</span>
+                <span>Жардам & Колдоо</span>
               </NavLink>
             </li>
             <li>
               <NavLink onClick={handleClickLogout}>
                 <img src={logout} alt="logout" />
-                <span>Log out</span>
+                <span>Чыгуу</span>
               </NavLink>
             </li>
           </nav>

@@ -23,8 +23,13 @@ function MyBooks() {
               <Menu />
               <BurgerMenu />
             </div>
-            <span>My books</span>
+            <span>Китептерим</span>
           </header>
+          <div className={styles.nothing}>
+            <h2 style={currentThemeColor}>Сатып алынган китептердин тизмеси бош.</h2>
+            <hr />
+          </div>
+          <h2 style={currentThemeColor}>Сунуштоо</h2>
           <ul className={styles.content}>
             <li className={styles.book}>
               <NavLink to="payment">
@@ -33,13 +38,11 @@ function MyBooks() {
                 </div>
               </NavLink>
               <div className={styles.title}>
-                <h3 style={currentThemeColor}>
-                  A Mersey Killing: When Liverpool Rocked and the Music died
-                </h3>
-                <p style={currentThemeColor}>Brian L. Porter</p>
+                <h3 style={currentThemeColor}>Кылым карытар бир күн</h3>
+                <p style={currentThemeColor}>Чынгыз Айтматов</p>
                 <div className={styles.footer}>
-                  <span>Added on 12/12/2023</span>
-                  <button style={currentThemeColor}>Read</button>
+                  <span>Сайтка киргизилген датасы 12/12/2023</span>
+                  <button style={currentThemeColor}>Окуу</button>
                 </div>
               </div>
             </li>
@@ -48,13 +51,11 @@ function MyBooks() {
                 <img src={image} alt="image" />
               </div>
               <div className={styles.title}>
-                <h3 style={currentThemeColor}>
-                  A Mersey Killing: When Liverpool Rocked and the Music died
-                </h3>
-                <p style={currentThemeColor}>Brian L. Porter</p>
+                <h3 style={currentThemeColor}>Кылым карытар бир күн</h3>
+                <p style={currentThemeColor}>Чынгыз Айтматов</p>
                 <div className={styles.footer}>
-                  <span>Added on 12/12/2023</span>
-                  <button style={currentThemeColor}>Read</button>
+                  <span>Сайтка киргизилген датасы 12/12/2023</span>
+                  <button style={currentThemeColor}>Окуу</button>
                 </div>
               </div>
             </li>
@@ -63,13 +64,11 @@ function MyBooks() {
                 <img src={image} alt="image" />
               </div>
               <div className={styles.title}>
-                <h3 style={currentThemeColor}>
-                  A Mersey Killing: When Liverpool Rocked and the Music died
-                </h3>
-                <p style={currentThemeColor}>Brian L. Porter</p>
+                <h3 style={currentThemeColor}>Кылым карытар бир күн</h3>
+                <p style={currentThemeColor}>Чынгыз Айтматов</p>
                 <div className={styles.footer}>
-                  <span>Added on 12/12/2023</span>
-                  <button style={currentThemeColor}>Read</button>
+                  <span>Сайтка киргизилген датасы 12/12/2023</span>
+                  <button style={currentThemeColor}>Окуу</button>
                 </div>
               </div>
             </li>
@@ -78,13 +77,11 @@ function MyBooks() {
                 <img src={image} alt="image" />
               </div>
               <div className={styles.title}>
-                <h3 style={currentThemeColor}>
-                  A Mersey Killing: When Liverpool Rocked and the Music died
-                </h3>
-                <p style={currentThemeColor}>Brian L. Porter</p>
+                <h3 style={currentThemeColor}>Кылым карытар бир күн</h3>
+                <p style={currentThemeColor}>Чынгыз Айтматов</p>
                 <div className={styles.footer}>
-                  <span>Added on 12/12/2023</span>
-                  <button style={currentThemeColor}>Read</button>
+                  <span>Сайтка киргизилген датасы 12/12/2023</span>
+                  <button style={currentThemeColor}>Окуу</button>
                 </div>
               </div>
             </li>

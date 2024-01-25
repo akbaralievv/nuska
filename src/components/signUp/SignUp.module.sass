@@ -38,6 +38,7 @@
         font-style: normal
         font-weight: 500
         line-height: normal
+        margin-top: 20px
     .inputs
         display: flex
         flex-direction: column
@@ -66,10 +67,24 @@
             font-weight: 400
             line-height: normal
             cursor: pointer
-        .createAcc
+        .forgout
             width: auto
             height: auto
-            padding: 10px 12px
+            background: transparent
+            border: none
+            text-decoration: none
+            border-bottom: 1px solid black
+            color: #000
+            font-family: 'Montserrat',sans-serif
+            font-size: 20px
+            font-style: normal
+            font-weight: 400
+            line-height: normal
+            cursor: pointer
+        .light
+            border-bottom: 1px solid black
+        .dark
+            border-bottom: 1px solid white
         .checkbox
             display: flex
             align-items: center
@@ -85,3 +100,9 @@
                 font-weight: 400
                 line-height: normal
                 width: 200px
+        .errorCheckbox
+            color: red
+            font-family: Montserrat, sans-serif
+            margin-top: 10px
+            font-size: 12px
+            margin-bottom: 20px

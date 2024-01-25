@@ -68,7 +68,7 @@ function ForgoutPassword() {
       </div>
       <div className={styles.buttons}>
         <button type="submit" style={currentThemeColor} disabled={loading}>
-          {loading ? <PreloadBtn /> : 'Получить код'}
+          {loading ? <PreloadBtn /> : 'Кодду алуу'}
         </button>
       </div>
       {isOpenModal && <ModalWindow message={error} />}

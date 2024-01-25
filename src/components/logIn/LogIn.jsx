@@ -92,23 +92,21 @@ function LogIn() {
             />
           </div>
           <div className={styles.buttons}>
-            <button
-              type="button"
-              style={currentThemeColor}
-              className={styles.forgout}
-              onClick={() => dispatch(setIsForgoutPassword(true))}>
-              Забыли пароль?
-            </button>
             <button type="submit" style={currentThemeColor} disabled={loading}>
               {loading ? <PreloadBtn /> : 'Кирүү'}
             </button>
-            <button
-              type="button"
-              className={styles.createAcc}
+            <a
+              className={`${styles.forgout} ${key === 'light' ? styles.light : styles.dark}`}
               style={currentThemeColor}
               onClick={() => dispatch(setIsAuth(false))}>
-              Создать аккаунт
-            </button>
+              Каттоо эсебиңиз жокпу? Түзүү
+            </a>
+            <a
+              style={currentThemeColor}
+              className={`${styles.forgout} ${key === 'light' ? styles.light : styles.dark}`}
+              onClick={() => dispatch(setIsForgoutPassword(true))}>
+              Сыр сөзүңүздү унуттуңузбу?
+            </a>
           </div>
           {isOpenModal && <ModalWindow message={error ? error : data} />}
         </form>

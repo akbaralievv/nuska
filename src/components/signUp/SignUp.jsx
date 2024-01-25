@@ -34,6 +34,7 @@ function SignUp() {
     username: false,
     password1: false,
     email: false,
+    checkbox: false,
   });
 
   const [check, setCheck] = useState(false);
@@ -75,6 +76,9 @@ function SignUp() {
       setErrorValid((prev) => ({ ...prev, email: false }));
     }
     if (!check) {
+      setErrorValid((prev) => ({ ...prev, checkbox: true }));
+    } else {
+      setErrorValid((prev) => ({ ...prev, checkbox: false }));
     }
   };
 
@@ -116,18 +120,22 @@ function SignUp() {
         <button type="submit" style={currentThemeColor} disabled={loading}>
           {loading ? <PreloadBtn /> : 'Катталуу'}
         </button>
-        <button
-          type="button"
-          className={styles.createAcc}
+        <a
+          className={`${styles.forgout} ${key === 'light' ? styles.light : styles.dark}`}
           style={currentThemeColor}
           onClick={() => dispatch(setIsAuth(true))}>
-          Есть аккаунт? Войти
-        </button>
-        <div className={styles.checkbox}>
-          <input type="checkbox" name="" id="checkbox" onChange={handleCheck} />
-          <label htmlFor="checkbox" style={currentThemeColor}>
-            Соглашение об использовании приложения и купленных книг
-          </label>
+          Сиздин аккаунтуңуз барбы? Кирүү
+        </a>
+        <div>
+          <div className={styles.checkbox}>
+            <input type="checkbox" name="" id="checkbox" onChange={handleCheck} />
+            <label htmlFor="checkbox" style={currentThemeColor}>
+              Тиркемени колдонуу боюнча келишим
+            </label>
+          </div>
+          {errorValid.checkbox && (
+            <p className={styles.errorCheckbox}>Сураныч, келишимди окуп чыгыңыз.</p>
+          )}
         </div>
       </div>
       {isOpenModal && <ModalWindow message={data.message ?? error} />}

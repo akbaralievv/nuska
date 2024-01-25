@@ -12,9 +12,13 @@ import phone from '../../assets/icons/menu/phoneAcc.svg';
 import Menu from '../../components/menu/Menu';
 import BurgerMenu from '../../components/burgerMenu/BurgerMenu';
 import { getUser } from '../../redux/slices/user/getUser';
+import { getRefreshToken } from '../../components/helpers/tokens';
+import { setIsOpenModal } from '../../redux/slices/isTrue';
+import ModalWindow from '../../components/modalWindow/ModalWindow';
 
 function MyAccount() {
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
+  const { isOpenModal } = useSelector((state) => state.isTrue);
   const { data } = useSelector((state) => state.getUser);
 
   const dispatch = useDispatch();
@@ -22,10 +26,22 @@ function MyAccount() {
   useEffect(() => {
     dispatch(getUser());
     window.scrollTo(0, 0);
+    if (!getRefreshToken()) {
+      dispatch(setIsOpenModal(true));
+      document.body.style.overflow = 'hidden';
+    } else {
+      dispatch(setIsOpenModal(false));
+      document.body.style.overflow = '';
+    }
+    return () => {
+      dispatch(setIsOpenModal(false));
+      document.body.style.overflow = '';
+    };
   }, []);
 
   return (
     <div className={styles.wrapper}>
+      {isOpenModal && <ModalWindow message={'Вы не авторизованы!'} elementBtn={true} />}
       <div className={styles.container}>
         <div className={styles.inner}>
           <header className={styles.header}>
@@ -33,7 +49,7 @@ function MyAccount() {
               <Menu />
               <BurgerMenu />
             </div>
-            <span>My account</span>
+            <span>Аккаунт</span>
           </header>
           <div className={styles.content}>
             <div className={styles.username}>
@@ -46,7 +62,7 @@ function MyAccount() {
             </div>
             <div className={styles.editProfile}>
               <p className={styles.title} style={currentThemeColor}>
-                Редактировать профиль
+                Профилди оңдоо
               </p>
               <div className={styles.forms}>
                 <ul
@@ -58,7 +74,7 @@ function MyAccount() {
                   <li>
                     <p style={currentThemeColor}>
                       <img src={user} alt="user" />
-                      Username
+                      Аты-жөнү
                     </p>
                     <input
                       type="text"
@@ -76,11 +92,11 @@ function MyAccount() {
                   <li>
                     <p style={currentThemeColor}>
                       <img src={email} alt="email" />
-                      Email address
+                      Email дарек
                     </p>
                     {data.email && <p style={currentThemeColor}>{data.email}</p>}
                   </li>
-                  <li className={styles.changeLi}>
+                  {/* <li className={styles.changeLi}>
                     <p style={currentThemeColor}>
                       <img src={lock} alt="lock" />
                       Password
@@ -89,7 +105,7 @@ function MyAccount() {
                       <p style={currentThemeColor}>XXXXXXXX</p>
                       <button style={currentThemeColor}>Change password</button>
                     </div>
-                  </li>
+                  </li> */}
                 </ul>
                 <ul
                   className={styles.form}
@@ -100,38 +116,28 @@ function MyAccount() {
                   <li className={styles.changeLi}>
                     <p style={currentThemeColor}>
                       <img src={languages} alt="languages" />
-                      Language
+                      Тил
                     </p>
                     <div className={styles.change}>
                       <p style={currentThemeColor}>English</p>
-                      <button style={currentThemeColor}>Change language</button>
-                    </div>
-                  </li>
-                  <li className={styles.changeLi}>
-                    <p style={currentThemeColor}>
-                      <img src={phone} alt="phone" />
-                      Phone number
-                    </p>
-                    <div className={styles.change}>
-                      <p style={currentThemeColor}>+000000000000</p>
-                      <button style={currentThemeColor}>Change number</button>
+                      <button style={currentThemeColor}>Тилди алмаштыруу</button>
                     </div>
                   </li>
                   <li className={styles.changeLi}>
                     <p style={currentThemeColor}>
                       <img src={author} alt="author" />
-                      Account
+                      Аккаунт
                     </p>
                     <div className={styles.change}>
                       <p></p>
-                      <button style={currentThemeColor}>Delete account</button>
+                      <button style={currentThemeColor}>Аккаунтту жок кылуу</button>
                     </div>
                   </li>
                 </ul>
               </div>
               <div className={styles.buttons}>
-                <button style={currentThemeColor}>Log out</button>
-                <button style={currentThemeColor}>Save changes</button>
+                <button style={currentThemeColor}>Чыгуу</button>
+                <button style={currentThemeColor}>Өзгөрүүлөрдү сактоо</button>
               </div>
             </div>
           </div>

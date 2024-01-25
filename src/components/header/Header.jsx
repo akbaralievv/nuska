@@ -14,7 +14,7 @@ function Header() {
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
   const { isLogout } = useSelector((state) => state.isTrue);
   const [searchValue, setSearchValue] = useState('');
-  const [isAuthLog, setIsAuthLog] = useState(false);
+  const [isAuthLog, setIsAuthLog] = useState(isUserAuthenticated());
   const [isFocused, setIsFocused] = useState(false);
 
   const dispatch = useDispatch();
@@ -54,14 +54,14 @@ function Header() {
                   className={styles.auth}
                   onClick={() => handleAuthClick(true)}
                   style={currentThemeColor}>
-                  Log in
+                  Кирүү
                 </NavLink>
                 <NavLink
                   to="/auth"
                   className={styles.auth}
                   onClick={() => handleAuthClick(false)}
                   style={currentThemeColor}>
-                  Sign up
+                  Катталуу
                 </NavLink>
               </>
             )}
@@ -69,7 +69,7 @@ function Header() {
               <img src={search} alt="search" style={{ display: isFocused ? 'none' : 'block' }} />
               <input
                 type="text"
-                placeholder="Поиск"
+                placeholder="Издөө"
                 onChange={handleChangeSearch}
                 onFocus={handleFocus}
                 onBlur={handleBlur}

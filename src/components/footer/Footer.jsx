@@ -14,7 +14,7 @@ function Footer() {
           <div className={styles.genreFilters}>
             <nav className={styles.nav}>
               <li>
-                <h3>Жанры</h3>
+                <h3>Жанрлар</h3>
               </li>
               <li>
                 <a href="" style={currentThemeColor}>
@@ -33,42 +33,12 @@ function Footer() {
               </li>
               <li>
                 <a href="" style={currentThemeColor}>
-                  Еще драма
+                  Жаны
                 </a>
               </li>
               <li>
                 <a href="" style={currentThemeColor}>
-                  И хоррор
-                </a>
-              </li>
-            </nav>
-            <nav className={styles.nav}>
-              <li>
-                <h3>Жанры</h3>
-              </li>
-              <li>
-                <a href="" style={currentThemeColor}>
-                  Триллер
-                </a>
-              </li>
-              <li>
-                <a href="" style={currentThemeColor}>
-                  Хоррор
-                </a>
-              </li>
-              <li>
-                <a href="" style={currentThemeColor}>
-                  Драма
-                </a>
-              </li>
-              <li>
-                <a href="" style={currentThemeColor}>
-                  Еще драма
-                </a>
-              </li>
-              <li>
-                <a href="" style={currentThemeColor}>
-                  И хоррор
+                  Сунуштоо
                 </a>
               </li>
             </nav>
@@ -77,16 +47,16 @@ function Footer() {
             <a href="" className={styles.playMarket}>
               <img src={playMarket} alt="playMarket" />
               <div className={styles.text}>
-                <p style={currentThemeColor}>Get it on</p>
+                <p style={currentThemeColor}>Жүктөп алуу үчүн</p>
                 <h4 style={currentThemeColor}>Google Play</h4>
               </div>
             </a>
             <div className={styles.footer}>
               <a href="" style={currentThemeColor}>
-                Тех. поддержка: nuska@book.kg
+                Тех. колдоо: nuska@book.kg
               </a>
               <a href="" style={currentThemeColor}>
-                Privacy & Policy
+                Купуялык & саясат
               </a>
             </div>
           </div>

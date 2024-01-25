@@ -66,7 +66,7 @@ function ConfirmCode() {
       </div>
       <div className={styles.buttons}>
         <button type="submit" style={currentThemeColor} disabled={loading}>
-          {loading ? <PreloadBtn /> : 'Подтвердить код'}
+          {loading ? <PreloadBtn /> : 'Кодду текшерүү'}
         </button>
       </div>
       {isOpenModal && <ModalWindow message={error ? error : 'Сиз ийгиликтуу кирдиниз'} />}

@@ -1,4 +1,19 @@
-.genreFilters {
+.wrapper {
+  border-radius: 12px;
+  background: rgba(187, 187, 187, 0.3);
+  width: 913px;
+  height: 90px;
+  margin: 98px auto 40px;
+  padding: 0 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .genreFilters {
+  height: 100%;
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9,20 +24,26 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 850px;
-  height: 80px;
-  border-radius: 10px;
-  background: rgba(187, 187, 187, 0.3);
-  margin: 98px auto 40px;
-  padding: 0 17px;
   overflow: auto;
+  overflow-y: hidden;
   scrollbar-width: none;
-  gap: 22px;
 }
-.genreFilters::-webkit-scrollbar {
-  display: none;
+.wrapper .genreFilters::-webkit-scrollbar {
+  width: 2px;
+  height: 10px;
+  border-radius: 10px;
 }
-.genreFilters li {
+.wrapper .genreFilters::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+.wrapper .genreFilters::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.wrapper .genreFilters::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.wrapper .genreFilters li {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -35,7 +56,7 @@
           align-items: center;
   padding: 0 8px;
 }
-.genreFilters li a {
+.wrapper .genreFilters li a {
   color: #000;
   font-family: "Montserrat", sans-serif;
   font-size: 26px;
@@ -45,7 +66,10 @@
   cursor: pointer;
   text-decoration: none;
 }
-.genreFilters .active {
+.wrapper .genreFilters .genreSpacer {
+  width: 17px;
+}
+.wrapper .genreFilters .active {
   border-radius: 10px;
   background: #53A32E;
 }

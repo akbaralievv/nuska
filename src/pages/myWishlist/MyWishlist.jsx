@@ -24,22 +24,25 @@ function MyWishlist() {
               <Menu />
               <BurgerMenu />
             </div>
-            <span>My wishlist</span>
+            <span>Менин тадоом</span>
           </header>
+          <div className={styles.nothing}>
+            <h2 style={currentThemeColor}>Тандаган китептердин тизмеси бош.</h2>
+            <hr />
+          </div>
+          <h2 style={currentThemeColor}>Сунуштоо</h2>
           <ul className={styles.content}>
             <li className={styles.book}>
               <div className={styles.image}>
                 <img src={image} alt="image" />
               </div>
               <div className={styles.title}>
-                <h3 style={currentThemeColor}>
-                  A Mersey Killing: When Liverpool Rocked and the Music died
-                </h3>
-                <p style={currentThemeColor}>Brian L. Porter</p>
+                <h3 style={currentThemeColor}>Кылым карытар бир күн</h3>
+                <p style={currentThemeColor}>Чынгыз Айтматов</p>
                 <div className={styles.footer}>
-                  <span>Added on 12/12/2023</span>
+                  <span>Сайтка киргизилген датасы 12/12/2023</span>
                   <button style={currentThemeColor}>
-                    Remove <img src={key === 'dark' ? basket : basketBlack} alt="basket" />
+                    Алып салуу <img src={key === 'dark' ? basket : basketBlack} alt="basket" />
                   </button>
                 </div>
               </div>
@@ -49,14 +52,12 @@ function MyWishlist() {
                 <img src={image} alt="image" />
               </div>
               <div className={styles.title}>
-                <h3 style={currentThemeColor}>
-                  A Mersey Killing: When Liverpool Rocked and the Music died
-                </h3>
-                <p style={currentThemeColor}>Brian L. Porter</p>
+                <h3 style={currentThemeColor}>Кылым карытар бир күн</h3>
+                <p style={currentThemeColor}>Чынгыз Айтматов</p>
                 <div className={styles.footer}>
-                  <span>Added on 12/12/2023</span>
+                  <span>Сайтка киргизилген датасы 12/12/2023</span>
                   <button style={currentThemeColor}>
-                    Remove <img src={key === 'dark' ? basket : basketBlack} alt="basket" />
+                    Алып салуу <img src={key === 'dark' ? basket : basketBlack} alt="basket" />
                   </button>
                 </div>
               </div>
@@ -66,14 +67,12 @@ function MyWishlist() {
                 <img src={image} alt="image" />
               </div>
               <div className={styles.title}>
-                <h3 style={currentThemeColor}>
-                  A Mersey Killing: When Liverpool Rocked and the Music died
-                </h3>
-                <p style={currentThemeColor}>Brian L. Porter</p>
+                <h3 style={currentThemeColor}>Кылым карытар бир күн</h3>
+                <p style={currentThemeColor}>Чынгыз Айтматов</p>
                 <div className={styles.footer}>
-                  <span>Added on 12/12/2023</span>
+                  <span>Сайтка киргизилген датасы 12/12/2023</span>
                   <button style={currentThemeColor}>
-                    Remove <img src={key === 'dark' ? basket : basketBlack} alt="basket" />
+                    Алып салуу <img src={key === 'dark' ? basket : basketBlack} alt="basket" />
                   </button>
                 </div>
               </div>
@@ -83,14 +82,12 @@ function MyWishlist() {
                 <img src={image} alt="image" />
               </div>
               <div className={styles.title}>
-                <h3 style={currentThemeColor}>
-                  A Mersey Killing: When Liverpool Rocked and the Music died
-                </h3>
-                <p style={currentThemeColor}>Brian L. Porter</p>
+                <h3 style={currentThemeColor}>Кылым карытар бир күн</h3>
+                <p style={currentThemeColor}>Чынгыз Айтматов</p>
                 <div className={styles.footer}>
-                  <span>Added on 12/12/2023</span>
+                  <span>Сайтка киргизилген датасы 12/12/2023</span>
                   <button style={currentThemeColor}>
-                    Remove <img src={key === 'dark' ? basket : basketBlack} alt="basket" />
+                    Алып салуу <img src={key === 'dark' ? basket : basketBlack} alt="basket" />
                   </button>
                 </div>
               </div>

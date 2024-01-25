@@ -107,7 +107,7 @@ function BookLists() {
       <div className={styles.container}>
         <div className={styles.inner}>
           <section className={styles.catalog}>
-            <h2 style={currentThemeColor}>Популярные</h2>
+            <h2 style={currentThemeColor}>Популярдуу</h2>
             <Slider {...settingsData}>
               {loading
                 ? skeletonBooks
@@ -115,7 +115,7 @@ function BookLists() {
             </Slider>
           </section>
           <section className={styles.catalog}>
-            <h2 style={currentThemeColor}>Бестселлеры</h2>
+            <h2 style={currentThemeColor}>Мыкты сатылган китептер</h2>
             <Slider {...settingsBestselling}>
               {loading
                 ? skeletonBooks
@@ -123,7 +123,7 @@ function BookLists() {
             </Slider>
           </section>
           <section className={styles.catalog}>
-            <h2 style={currentThemeColor}>Новые</h2>
+            <h2 style={currentThemeColor}>Жанылар</h2>
             <Slider {...settingsNewbooks}>
               {loading
                 ? skeletonBooks

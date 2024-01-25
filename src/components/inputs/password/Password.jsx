@@ -43,7 +43,7 @@ function Password({ setValueSignUp, setValidSignUp, errorValid, valueSignUp }) {
     <div className={styles.wrapper}>
       <div className={styles.title}>
         <img src={icon} alt="icon" />
-        <span style={currentThemeColor}>Password</span>
+        <span style={currentThemeColor}>Сырдык сөз</span>
       </div>
       <div className={styles.input}>
         <input
@@ -59,7 +59,7 @@ function Password({ setValueSignUp, setValidSignUp, errorValid, valueSignUp }) {
           <img src={eyeShow} alt="icon" onClick={() => handleClickEye(true)} />
         )}
       </div>
-      {errorValid && <p className={styles.error}>Password must be at least 8 characters long.</p>}
+      {errorValid && <p className={styles.error}>Сырсөз кеминде 8 белгиден турушу керек.</p>}
     </div>
   );
 }

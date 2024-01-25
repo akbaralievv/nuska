@@ -39,7 +39,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 35px;
-  margin: 48px 0 100px;
+  margin: 80px 0 40px;
   max-width: 320px;
 }
 .wrapper .buttons {
@@ -53,9 +53,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 20px;
+  gap: 40px;
 }
-.wrapper .buttons .forgout, .wrapper .buttons button {
+.wrapper .buttons button {
   text-decoration: none;
   width: 260px;
   height: 45px;
@@ -77,14 +77,28 @@
   font-weight: 400;
   line-height: normal;
   cursor: pointer;
-}
-.wrapper .buttons button {
   border: none;
   width: 123px;
   height: 41px;
 }
-.wrapper .buttons .createAcc {
+.wrapper .buttons .createAcc, .wrapper .buttons .forgout {
   width: auto;
   height: auto;
-  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  border-bottom: 1px solid black;
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+}
+.wrapper .buttons .light {
+  border-bottom: 1px solid black;
+}
+.wrapper .buttons .dark {
+  border-bottom: 1px solid white;
 }
