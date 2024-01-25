@@ -32,6 +32,13 @@ function Password({ setValueSignUp, setValidSignUp, errorValid, valueSignUp }) {
       } else {
         setValidSignUp((prev) => ({ ...prev, password: false }));
       }
+    } else if ('new_password' in valueSignUp) {
+      if (validatePassword(value)) {
+        setValueSignUp((prev) => ({ ...prev, new_password: value }));
+        setValidSignUp((prev) => ({ ...prev, new_password: true }));
+      } else {
+        setValidSignUp((prev) => ({ ...prev, new_password: false }));
+      }
     }
   };
 

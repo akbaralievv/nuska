@@ -25,6 +25,12 @@ function Main() {
     error: loginError,
   } = useSelector((state) => state.authorization);
 
+  const {
+    data: codeData,
+    loading: codeLoading,
+    error: codeError,
+  } = useSelector((state) => state.codeConfirm);
+
   const { isOpenModal, isLogout } = useSelector((state) => state.isTrue);
   const dispatch = useDispatch();
 
@@ -48,7 +54,15 @@ function Main() {
       {isLogout && <ModalWindow message={'Сиз аккаунтуңуздан ийгиликтүү чыктыңыз'} />}
       {isOpenModal && (
         <ModalWindow
-          message={registerData.message || registerError || loginData || loginError || ''}
+          message={
+            registerData.message ||
+            registerError ||
+            loginData ||
+            loginError ||
+            codeData ||
+            codeError ||
+            ''
+          }
         />
       )}
     </div>

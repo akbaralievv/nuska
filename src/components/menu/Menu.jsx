@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './Menu.module.css';
@@ -55,6 +55,8 @@ function Menu() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [dispatch]);
+
+  const navigate = useNavigate();
 
   const handleClickLogout = () => {
     dispatch(setIsOpenMenu(false));
@@ -134,7 +136,7 @@ function Menu() {
               </NavLink>
             </li>
             <li>
-              <NavLink onClick={handleClickLogout}>
+              <NavLink to={'/'} onClick={handleClickLogout}>
                 <img src={logout} alt="logout" />
                 <span>Чыгуу</span>
               </NavLink>

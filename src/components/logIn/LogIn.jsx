@@ -10,6 +10,7 @@ import PreloadBtn from '../PreloadBtn/PreloadBtn';
 import ModalWindow from '../modalWindow/ModalWindow';
 import {
   setIsAuth,
+  setIsChangePassword,
   setIsConfirmCode,
   setIsForgoutPassword,
   setIsOpenModal,
@@ -17,12 +18,15 @@ import {
 import forgoutPassword from '../../redux/slices/auth/forgoutPassword';
 import ForgoutPassword from '../forgoutPassword/ForgoutPassword';
 import ConfirmCode from '../confirmCode/ConfirmCode';
+import ChangePassword from '../changePassword/ChangePassword';
 
 function LogIn() {
   const { data, loading, error } = useSelector((state) => state.authorization);
   const { isOpenModal } = useSelector((state) => state.isTrue);
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
-  const { isForgoutPassword, isConfirmCode } = useSelector((state) => state.isTrue);
+  const { isForgoutPassword, isConfirmCode, isChangePassword } = useSelector(
+    (state) => state.isTrue,
+  );
 
   const [valueSignUp, setValueSignUp] = useState({
     password: '',
@@ -77,6 +81,9 @@ function LogIn() {
       ) : isConfirmCode ? (
         <ConfirmCode />
       ) : (
+        // isChangePassword ? (
+        //   <ChangePassword />
+        // ) :
         <form action="" onSubmit={handleSubmit}>
           <div className={styles.inputs}>
             <Email

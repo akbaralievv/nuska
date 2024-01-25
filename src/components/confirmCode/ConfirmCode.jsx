@@ -51,9 +51,9 @@ function ConfirmCode() {
     }
   }, [data, error]);
 
-  useEffect(() => {
-    return () => dispatch(clearDataCodeConfirm());
-  }, []);
+  // useEffect(() => {
+  //   return () => dispatch(clearDataCodeConfirm());
+  // }, []);
 
   return (
     <form action="" onSubmit={handleSubmit}>

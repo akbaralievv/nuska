@@ -16,5 +16,6 @@ const API_URLS = {
   refresh_token: 'https://nuska.kg/api/v1/authentication/token/refresh/',
   reset_password: 'https://nuska.kg/api/v1/authentication/users/reset/password/',
   code_confirm: 'https://nuska.kg/api/v1/authentication/users/reset/code/confirm/',
+  change_password: 'https://nuska.kg/api/v1/authentication/users/reset/password/confirm/',
 };
 export default API_URLS;

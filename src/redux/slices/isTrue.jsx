@@ -7,6 +7,7 @@ const initialState = {
   isForgoutPassword: false,
   isConfirmCode: false,
   isLogout: false,
+  isChangePassword: false,
 };
 
 const isTrueSlice = createSlice({
@@ -31,6 +32,9 @@ const isTrueSlice = createSlice({
     setIsConfirmCode: (state, action) => {
       state.isConfirmCode = action.payload;
     },
+    setIsChangePassword: (state, action) => {
+      state.isChangePassword = action.payload;
+    },
   },
 });
 
@@ -41,5 +45,6 @@ export const {
   setIsOpenModal,
   setIsForgoutPassword,
   setIsConfirmCode,
+  setIsChangePassword,
 } = isTrueSlice.actions;
 export default isTrueSlice.reducer;

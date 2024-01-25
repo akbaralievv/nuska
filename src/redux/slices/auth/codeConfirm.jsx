@@ -11,6 +11,7 @@ export const codeConfirm = createAsyncThunk('codeConfirm', async (body, { reject
     const response = await axios.post(api, body);
     const data = await response.data;
     handleSuccessfulSignIn(data.tokens.access, data.tokens.refresh);
+    console.log(data);
     return data.message;
   } catch (error) {
     if (error.response && error.response.data) {

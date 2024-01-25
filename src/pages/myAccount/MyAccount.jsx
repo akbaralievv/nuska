@@ -41,7 +41,9 @@ function MyAccount() {
 
   return (
     <div className={styles.wrapper}>
-      {isOpenModal && <ModalWindow message={'Вы не авторизованы!'} elementBtn={true} />}
+      {isOpenModal && (
+        <ModalWindow message={'Сизге ыйгарым укук берилген эмес!'} elementBtn={true} />
+      )}
       <div className={styles.container}>
         <div className={styles.inner}>
           <header className={styles.header}>

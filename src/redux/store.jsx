@@ -16,6 +16,7 @@ import getComments from './slices/book/getComments';
 import postComment from './slices/book/postComment';
 import forgoutPassword from './slices/auth/forgoutPassword';
 import codeConfirm from './slices/auth/codeConfirm';
+import changePassword from './slices/auth/changePassword';
 
 export const store = configureStore({
   reducer: {
@@ -35,5 +36,6 @@ export const store = configureStore({
     postComment,
     forgoutPassword,
     codeConfirm,
+    changePassword,
   },
 });

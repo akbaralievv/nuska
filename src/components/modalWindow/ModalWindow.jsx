@@ -39,7 +39,7 @@ function ModalWindow({ message, elementBtn }) {
         </button>
         {elementBtn && (
           <button className={styles.authBtn} onClick={handleClickAuthBtn}>
-            Авторизоваться
+            Кирүү
           </button>
         )}
       </div>
