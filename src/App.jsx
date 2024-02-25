@@ -15,6 +15,8 @@ import Inside from './pages/inside/Inside';
 import MyBooks from './pages/myBooks/MyBooks';
 import MyWishlist from './pages/myWishlist/MyWishlist';
 import PaymentForm from './pages/payment/Payment';
+import AuthorBooks from './pages/authorBooks/AuthorBooks';
+import AuthorDetail from './pages/authorDetail/AuthorDetail';
 
 function App() {
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
@@ -39,8 +41,10 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<Main />} />
         <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/authorDetail/:id" element={<AuthorDetail />} />
         <Route path="/myBooks" element={<MyBooks />} />
         <Route path="/myWishlist" element={<MyWishlist />} />
+        <Route path="/authorBooks" element={<AuthorBooks />} />
         <Route path="/myBooks/payment" element={<PaymentForm />} />
         <Route path="/myAccount" element={<MyAccount />} />
       </Route>

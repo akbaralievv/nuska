@@ -28,6 +28,11 @@ const initialState = {
 const getCommentsSlice = createSlice({
   name: 'CommentsSlice',
   initialState,
+  reducers: {
+    clearDataComments: (state, action) => {
+      state.data = [];
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getComments.fulfilled, (state, action) => {
       state.data = action.payload;
@@ -47,4 +52,5 @@ const getCommentsSlice = createSlice({
   },
 });
 
+export const { clearDataComments } = getCommentsSlice.actions;
 export default getCommentsSlice.reducer;

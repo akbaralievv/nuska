@@ -1,3 +1,8 @@
+html,
+body {
+    scroll-behavior: smooth;
+}
+
 .rccs {
     transform: scale(1.5);
 }
@@ -9,11 +14,24 @@ form {
 .slick-slide{
     max-width: 180px !important
 }
-.slick-arrow{
-    display: none !important
+.slick-arrow::before{
+    display: none;
 }
 .slick-dots{
     display: none !important
+}
+.slick-next{
+    right: -30px !important
+}
+.slick-prev{
+    left: -60px !important
+}
+.slick-next img{
+    width: 50px;
+}
+.slick-prev img{
+    width: 50px;
+    transform: rotate(-180deg);
 }
 .slick-track{
     display: flex !important;
@@ -21,7 +39,32 @@ form {
     margin-left: 0 !important;
 }
 
-html,
-body {
-    scroll-behavior: smooth;
+.MuiStack-root{
+    margin-top: 40px;
+}
+
+.MuiStack-root ul{
+    justify-content: center;
+}
+
+.MuiStack-root .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root{
+    font-size: 1.5rem;
+    border-radius: 50%;
+    min-width: 45px;
+    height: 45px;
+}
+
+.MuiStack-root .css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon{
+    font-size: 2.25rem;
+}
+
+.MuiStack-root .css-1v2lvtn-MuiPaginationItem-root{
+    font-size: 1.5rem;
+}
+.MuiStack-root .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected{
+    background-color: #5CC11F;
+    color: #fff;
+}
+.MuiStack-root .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected:hover{
+    background-color: #7dd049;
 }

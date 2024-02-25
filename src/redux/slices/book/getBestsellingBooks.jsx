@@ -5,15 +5,21 @@ import API_URLS from '../../../config/api';
 
 const api = API_URLS.bestselling;
 
-export const getBestsellingBooks = createAsyncThunk('getBestsellingBooks', async () => {
-  try {
-    const response = await axios.get(api);
-    const data = response.data;
-    return data;
-  } catch (error) {
-    console.error('Error fetching books:', error);
-  }
-});
+export const getBestsellingBooks = createAsyncThunk(
+  'getBestsellingBooks',
+  async (jenre_id, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(api + `${jenre_id ? '?jenre_id=' + jenre_id : ''}`);
+      const data = response.data;
+      return data;
+    } catch (error) {
+      if (error.response && error.response.data && error.response.data.error) {
+        return rejectWithValue(error.response.data.error);
+      }
+      return rejectWithValue('Белгисиз ката кетти');
+    }
+  },
+);
 
 const initialState = {
   data: [],
@@ -24,6 +30,11 @@ const initialState = {
 const getBestsellingBooksSlice = createSlice({
   name: 'getBestsellingBooks',
   initialState,
+  reducers: {
+    clearDataBestsellingBooks: (state, action) => {
+      state.data = [];
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getBestsellingBooks.fulfilled, (state, action) => {
       state.data = action.payload;
@@ -43,4 +54,5 @@ const getBestsellingBooksSlice = createSlice({
   },
 });
 
+export const { clearDataBestsellingBooks } = getBestsellingBooksSlice.actions;
 export default getBestsellingBooksSlice.reducer;

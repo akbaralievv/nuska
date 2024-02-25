@@ -25,9 +25,20 @@
           flex-direction: column;
   gap: 31px;
 }
+.wrapper .container .inner .catalog .nothing {
+  width: 510px !important;
+}
+.wrapper .container .inner .catalog .nothing span {
+  color: #FFF;
+  font-family: "Montserrat", sans-serif, sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
 .wrapper .container .inner .catalog h2 {
   color: #FFF;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 32px;
   font-style: normal;
   font-weight: 500;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -8,10 +8,27 @@ import SkeletonCard from '../skeletonCard/SkeletonCard';
 import BookCard from '../bookCard/BookCard';
 
 import ads from '../../assets/images/ads.png';
+import arrow from '../../assets/icons/arrow.png';
+import arrowWhite from '../../assets/icons/arrowWhite.png';
 import styles from './BookLists.module.css';
-import { getBooks } from '../../redux/slices/book/getBooks';
-import { getBestsellingBooks } from '../../redux/slices/book/getBestsellingBooks';
-import { getNewbooks } from '../../redux/slices/book/getNewbooks';
+
+import { clearDataBooks, getBooks } from '../../redux/slices/book/getBooks';
+import {
+  clearDataBestsellingBooks,
+  getBestsellingBooks,
+} from '../../redux/slices/book/getBestsellingBooks';
+import { clearDataNewBooks, getNewbooks } from '../../redux/slices/book/getNewbooks';
+
+function CustomNextArrow(props) {
+  const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
+  const { className, style, onClick } = props;
+
+  return (
+    <div className={className} style={{ ...style, cursor: 'pointer' }} onClick={onClick}>
+      <img src={key === 'light' ? arrow : arrowWhite} alt="arrow" />
+    </div>
+  );
+}
 
 function BookLists() {
   const { data, loading, error } = useSelector((state) => state.getBooks);
@@ -26,16 +43,23 @@ function BookLists() {
     dispatch(getBooks());
     dispatch(getBestsellingBooks());
     dispatch(getNewbooks());
+    return () => {
+      dispatch(clearDataBestsellingBooks());
+      dispatch(clearDataBooks());
+      dispatch(clearDataNewBooks());
+    };
   }, [dispatch]);
 
   const skeletonBooks = [...new Array(6)].map((_, id) => <SkeletonCard key={id} />);
 
   const settingsData = {
     dots: true,
-    infinite: data.length > 6 ? true : false,
+    infinite: data?.length > 6 ? true : false,
     speed: 500,
     slidesToShow: 6,
     slidesToScroll: 6,
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomNextArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -56,10 +80,12 @@ function BookLists() {
 
   const settingsBestselling = {
     dots: true,
-    infinite: bestselling.length > 6 ? true : false,
+    infinite: bestselling?.length > 6 ? true : false,
     speed: 500,
     slidesToShow: 6,
     slidesToScroll: 6,
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomNextArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -80,10 +106,12 @@ function BookLists() {
 
   const settingsNewbooks = {
     dots: true,
-    infinite: newbooks.length > 6 ? true : false,
+    infinite: newbooks?.length > 6 ? true : false,
     speed: 500,
     slidesToShow: 6,
     slidesToScroll: 6,
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomNextArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -109,9 +137,15 @@ function BookLists() {
           <section className={styles.catalog}>
             <h2 style={currentThemeColor}>Популярдуу</h2>
             <Slider {...settingsData}>
-              {loading
-                ? skeletonBooks
-                : data?.map((book) => <BookCard key={book.id} data={book} />)}
+              {loading ? (
+                skeletonBooks
+              ) : data.length > 0 ? (
+                data?.map((book) => <BookCard key={book.id} data={book} />)
+              ) : (
+                <p className={styles.nothing}>
+                  <span style={currentThemeColor}>Бул жанрда китептер табылган жок</span>
+                </p>
+              )}
             </Slider>
           </section>
           <section className={styles.catalog}>
@@ -133,14 +167,6 @@ function BookLists() {
           <section className={styles.ads}>
             <img src={ads} alt="ads" />
           </section>
-          {/* <section className={styles.catalog}>
-            <h2 style={currentThemeColor}>Триллеры</h2>
-            <div className={styles.bookCards}>{books}</div>
-          </section>
-          <section className={styles.catalog}>
-            <h2 style={currentThemeColor}>Фантастика</h2>
-            <div className={styles.bookCards}>{books}</div>
-          </section> */}
         </div>
       </div>
     </div>

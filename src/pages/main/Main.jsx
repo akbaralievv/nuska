@@ -31,15 +31,11 @@ function Main() {
     error: codeError,
   } = useSelector((state) => state.codeConfirm);
 
-  const { isOpenModal, isLogout } = useSelector((state) => state.isTrue);
+  const { isOpenModal, isLogout, isOpenModalMain } = useSelector((state) => state.isTrue);
   const dispatch = useDispatch();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    // return () => {
-    //   dispatch(setIsOpenModal(false));
-    //   document.body.style.overflow = '';
-    // };
   }, []);
 
   return (
@@ -51,6 +47,13 @@ function Main() {
           <BookLists />
         </div>
       </div>
+      {isOpenModalMain && (
+        <ModalWindow
+          message={'Сизге ыйгарым укук берилген эмес!'}
+          elementBtn={true}
+          isMain={true}
+        />
+      )}
       {isLogout && <ModalWindow message={'Сиз аккаунтуңуздан ийгиликтүү чыктыңыз'} />}
       {isOpenModal && (
         <ModalWindow

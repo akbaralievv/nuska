@@ -26,14 +26,14 @@
                     margin-bottom: 60px
                     h2
                         color: #5CC11F
-                        font-family: Montserrat,sans-serif
+                        font-family: 'Montserrat',sans-serif,sans-serif
                         font-size: 30px
                         font-style: normal
                         font-weight: 600
                         line-height: normal
                     p
                         color: #000
-                        font-family: Montserrat,sans-serif
+                        font-family: 'Montserrat',sans-serif,sans-serif
                         font-size: 20px
                         font-style: normal
                         font-weight: 500
@@ -41,7 +41,7 @@
                 .editProfile
                     .title
                         color: #000
-                        font-family: Montserrat,sans-serif
+                        font-family: 'Montserrat',sans-serif,sans-serif
                         font-size: 24px
                         font-style: normal
                         font-weight: 500
@@ -62,8 +62,9 @@
                                 display: flex
                                 gap: 34px
                                 align-items: center
-                                input
+                                .container_input
                                     width: 284px
+                                input
                                     height: 33px
                                     border: none
                                     outline: none
@@ -73,14 +74,14 @@
                                     border: 1px solid #000
                                     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
                                     color: #000
-                                    font-family: Montserrat,sans-serif
+                                    font-family: 'Montserrat',sans-serif,sans-serif
                                     font-size: 20px
                                     font-style: normal
                                     font-weight: 400
                                     line-height: normal
                                 p
                                     color: #000
-                                    font-family: Montserrat,sans-serif
+                                    font-family: 'Montserrat',sans-serif,sans-serif
                                     font-size: 20px
                                     font-style: normal
                                     font-weight: 400
@@ -91,11 +92,18 @@
                                     img
                                         width: 20px
                                         height: 20px
+                                .error
+                                    color: red
+                                    margin-top: 10px
+                                    font-size: 16px
+                                &:last-child
+                                    align-items: center
                                 .change
                                     display: flex
                                     flex-direction: column
                                     gap: 10px
                                     button
+                                        cursor: pointer
                                         width: 249px
                                         height: 42px
                                         display: flex
@@ -104,29 +112,158 @@
                                         border-radius: 6px
                                         background: #5CC11F
                                         color: #000
-                                        font-family: Montserrat,sans-serif
+                                        font-family: 'Montserrat',sans-serif,sans-serif
                                         font-size: 20px
                                         font-style: normal
                                         font-weight: 400
                                         line-height: normal
                                         border: none
+                                    .deleteAccBtn
+                                        display: inline-block
+                                        width: auto
+                                        height: auto
+                                        border-radius: 0
+                                        background: transparent
+                                        border-bottom: 1px solid #000
+                                        padding-bottom: 3px
+                                    .languageSelect
+                                        width: 249px
+                                        padding: 15px 19px
+                                        border-radius: 8px
+                                        background: rgb(92, 193, 31)
+                                        display: flex
+                                        gap: 18px
+                                        button
+                                            display: flex
+                                            flex-direction: column
+                                            align-items: center
+                                            gap: 3px
+                                            border: none
+                                            background: transparent
+                                            appearance: none
+                                            img
+                                                width: 27px
+                                            span
+                                                color: #fff
+                                                text-align: center
+                                                font-family: 'Montserrat',sans-serif
+                                                font-size: 12px
+                                                font-weight: 400
+                                                line-height: 15px
+                                            .select
+                                                padding-bottom: 3px
+                                                border-bottom: 1px solid #fff
+                                    .popupDelete
+                                        padding: 17px 10px
+                                        border-radius: 6px
+                                        background: rgb(255, 255, 255)
+                                        display: flex
+                                        flex-direction: column
+                                        align-items: center
+                                        gap: 10px
+                                        h4
+                                            color: rgb(92, 193, 31)
+                                            font-family: 'Montserrat',sans-serif
+                                            font-size: 16px
+                                            font-weight: 700
+                                            line-height: 20px
+                                        p
+                                            color: rgb(92, 193, 31)
+                                            font-family: 'Montserrat',sans-serif
+                                            font-size: 14px
+                                            font-weight: 500
+                                            line-height: 17px
+                                        .btns
+                                            display: flex
+                                            justify-content: space-between
+                                            align-items: center
+                                            gap: 30px
+                                            button
+                                                display: flex
+                                                justify-content: center
+                                                align-items: center
+                                                appearance: none
+                                                border: none
+                                                border: 1px solid rgb(92, 193, 31)
+                                                border-radius: 3px
+                                                background: rgb(92, 193, 31)
+                                                color: #fff
+                                                font-family: 'Montserrat',sans-serif
+                                                font-size: 12px
+                                                font-weight: 500
+                                                line-height: 15px
+                                                width: 85px
+                                                height: 30px
+                                                &:last-child
+                                                    border: 1px solid rgb(64, 64, 64)
+                                                    background: rgb(64, 64, 64)
                             .changeLi
                                 align-items: start
                     .buttons
-                        margin-top: 92px
+                        margin-top: 40px
                         padding: 0 55px
                         display: flex
-                        align-items: center
-                        justify-content: space-between
+                        flex-direction: column
+                        align-items: end
+                        gap: 20px
                         button
+                            display: inline-flex
+                            justify-content: center
+                            align-items: center
+                            cursor: pointer
                             width: 249px
                             height: 42px
                             border-radius: 6px
                             background: #5CC11F
                             border: none
                             color: #000
-                            font-family: Montserrat
+                            font-family: 'Montserrat',sans-serif
                             font-size: 20px
                             font-style: normal
                             font-weight: 400
                             line-height: normal
+                        .popupDelete
+                            padding: 17px 10px
+                            border-radius: 6px
+                            background: rgb(255, 255, 255)
+                            display: flex
+                            flex-direction: column
+                            align-items: center
+                            gap: 10px
+                            h4
+                                color: rgb(92, 193, 31)
+                                font-family: 'Montserrat',sans-serif
+                                font-size: 16px
+                                font-weight: 700
+                                line-height: 20px
+                            p
+                                color: rgb(92, 193, 31)
+                                font-family: 'Montserrat',sans-serif
+                                font-size: 14px
+                                font-weight: 500
+                                line-height: 17px
+                            .btns
+                                display: flex
+                                justify-content: space-between
+                                align-items: center
+                                gap: 30px
+                                button,a
+                                    text-decoration: none
+                                    display: flex
+                                    justify-content: center
+                                    align-items: center
+                                    appearance: none
+                                    border: none
+                                    border: 1px solid rgb(92, 193, 31)
+                                    border-radius: 3px
+                                    background: rgb(92, 193, 31)
+                                    color: #fff
+                                    font-family: 'Montserrat',sans-serif
+                                    font-size: 12px
+                                    font-weight: 500
+                                    line-height: 15px
+                                    width: 85px
+                                    height: 30px
+                                a
+                                    border: 1px solid rgb(64, 64, 64)
+                                    background: rgb(64, 64, 64)

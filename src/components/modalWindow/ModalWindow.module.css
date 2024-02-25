@@ -54,7 +54,7 @@
   border-radius: 8px;
   background: #5CC11F;
   color: #000;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -62,7 +62,7 @@
   cursor: pointer;
 }
 .window .content h2 {
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;

@@ -33,7 +33,7 @@
             h2
                 margin: 25px 0
                 color: #000
-                font-family: Montserrat,sans-serif
+                font-family: 'Montserrat',sans-serif,sans-serif
                 font-size: 28px
                 font-style: normal
                 font-weight: 600
@@ -42,6 +42,12 @@
                 display: flex
                 gap: 50px
                 flex-wrap: wrap
+                .notFound
+                    font-family: 'Montserrat',sans-serif,sans-serif
+                    font-size: 22px
+                    font-style: normal
+                    font-weight: 500
+                    line-height: normal
                 .book
                     display: flex
                     gap: 53px
@@ -54,14 +60,14 @@
                         h3
                             width: 290px
                             color: #FFF
-                            font-family: Montserrat
+                            font-family: 'Montserrat',sans-serif
                             font-size: 24px
                             font-style: normal
                             font-weight: 500
                             line-height: normal
                         p
                             color: #FFF
-                            font-family: Montserrat
+                            font-family: 'Montserrat',sans-serif
                             font-size: 20px
                             font-style: normal
                             font-weight: 300
@@ -74,12 +80,12 @@
                             span
                                 width: 98px
                                 color: #636363
-                                font-family: Montserrat
+                                font-family: 'Montserrat',sans-serif
                                 font-size: 20px
                                 font-style: normal
                                 font-weight: 300
                                 line-height: normal
-                            button
+                            a
                                 width: 130px
                                 height: 46px
                                 appearance: none
@@ -88,8 +94,50 @@
                                 border: 1px solid #5CC11F
                                 background: #5CC11F
                                 color: #FFF
-                                font-family: Montserrat
+                                font-family: 'Montserrat',sans-serif
                                 font-size: 20px
                                 font-style: normal
                                 font-weight: 500
                                 line-height: normal
+                                text-decoration: none
+                                display: flex
+                                justify-content: center
+                                align-items: center
+            .spinWrapper
+                position: relative
+                width: 100%
+                .spinner
+                    position: absolute
+                    height: 60px
+                    width: 60px
+                    border: 3px solid transparent
+                    border-top-color: gray
+                    top: 50%
+                    left: 50%
+                    margin: -30px
+                    border-radius: 50%
+                    animation: spin 2s linear infinite
+                    &:before, &:after
+                        content: ''
+                        position: absolute
+                        border: 3px solid transparent
+                        border-radius: 50%
+                    &:before
+                        border-top-color: #5CC11F
+                        top: -12px
+                        left: -12px
+                        right: -12px
+                        bottom: -12px
+                        animation: spin 3s linear infinite
+                    &:after
+                        border-top-color: #FFFBFE
+                        top: 6px
+                        left: 6px
+                        right: 6px
+                        bottom: 6px
+                        animation: spin 4s linear infinite
+                        @keyframes spin
+                            0%
+                                transform: rotate(0deg)
+                            100%
+                                transform: rotate(360deg)

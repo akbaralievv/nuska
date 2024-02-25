@@ -29,6 +29,11 @@ const initialState = {
 const getUserSlice = createSlice({
   name: 'UserSlice',
   initialState,
+  reducers: {
+    clearDataUser: (state, action) => {
+      state.data = [];
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getUser.fulfilled, (state, action) => {
       state.data = action.payload;
@@ -48,4 +53,5 @@ const getUserSlice = createSlice({
   },
 });
 
+export const { clearDataUser } = getUserSlice.actions;
 export default getUserSlice.reducer;

@@ -34,7 +34,7 @@
           align-items: center;
 }
 .wrapper .inner .title h3 {
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -47,6 +47,7 @@
 .wrapper .inner .title img {
   width: 20px;
   height: 24px;
+  cursor: pointer;
 }
 .wrapper .inner .description {
   display: -webkit-box;
@@ -60,7 +61,7 @@
           align-items: center;
 }
 .wrapper .inner .description p {
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 300;
@@ -68,7 +69,7 @@
 }
 .wrapper .inner .description span {
   color: #F90;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;

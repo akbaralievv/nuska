@@ -26,24 +26,72 @@
           justify-content: space-between;
   width: 597px;
 }
+.wrapper .container .inner .home .title p {
+  color: #FFF;
+  font-family: "Montserrat", sans-serif, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
 .wrapper .container .inner .home .title .text h2 {
   color: #FFF;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   width: 478px;
 }
-.wrapper .container .inner .home .title .text p {
-  color: #FFF;
-  font-family: Montserrat, sans-serif;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
+.wrapper .container .inner .home .title .infoNumbers .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 23px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 40px;
 }
-.wrapper .container .inner .home .title .infoNumbers {
+.wrapper .container .inner .home .title .infoNumbers .buttons a {
+  text-decoration: none;
+}
+.wrapper .container .inner .home .title .infoNumbers .buttons button, .wrapper .container .inner .home .title .infoNumbers .buttons a {
+  padding: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 6.9px;
+  border: 1.15px solid #5CC11F;
+  color: #5CC11F;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18.4px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background: transparent;
+  gap: 5px;
+  cursor: pointer;
+}
+.wrapper .container .inner .home .title .infoNumbers .buttons button img, .wrapper .container .inner .home .title .infoNumbers .buttons a img {
+  width: 13px;
+  height: 16px;
+}
+.wrapper .container .inner .home .title .infoNumbers .buttons .green {
+  background: #5CC11F;
+  color: #FFF;
+}
+.wrapper .container .inner .home .title .infoNumbers_inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,7 +121,7 @@
 }
 .wrapper .container .inner .home .title .infoNumbers .info p {
   color: #FFF;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 24.822px;
   font-style: normal;
   font-weight: 300;
@@ -81,7 +129,7 @@
 }
 .wrapper .container .inner .home .title .infoNumbers .info span {
   color: #F90;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 41.369px;
   font-style: normal;
   font-weight: 300;
@@ -106,7 +154,7 @@
 }
 .wrapper .container .inner .about h3 {
   color: #F90;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 32px;
   font-style: normal;
   font-weight: 500;
@@ -116,60 +164,13 @@
 }
 .wrapper .container .inner .about .this .aboutBook p {
   color: #FFF;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   width: 607px;
   margin-bottom: 61px;
-}
-.wrapper .container .inner .about .this .aboutBook .buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 23px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.wrapper .container .inner .about .this .aboutBook .buttons a {
-  text-decoration: none;
-}
-.wrapper .container .inner .about .this .aboutBook .buttons button, .wrapper .container .inner .about .this .aboutBook .buttons a {
-  width: 172.5px;
-  height: 46px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: none;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  border-radius: 6.9px;
-  border: 1.15px solid #5CC11F;
-  color: #5CC11F;
-  font-family: Montserrat;
-  font-size: 18.4px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  background: transparent;
-  gap: 5px;
-}
-.wrapper .container .inner .about .this .aboutBook .buttons button img, .wrapper .container .inner .about .this .aboutBook .buttons a img {
-  width: 13px;
-  height: 16px;
-}
-.wrapper .container .inner .about .this .aboutBook .buttons .green {
-  background: #5CC11F;
-  color: #FFF;
 }
 .wrapper .container .inner .about .this .available {
   width: 582px;
@@ -182,7 +183,7 @@
 }
 .wrapper .container .inner .about .this .available h4 {
   color: #404040;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
@@ -210,7 +211,7 @@
 }
 .wrapper .container .inner .about .this .available .infos .info p {
   color: #404040;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -226,7 +227,7 @@
 }
 .wrapper .container .inner .about .this .available span {
   color: #B1B1B1;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -255,6 +256,24 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 49px;
+  max-height: 500px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+.wrapper .container .inner .about .this .reviews .users::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.wrapper .container .inner .about .this .reviews .users::-webkit-scrollbar-track {
+  background: #B1B1B1;
+  border-radius: 10px;
+}
+.wrapper .container .inner .about .this .reviews .users::-webkit-scrollbar-thumb {
+  background: #5CC11F;
+  border-radius: 10px;
+}
+.wrapper .container .inner .about .this .reviews .users::-webkit-scrollbar-thumb:hover {
+  background: #438918;
 }
 .wrapper .container .inner .about .this .reviews .users .user {
   width: 457px;
@@ -285,7 +304,7 @@
 }
 .wrapper .container .inner .about .this .reviews .users .user .title .name h4 {
   color: #FFF;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
@@ -293,18 +312,19 @@
 }
 .wrapper .container .inner .about .this .reviews .users .user .title .date {
   color: #9C9C9C;
-  font-family: Montserrat;
-  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   display: inline-block;
   margin-left: auto;
+  margin-top: 5px;
 }
 .wrapper .container .inner .about .this .reviews .users .user .description {
   margin-top: 12px;
   color: #FFF;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -328,7 +348,7 @@
   border-radius: 5px;
   border: 1px solid #5CC11F;
   color: #FFF;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -338,7 +358,7 @@
   padding: 9px 18px;
 }
 .wrapper .container .inner .about .this .reviews .send .errorComment {
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -355,13 +375,22 @@
   border-radius: 4px;
   background: #5CC11F;
   color: #FFF;
-  font-family: Montserrat;
-  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   margin-left: auto;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .wrapper .container .inner .about .other .books {
   display: -webkit-box;
@@ -372,6 +401,25 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 45px;
+  max-height: 1250px;
+  overflow: auto;
+  overflow-x: hidden;
+  padding-right: 10px;
+}
+.wrapper .container .inner .about .other .books::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.wrapper .container .inner .about .other .books::-webkit-scrollbar-track {
+  background: #B1B1B1;
+  border-radius: 10px;
+}
+.wrapper .container .inner .about .other .books::-webkit-scrollbar-thumb {
+  background: #5CC11F;
+  border-radius: 10px;
+}
+.wrapper .container .inner .about .other .books::-webkit-scrollbar-thumb:hover {
+  background: #438918;
 }
 .wrapper .container .inner .about .other .books .book {
   display: -webkit-box;
@@ -380,7 +428,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 53px;
+  gap: 30px;
 }
 .wrapper .container .inner .about .other .books .book .image {
   width: 180px;
@@ -389,12 +437,13 @@
 .wrapper .container .inner .about .other .books .book .image img {
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 .wrapper .container .inner .about .other .books .book .title h4 {
-  width: 290px;
+  width: 325px;
   color: #FFF;
-  font-family: Montserrat;
-  font-size: 32.222px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -409,8 +458,9 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.wrapper .container .inner .about .other .books .book .title h4 img {
-  width: 32px;
+.wrapper .container .inner .about .other .books .book .title img {
+  min-width: 27px;
+  cursor: pointer;
 }
 .wrapper .container .inner .about .other .books .book .title div {
   display: -webkit-box;
@@ -422,11 +472,12 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  gap: 20px;
 }
 .wrapper .container .inner .about .other .books .book .title div p {
   color: #FFF;
-  font-family: Montserrat;
-  font-size: 25.778px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -434,8 +485,8 @@
 }
 .wrapper .container .inner .about .other .books .book .title div span {
   color: #F90;
-  font-family: Montserrat;
-  font-size: 32.222px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 27px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

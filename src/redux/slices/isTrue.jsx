@@ -8,6 +8,9 @@ const initialState = {
   isConfirmCode: false,
   isLogout: false,
   isChangePassword: false,
+  isFavorites: false,
+  isOpenModalMain: false,
+  isDetailCard: false,
 };
 
 const isTrueSlice = createSlice({
@@ -26,6 +29,9 @@ const isTrueSlice = createSlice({
     setIsOpenModal: (state, action) => {
       state.isOpenModal = action.payload;
     },
+    setIsOpenModalMain: (state, action) => {
+      state.isOpenModalMain = action.payload;
+    },
     setIsForgoutPassword: (state, action) => {
       state.isForgoutPassword = action.payload;
     },
@@ -34,6 +40,12 @@ const isTrueSlice = createSlice({
     },
     setIsChangePassword: (state, action) => {
       state.isChangePassword = action.payload;
+    },
+    setIsFavorites: (state, action) => {
+      state.isFavorites = action.payload;
+    },
+    setIsDetailCard: (state, action) => {
+      state.isDetailCard = action.payload;
     },
   },
 });
@@ -46,5 +58,8 @@ export const {
   setIsForgoutPassword,
   setIsConfirmCode,
   setIsChangePassword,
+  setIsFavorites,
+  setIsOpenModalMain,
+  setIsDetailCard,
 } = isTrueSlice.actions;
 export default isTrueSlice.reducer;

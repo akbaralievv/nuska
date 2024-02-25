@@ -46,7 +46,7 @@
 }
 .wrapper .container .inner .content .username h2 {
   color: #5CC11F;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 600;
@@ -54,7 +54,7 @@
 }
 .wrapper .container .inner .content .username p {
   color: #000;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -62,7 +62,7 @@
 }
 .wrapper .container .inner .content .editProfile .title {
   color: #000;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
@@ -102,8 +102,10 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.wrapper .container .inner .content .editProfile .forms .form li input {
+.wrapper .container .inner .content .editProfile .forms .form li .container_input {
   width: 284px;
+}
+.wrapper .container .inner .content .editProfile .forms .form li input {
   height: 33px;
   border: none;
   outline: none;
@@ -114,7 +116,7 @@
   -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   color: #000;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -122,7 +124,7 @@
 }
 .wrapper .container .inner .content .editProfile .forms .form li p {
   color: #000;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -139,6 +141,16 @@
   width: 20px;
   height: 20px;
 }
+.wrapper .container .inner .content .editProfile .forms .form li .error {
+  color: red;
+  margin-top: 10px;
+  font-size: 16px;
+}
+.wrapper .container .inner .content .editProfile .forms .form li:last-child {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .wrapper .container .inner .content .editProfile .forms .form li .change {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -150,6 +162,7 @@
   gap: 10px;
 }
 .wrapper .container .inner .content .editProfile .forms .form li .change button {
+  cursor: pointer;
   width: 249px;
   height: 42px;
   display: -webkit-box;
@@ -164,12 +177,135 @@
   border-radius: 6px;
   background: #5CC11F;
   color: #000;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   border: none;
+}
+.wrapper .container .inner .content .editProfile .forms .form li .change .deleteAccBtn {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px;
+}
+.wrapper .container .inner .content .editProfile .forms .form li .change .languageSelect {
+  width: 249px;
+  padding: 15px 19px;
+  border-radius: 8px;
+  background: rgb(92, 193, 31);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 18px;
+}
+.wrapper .container .inner .content .editProfile .forms .form li .change .languageSelect button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3px;
+  border: none;
+  background: transparent;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.wrapper .container .inner .content .editProfile .forms .form li .change .languageSelect button img {
+  width: 27px;
+}
+.wrapper .container .inner .content .editProfile .forms .form li .change .languageSelect button span {
+  color: #fff;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+}
+.wrapper .container .inner .content .editProfile .forms .form li .change .languageSelect button .select {
+  padding-bottom: 3px;
+  border-bottom: 1px solid #fff;
+}
+.wrapper .container .inner .content .editProfile .forms .form li .change .popupDelete {
+  padding: 17px 10px;
+  border-radius: 6px;
+  background: rgb(255, 255, 255);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.wrapper .container .inner .content .editProfile .forms .form li .change .popupDelete h4 {
+  color: rgb(92, 193, 31);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.wrapper .container .inner .content .editProfile .forms .form li .change .popupDelete p {
+  color: rgb(92, 193, 31);
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+}
+.wrapper .container .inner .content .editProfile .forms .form li .change .popupDelete .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+.wrapper .container .inner .content .editProfile .forms .form li .change .popupDelete .btns button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  border: 1px solid rgb(92, 193, 31);
+  border-radius: 3px;
+  background: rgb(92, 193, 31);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  width: 85px;
+  height: 30px;
+}
+.wrapper .container .inner .content .editProfile .forms .form li .change .popupDelete .btns button:last-child {
+  border: 1px solid rgb(64, 64, 64);
+  background: rgb(64, 64, 64);
 }
 .wrapper .container .inner .content .editProfile .forms .form .changeLi {
   -webkit-box-align: start;
@@ -177,28 +313,112 @@
           align-items: start;
 }
 .wrapper .container .inner .content .editProfile .buttons {
-  margin-top: 92px;
+  margin-top: 40px;
   padding: 0 55px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  gap: 20px;
+}
+.wrapper .container .inner .content .editProfile .buttons button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.wrapper .container .inner .content .editProfile .buttons button {
+  cursor: pointer;
   width: 249px;
   height: 42px;
   border-radius: 6px;
   background: #5CC11F;
   border: none;
   color: #000;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+.wrapper .container .inner .content .editProfile .buttons .popupDelete {
+  padding: 17px 10px;
+  border-radius: 6px;
+  background: rgb(255, 255, 255);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.wrapper .container .inner .content .editProfile .buttons .popupDelete h4 {
+  color: rgb(92, 193, 31);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.wrapper .container .inner .content .editProfile .buttons .popupDelete p {
+  color: rgb(92, 193, 31);
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+}
+.wrapper .container .inner .content .editProfile .buttons .popupDelete .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+.wrapper .container .inner .content .editProfile .buttons .popupDelete .btns button, .wrapper .container .inner .content .editProfile .buttons .popupDelete .btns a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  border: 1px solid rgb(92, 193, 31);
+  border-radius: 3px;
+  background: rgb(92, 193, 31);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  width: 85px;
+  height: 30px;
+}
+.wrapper .container .inner .content .editProfile .buttons .popupDelete .btns a {
+  border: 1px solid rgb(64, 64, 64);
+  background: rgb(64, 64, 64);
 }

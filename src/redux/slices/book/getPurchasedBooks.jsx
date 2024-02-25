@@ -1,18 +1,17 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
 
-import API_URLS from '../../../config/api';
 import { api } from '../../../components/helpers/interceptors';
+import API_URLS from '../../../config/api';
 
-const api_url = API_URLS.favoriteBooks;
+const api_url = API_URLS.purchased_books;
 
-export const getFavoriteBooks = createAsyncThunk(
-  'getFavoriteBooks',
+export const getPurchasedBooks = createAsyncThunk(
+  'getPurchasedBooks',
   async (_, { rejectWithValue }) => {
     try {
       const response = await api.get(api_url);
       const data = response.data;
-      return data.user;
+      return data;
     } catch (error) {
       if (error.response && error.response.data && error.response.data.error) {
         return rejectWithValue(error.response.data.error);
@@ -29,21 +28,26 @@ const initialState = {
   error: false,
 };
 
-const getFavoriteBooksSlice = createSlice({
-  name: 'getFavoriteBooks',
+const getPurchasedBooksSlice = createSlice({
+  name: 'PurchasedBooksSlice',
   initialState,
+  reducers: {
+    clearDataPurchasedBooks: (state, action) => {
+      state.data = [];
+    },
+  },
   extraReducers: (builder) => {
-    builder.addCase(getFavoriteBooks.fulfilled, (state, action) => {
+    builder.addCase(getPurchasedBooks.fulfilled, (state, action) => {
       state.data = action.payload;
       state.loading = false;
       state.error = false;
     });
-    builder.addCase(getFavoriteBooks.pending, (state) => {
+    builder.addCase(getPurchasedBooks.pending, (state) => {
       state.data = [];
       state.loading = true;
       state.error = false;
     });
-    builder.addCase(getFavoriteBooks.rejected, (state, action) => {
+    builder.addCase(getPurchasedBooks.rejected, (state, action) => {
       state.data = [];
       state.loading = false;
       state.error = action.error.message;
@@ -51,4 +55,5 @@ const getFavoriteBooksSlice = createSlice({
   },
 });
 
-export default getFavoriteBooksSlice.reducer;
+export const { clearDataPurchasedBooks } = getPurchasedBooksSlice.actions;
+export default getPurchasedBooksSlice.reducer;

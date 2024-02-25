@@ -2,17 +2,16 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 import API_URLS from '../../../config/api';
-import { api } from '../../../components/helpers/interceptors';
 
-const api_url = API_URLS.addFavoriteBook;
+const api = API_URLS.recommendedBooks;
 
-export const postFavoriteBook = createAsyncThunk(
-  'postFavoriteBook',
-  async (id, { rejectWithValue }) => {
+export const getRecommendedBooks = createAsyncThunk(
+  'getRecommendedBooks',
+  async (_, { rejectWithValue }) => {
     try {
-      const response = await api.post(api_url + '/' + id);
+      const response = await axios.get(api);
       const data = response.data;
-      return data.user;
+      return data;
     } catch (error) {
       if (error.response && error.response.data && error.response.data.error) {
         return rejectWithValue(error.response.data.error);
@@ -29,21 +28,26 @@ const initialState = {
   error: false,
 };
 
-const postFavoriteBookSlice = createSlice({
-  name: 'postFavoriteBook',
+const getRecommendedBooksSlice = createSlice({
+  name: 'RecommendedBooksSlice',
   initialState,
+  reducers: {
+    clearDataRecommended: (state, action) => {
+      state.data = [];
+    },
+  },
   extraReducers: (builder) => {
-    builder.addCase(postFavoriteBook.fulfilled, (state, action) => {
+    builder.addCase(getRecommendedBooks.fulfilled, (state, action) => {
       state.data = action.payload;
       state.loading = false;
       state.error = false;
     });
-    builder.addCase(postFavoriteBook.pending, (state) => {
+    builder.addCase(getRecommendedBooks.pending, (state) => {
       state.data = [];
       state.loading = true;
       state.error = false;
     });
-    builder.addCase(postFavoriteBook.rejected, (state, action) => {
+    builder.addCase(getRecommendedBooks.rejected, (state, action) => {
       state.data = [];
       state.loading = false;
       state.error = action.error.message;
@@ -51,4 +55,5 @@ const postFavoriteBookSlice = createSlice({
   },
 });
 
-export default postFavoriteBookSlice.reducer;
+export const { clearDataRecommended } = getRecommendedBooksSlice.actions;
+export default getRecommendedBooksSlice.reducer;

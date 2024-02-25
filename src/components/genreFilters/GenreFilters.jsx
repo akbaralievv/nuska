@@ -2,12 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './GenreFilters.module.css';
-import { getGenres } from '../../redux/slices/getGenres';
+import { clearDataGenres, getGenres } from '../../redux/slices/getGenres';
 import { getBooks } from '../../redux/slices/book/getBooks';
+import { getNewbooks } from '../../redux/slices/book/getNewbooks';
+import { getBestsellingBooks } from '../../redux/slices/book/getBestsellingBooks';
 
 function GenreFilters() {
   const { jenres, loading, error } = useSelector((state) => state.getGenres);
-  const { currentThemeColor } = useSelector((state) => state.changeTheme.theme);
+  const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
 
   const [activeGenre, setActiveGenre] = useState(null);
 
@@ -16,6 +18,9 @@ function GenreFilters() {
 
   useEffect(() => {
     dispatch(getGenres());
+    return () => {
+      dispatch(clearDataGenres());
+    };
   }, [dispatch]);
 
   useEffect(() => {
@@ -27,6 +32,8 @@ function GenreFilters() {
       ) {
         setActiveGenre(null);
         dispatch(getBooks(null));
+        dispatch(getNewbooks(null));
+        dispatch(getBestsellingBooks(null));
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -40,11 +47,15 @@ function GenreFilters() {
     e.preventDefault();
     setActiveGenre(genre);
     dispatch(getBooks(genre));
+    dispatch(getNewbooks(genre));
+    dispatch(getBestsellingBooks(genre));
   };
 
   return (
     <div className={styles.wrapper}>
-      <ul className={styles.genreFilters} ref={genreFiltersRef}>
+      <ul
+        className={`${styles.genreFilters} ${key === 'dark' ? styles.darkTheme : ''}`}
+        ref={genreFiltersRef}>
         {jenres?.map((genre) => (
           <li key={genre.id} className={activeGenre === genre.id ? styles.active : ''}>
             <a href="#" onClick={(e) => handleGenreClick(genre.id, e)} style={currentThemeColor}>

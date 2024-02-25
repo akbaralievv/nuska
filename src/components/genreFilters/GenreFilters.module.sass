@@ -15,16 +15,18 @@
         align-items: center
         overflow: auto
         overflow-y: hidden
-        scrollbar-width: none
         &::-webkit-scrollbar
             width: 2px
             height: 10px
             border-radius: 10px
         &::-webkit-scrollbar-track
-            background: rgba(0, 0, 0, 0.1)
-        &::-webkit-scrollbar-thumb
-            background: #888
+            background: rgba(0, 0, 0, 0.15)
             border-radius: 10px
+            cursor: pointer
+        &::-webkit-scrollbar-thumb
+            background: #7d7d7d
+            border-radius: 10px
+            cursor: pointer
         &::-webkit-scrollbar-thumb:hover
             background: #555
         li
@@ -47,3 +49,16 @@
         .active
             border-radius: 10px
             background: #53A32E
+    .darkTheme
+        &::-webkit-scrollbar
+            width: 2px
+            height: 10px
+            border-radius: 10px
+        &::-webkit-scrollbar-track
+            background: rgba(0, 0, 0, 0.3)
+            border-radius: 10px
+        &::-webkit-scrollbar-thumb
+            background: #888
+            border-radius: 10px
+        &::-webkit-scrollbar-thumb:hover
+            background: #6d6d6d

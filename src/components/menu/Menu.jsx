@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './Menu.module.css';
 
 import account from '../../assets/icons/menu/account.svg';
-import language from '../../assets/icons/menu/language.svg';
+import author from '../../assets/icons/menu/authorIcon.svg';
 import books from '../../assets/icons/menu/books.svg';
 import wishlist from '../../assets/icons/menu/wishlist.svg';
 import about from '../../assets/icons/menu/about.svg';
@@ -83,12 +83,6 @@ function Menu() {
                 <span>Аккаунт</span>
               </NavLink>
             </li>
-            {/* <li>
-              <NavLink>
-                <img src={language} alt="language" />
-                <span>Choose another language</span>
-              </NavLink>
-            </li> */}
             <li>
               <NavLink to="/myBooks" onClick={() => dispatch(setIsOpenMenu(false))}>
                 <img src={books} alt="books" />
@@ -99,6 +93,12 @@ function Menu() {
               <NavLink to="/myWishlist" onClick={() => dispatch(setIsOpenMenu(false))}>
                 <img src={wishlist} alt="wishlist" />
                 <span>Тандалгандар</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/authorBooks" onClick={() => dispatch(setIsOpenMenu(false))}>
+                <img src={author} alt="authorBooks" />
+                <span>Авторлугум</span>
               </NavLink>
             </li>
           </nav>

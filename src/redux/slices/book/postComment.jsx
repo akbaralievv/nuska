@@ -7,10 +7,10 @@ const api_url = API_URLS.createComment;
 
 export const postComment = createAsyncThunk(
   'postComment',
-  async ({ id, string }, { rejectWithValue }) => {
+  async ({ id, commentValue }, { rejectWithValue }) => {
     try {
-      const response = await api.post(api_url + id, {
-        comment: string,
+      const response = await api.post(api_url + id + '/', {
+        comment: commentValue,
       });
       const data = response.data;
       return data;

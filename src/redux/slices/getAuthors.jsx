@@ -24,6 +24,11 @@ const initialState = {
 const getAuthorsSlice = createSlice({
   name: 'getAuthors',
   initialState,
+  reducers: {
+    clearDataAuthors: (state, action) => {
+      state.data = [];
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getAuthors.fulfilled, (state, action) => {
       state.authors = action.payload;
@@ -43,4 +48,5 @@ const getAuthorsSlice = createSlice({
   },
 });
 
+export const { clearDataAuthors } = getAuthorsSlice.actions;
 export default getAuthorsSlice.reducer;

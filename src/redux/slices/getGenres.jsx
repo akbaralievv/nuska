@@ -24,6 +24,11 @@ const initialState = {
 const getGenresSlice = createSlice({
   name: 'getGenres',
   initialState,
+  reducers: {
+    clearDataGenres: (state, action) => {
+      state.data = [];
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getGenres.fulfilled, (state, action) => {
       state.jenres = action.payload;
@@ -43,4 +48,5 @@ const getGenresSlice = createSlice({
   },
 });
 
+export const { clearDataGenres } = getGenresSlice.actions;
 export default getGenresSlice.reducer;
