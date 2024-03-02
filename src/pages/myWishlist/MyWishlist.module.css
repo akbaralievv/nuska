@@ -1,50 +1,114 @@
 .wrapper {
-  margin: 96px 0;
+  margin: 61px 0 96px;
 }
 .wrapper .container {
   width: 1180px;
   margin: 0 auto;
 }
 .wrapper .container .inner {
+  position: relative;
+}
+.wrapper .container .inner .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .container .inner .header > span {
+  color: #5CC11F;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.wrapper .container .inner .nothing {
+  margin-top: 96px;
+}
+.wrapper .container .inner .nothing h2 {
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.wrapper .container .inner .nothing hr {
+  border: none;
+  border: 1px solid #5CC11F;
+}
+.wrapper .container .inner h2 {
+  margin: 25px 0;
+  color: #000;
+  font-family: "Montserrat", sans-serif, sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.wrapper .container .inner > .content {
+  margin-top: 96px;
+}
+.wrapper .container .inner .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 50px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  min-height: calc(100vh - 594px);
 }
-.wrapper .container .inner .book {
+.wrapper .container .inner .content .book {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 53px;
+  height: 285px;
 }
-.wrapper .container .inner .book .image {
+.wrapper .container .inner .content .book .image {
   width: 180px;
 }
-.wrapper .container .inner .book .image img {
+.wrapper .container .inner .content .book .image img {
   width: 100%;
   height: 100%;
 }
-.wrapper .container .inner .book .title h3 {
+.wrapper .container .inner .content .book .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .container .inner .content .book .title h3 {
   width: 290px;
   color: #FFF;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
-.wrapper .container .inner .book .title p {
+.wrapper .container .inner .content .book .title p {
   color: #FFF;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
-  margin: 40px 0 47px;
 }
-.wrapper .container .inner .book .title .footer {
+.wrapper .container .inner .content .book .title .footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,20 +117,21 @@
           align-items: center;
   gap: 62px;
 }
-.wrapper .container .inner .book .title .footer span {
+.wrapper .container .inner .content .book .title .footer span {
   width: 98px;
   color: #636363;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
 }
-.wrapper .container .inner .book .title .footer button {
+.wrapper .container .inner .content .book .title .footer a, .wrapper .container .inner .content .book .title .footer button {
   border-radius: 6px;
   border: 1px solid #5CC11F;
+  background: #5CC11F;
   width: 130px;
-  height: 47px;
+  padding: 6px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -76,16 +141,19 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 3px;
   color: #FFF;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
 }
-.wrapper .container .inner .book .title .footer button img {
-  width: 23px;
-  height: 25px;
+.wrapper .container .inner .content .nothing {
+  font-family: "Montserrat", sans-serif, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }

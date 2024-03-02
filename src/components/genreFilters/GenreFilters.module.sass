@@ -1,29 +1,64 @@
-.genreFilters
-    list-style: none
-    display: flex
-    justify-content: space-between
-    align-items: center
-    width: 850px
-    height: 80px
-    border-radius: 10px
-    background: rgba(83, 163, 46, 0.20)
+.wrapper
+    border-radius: 12px
+    background: rgba(187, 187, 187, 0.30)
+    width: 913px
+    height: 90px
     margin: 98px auto 40px
     padding: 0 17px
-    li
+    display: flex
+    align-items: center
+    .genreFilters
         height: 100%
+        list-style: none
         display: flex
-        padding: 0 8px
-        justify-content: center
+        justify-content: space-between
         align-items: center
-        a
-            color: #FFF
-            font-family: Montserrat, sans-serif
-            font-size: 26px
-            font-style: normal
-            font-weight: 300
-            line-height: normal
+        overflow: auto
+        overflow-y: hidden
+        &::-webkit-scrollbar
+            width: 2px
+            height: 10px
+            border-radius: 10px
+        &::-webkit-scrollbar-track
+            background: rgba(0, 0, 0, 0.15)
+            border-radius: 10px
             cursor: pointer
-            text-decoration: none
-    .active
-        border-radius: 10px
-        background: #53A32E
+        &::-webkit-scrollbar-thumb
+            background: #7d7d7d
+            border-radius: 10px
+            cursor: pointer
+        &::-webkit-scrollbar-thumb:hover
+            background: #555
+        li
+            height: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 0 8px
+            a
+                color: #000
+                font-family: 'Montserrat',sans-serif
+                font-size: 26px
+                font-style: normal
+                font-weight: 300
+                line-height: normal
+                cursor: pointer
+                text-decoration: none
+        .genreSpacer
+            width: 17px
+        .active
+            border-radius: 10px
+            background: #53A32E
+    .darkTheme
+        &::-webkit-scrollbar
+            width: 2px
+            height: 10px
+            border-radius: 10px
+        &::-webkit-scrollbar-track
+            background: rgba(0, 0, 0, 0.3)
+            border-radius: 10px
+        &::-webkit-scrollbar-thumb
+            background: #888
+            border-radius: 10px
+        &::-webkit-scrollbar-thumb:hover
+            background: #6d6d6d

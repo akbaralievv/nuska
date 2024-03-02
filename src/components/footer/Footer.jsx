@@ -3,8 +3,10 @@ import React from 'react';
 import playMarket from '../../assets/images/play market.png';
 
 import styles from './Footer.module.css';
+import { useSelector } from 'react-redux';
 
 function Footer() {
+  const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -12,42 +14,32 @@ function Footer() {
           <div className={styles.genreFilters}>
             <nav className={styles.nav}>
               <li>
-                <h3>Жанры</h3>
+                <h3>Жанрлар</h3>
               </li>
               <li>
-                <a href="">Триллер</a>
+                <a href="" style={currentThemeColor}>
+                  Триллер
+                </a>
               </li>
               <li>
-                <a href="">Хоррор</a>
+                <a href="" style={currentThemeColor}>
+                  Хоррор
+                </a>
               </li>
               <li>
-                <a href="">Драма</a>
+                <a href="" style={currentThemeColor}>
+                  Драма
+                </a>
               </li>
               <li>
-                <a href="">Еще драма</a>
+                <a href="" style={currentThemeColor}>
+                  Жаны
+                </a>
               </li>
               <li>
-                <a href="">И хоррор</a>
-              </li>
-            </nav>
-            <nav className={styles.nav}>
-              <li>
-                <h3>Жанры</h3>
-              </li>
-              <li>
-                <a href="">Триллер</a>
-              </li>
-              <li>
-                <a href="">Хоррор</a>
-              </li>
-              <li>
-                <a href="">Драма</a>
-              </li>
-              <li>
-                <a href="">Еще драма</a>
-              </li>
-              <li>
-                <a href="">И хоррор</a>
+                <a href="" style={currentThemeColor}>
+                  Сунуштоо
+                </a>
               </li>
             </nav>
           </div>
@@ -55,13 +47,17 @@ function Footer() {
             <a href="" className={styles.playMarket}>
               <img src={playMarket} alt="playMarket" />
               <div className={styles.text}>
-                <p>Get it on</p>
-                <h4>Google Play</h4>
+                <p style={currentThemeColor}>Жүктөп алуу үчүн</p>
+                <h4 style={currentThemeColor}>Google Play</h4>
               </div>
             </a>
             <div className={styles.footer}>
-              <a href="">Тех. поддержка: nuska@book.kg</a>
-              <a href="">Privacy & Policy</a>
+              <a href="" style={currentThemeColor}>
+                Тех. колдоо: nuska@book.kg
+              </a>
+              <a href="" style={currentThemeColor}>
+                Купуялык & саясат
+              </a>
             </div>
           </div>
         </div>

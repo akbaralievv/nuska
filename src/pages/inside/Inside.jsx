@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import BurgerMenu from '../../components/burgerMenu/BurgerMenu';
@@ -6,11 +6,18 @@ import BurgerMenu from '../../components/burgerMenu/BurgerMenu';
 import styles from './Inside.module.css';
 import zoomIn from '../../assets/icons/inside/zoom in.svg';
 import zoomOut from '../../assets/icons/inside/zoom out.svg';
+import zoomInLight from '../../assets/icons/inside/zoom-in light.svg';
+import zoomOutLight from '../../assets/icons/inside/zoom-out light.svg';
 import bookmark from '../../assets/icons/inside/bookmark.svg';
 import favoriteDet from '../../assets/icons/detail/favoriteDet.svg';
 import Menu from '../../components/menu/Menu';
+import { useSelector } from 'react-redux';
 
 function Inside() {
+  const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <main className={styles.wrapper}>
       <div className={styles.container}>
@@ -21,21 +28,25 @@ function Inside() {
             <div className={styles.zoom}>
               <div className={styles.zooms}>
                 <div className={styles.zooms_inner}>
-                  <img src={zoomIn} alt="zoomIn" />
-                  <p>Zoom in</p>
+                  <img src={key === 'dark' ? zoomIn : zoomInLight} alt="zoomIn" />
+                  <p style={currentThemeColor}>Zoom in</p>
                 </div>
                 <div className={styles.zooms_inner}>
-                  <img src={zoomOut} alt="zoomOut" />
-                  <p>Zoom out</p>
+                  <img src={key === 'dark' ? zoomOut : zoomOutLight} alt="zoomOut" />
+                  <p style={currentThemeColor}>Zoom out</p>
                 </div>
               </div>
               <div className={styles.bookmark}>
                 <img src={bookmark} alt="bookmark" />
               </div>
-              <p className={styles.count}>4/215</p>
+              <p className={styles.count} style={currentThemeColor}>
+                4/215
+              </p>
             </div>
             <nav className={styles.navbar}>
-              <NavLink className={styles.buy}>Buy this book</NavLink>
+              <NavLink className={styles.buy} style={currentThemeColor}>
+                Buy this book
+              </NavLink>
               <button className={styles.add}>
                 <img src={favoriteDet} alt="favoriteDet" />
                 <span>Add to wishlist</span>
@@ -44,7 +55,7 @@ function Inside() {
           </header>
           <section className={styles.content}>
             <div className={styles.reader}>
-              <p>
+              <p style={currentThemeColor}>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
@@ -64,7 +75,7 @@ function Inside() {
                 mollit anim id est laborum."
               </p>
               <hr />
-              <p>
+              <p style={currentThemeColor}>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
@@ -86,12 +97,12 @@ function Inside() {
             </div>
             <div className={styles.paginate}>
               <div className={styles.previous}>
-                <button>Previous page</button>
+                <button style={currentThemeColor}>Previous page</button>
                 <p>3</p>
               </div>
               <div className={styles.next}>
                 <p>4</p>
-                <button>Next page</button>
+                <button style={currentThemeColor}>Next page</button>
               </div>
             </div>
           </section>

@@ -1,0 +1,81 @@
+.input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+}
+
+.container {
+  width: 1180px;
+  margin: 110px auto;
+}
+
+.form {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  margin: 120px auto 80px;
+}
+.form .dateCVC {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.form input {
+  border: none;
+  outline: none;
+  padding: 15px;
+  border-radius: 8px;
+  width: 290px;
+}
+.form .dateCVC {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 290px;
+}
+.form .dateCVC input {
+  width: 130px;
+}
+.form .error {
+  color: red;
+}
+.form .btnSubmit {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background: #5CC11F;
+  color: black;
+  padding: 15px;
+  border-radius: 8px;
+  width: 290px;
+  cursor: pointer;
+  font-size: 18px;
+}

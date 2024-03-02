@@ -1,18 +1,8 @@
-.walpaper {
-  width: 100%;
-  height: 100vh;
-  min-height: 400px;
-  top: 70px;
-  position: fixed;
-  background: transparent;
-  z-index: 2;
-}
-
 .wrapper {
   display: none;
   width: 500px;
   height: 1024px;
-  background: #262626;
+  background: #595959;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -21,6 +11,10 @@
   top: -70px;
   z-index: 10;
   padding-top: 70px;
+  padding-bottom: 133px;
+}
+.wrapper.locationInside {
+  top: -68px;
 }
 .wrapper .inner {
   display: -webkit-box;
@@ -40,7 +34,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 381px;
+  height: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .wrapper .inner .navbar .nav {
   display: -webkit-box;
@@ -52,6 +49,20 @@
           flex-direction: column;
   list-style: none;
   gap: 24px;
+}
+.wrapper .inner .navbar .nav li {
+  width: 327px;
+  padding: 8px 5px;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .inner .navbar .nav li:hover {
+  background: rgba(34, 34, 34, 0.5);
 }
 .wrapper .inner .navbar .nav a {
   text-decoration: none;
@@ -69,7 +80,7 @@
 }
 .wrapper .inner .navbar .nav a span {
   color: #FFF;
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;

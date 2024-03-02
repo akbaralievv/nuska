@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #636363;
+}
+
+.rccs__card--unknown > div {
+  background: linear-gradient(25deg, #999, #999);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}

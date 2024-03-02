@@ -1,0 +1,233 @@
+.wrapper {
+  margin: 0 0 117px;
+}
+.wrapper .container {
+  width: 1180px;
+  margin: 0 auto;
+}
+.wrapper .container .inner .home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.wrapper .container .inner .home .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 597px;
+}
+.wrapper .container .inner .home .title p {
+  color: #FFF;
+  font-family: "Montserrat", sans-serif, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.wrapper .container .inner .home .title .text h2 {
+  color: #FFF;
+  font-family: "Montserrat", sans-serif, sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 478px;
+}
+.wrapper .container .inner .home .title .infoNumbers .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 23px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 40px;
+}
+.wrapper .container .inner .home .title .infoNumbers .buttons a {
+  text-decoration: none;
+}
+.wrapper .container .inner .home .title .infoNumbers .buttons button, .wrapper .container .inner .home .title .infoNumbers .buttons a {
+  width: 172.5px;
+  height: 46px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 6.9px;
+  border: 1.15px solid #5CC11F;
+  background: #5CC11F;
+  color: #5CC11F;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18.4px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  gap: 5px;
+  cursor: pointer;
+}
+.wrapper .container .inner .home .title .infoNumbers .buttons button img, .wrapper .container .inner .home .title .infoNumbers .buttons a img {
+  width: 13px;
+  height: 16px;
+}
+.wrapper .container .inner .home .title .infoNumbers .buttons .green {
+  background: #5CC11F;
+  color: #FFF;
+}
+.wrapper .container .inner .home .title .infoNumbers_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .container .inner .home .title .infoNumbers .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5.85px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .container .inner .home .title .infoNumbers .info img {
+  width: 33px;
+  height: 50.5px;
+}
+.wrapper .container .inner .home .title .infoNumbers .info p {
+  color: #FFF;
+  font-family: "Montserrat", sans-serif, sans-serif;
+  font-size: 24.822px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.wrapper .container .inner .home .title .infoNumbers .info span {
+  color: #F90;
+  font-family: "Montserrat", sans-serif, sans-serif;
+  font-size: 41.369px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.wrapper .container .inner .home .image {
+  width: 290px;
+}
+.wrapper .container .inner .home .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+.wrapper .container .inner .about {
+  margin-top: 140px;
+}
+.wrapper .container .inner .about h3 {
+  color: #F90;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.wrapper .container .inner .about .this .aboutBook p {
+  color: #FFF;
+  font-family: "Montserrat", sans-serif;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 39px;
+  text-align: justify;
+}
+.wrapper .container .inner .about .salesInfo {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .container .inner .about .salesInfo .content {
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 25px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style: none;
+  width: 80%;
+}
+.wrapper .container .inner .about .salesInfo .content > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  width: 20%;
+}
+.wrapper .container .inner .about .salesInfo .content > li p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+}
+.wrapper .container .inner .about .salesInfo .content ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+.wrapper .container .inner .about .salesInfo .content ul li {
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+}

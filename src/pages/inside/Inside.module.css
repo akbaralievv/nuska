@@ -15,6 +15,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
 }
 .wrapper .container .inner .header .zoom {
   border-radius: 10px;
@@ -57,7 +58,7 @@
 }
 .wrapper .container .inner .header .zooms_inner p {
   color: #FFF;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 18.4px;
   font-style: normal;
   font-weight: 500;
@@ -76,7 +77,7 @@
 }
 .wrapper .container .inner .header .zoom .count {
   color: #FFF;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 18.4px;
   font-style: normal;
   font-weight: 500;
@@ -109,7 +110,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 18.4px;
   font-style: normal;
   font-weight: 500;
@@ -145,7 +146,7 @@
 .wrapper .container .inner .content .reader p {
   width: 542px;
   color: #FFF;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -194,7 +195,7 @@
   border-radius: 5px;
   background: #5CC11F;
   color: #FFF;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -202,7 +203,7 @@
 }
 .wrapper .container .inner .content .paginate .previous p, .wrapper .container .inner .content .paginate .next p {
   color: #5CC11F;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
