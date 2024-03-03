@@ -37,12 +37,21 @@ function BookLists() {
 
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
 
+  const { isActiveJenres } = useSelector((state) => state.getGenres);
+
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getBooks());
-    dispatch(getBestsellingBooks());
-    dispatch(getNewbooks());
+    if (isActiveJenres) {
+      dispatch(getBooks(isActiveJenres));
+      dispatch(getBestsellingBooks(isActiveJenres));
+      dispatch(getNewbooks(isActiveJenres));
+    } else {
+      dispatch(getBooks());
+      dispatch(getBestsellingBooks());
+      dispatch(getNewbooks());
+    }
     return () => {
       dispatch(clearDataBestsellingBooks());
       dispatch(clearDataBooks());

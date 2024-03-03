@@ -1,7 +1,6 @@
 .wrapper {
   border-radius: 12px;
   background: rgba(187, 187, 187, 0.3);
-  width: 913px;
   height: 90px;
   margin: 98px auto 40px;
   padding: 0 17px;
@@ -11,6 +10,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  max-width: 1200px;
 }
 .wrapper .genreFilters {
   height: 100%;
@@ -26,10 +26,11 @@
           align-items: center;
   overflow: auto;
   overflow-y: hidden;
+  padding: 8px 0px;
 }
 .wrapper .genreFilters::-webkit-scrollbar {
   width: 2px;
-  height: 10px;
+  height: 8px;
   border-radius: 10px;
 }
 .wrapper .genreFilters::-webkit-scrollbar-track {
@@ -56,7 +57,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 8px;
+  padding: 0 25px;
 }
 .wrapper .genreFilters li a {
   color: #000;

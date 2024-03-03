@@ -3,10 +3,33 @@ import React from 'react';
 import playMarket from '../../assets/images/play market.png';
 
 import styles from './Footer.module.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeIsActiveJenres, getGenres } from '../../redux/slices/getGenres';
+import { useNavigate } from 'react-router-dom';
+import getBooks from '../../redux/slices/book/getBooks';
+import getNewbooks from '../../redux/slices/book/getNewbooks';
+import getBestsellingBooks from '../../redux/slices/book/getBestsellingBooks';
 
 function Footer() {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
+  const { jenres, isActiveJenres} = useSelector((state) => state.getGenres);
+  
+  React.useEffect(() => {
+    dispatch(getGenres())
+  }, [])
+   
+  const clickCateg =(e, genre)=> {
+    e.preventDefault();
+    navigate("/")
+    setTimeout(() => {
+      dispatch(changeIsActiveJenres(genre));
+      dispatch(getBooks(genre));
+      dispatch(getNewbooks(genre));
+      dispatch(getBestsellingBooks(genre));
+    }, 1000);
+  }
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -16,31 +39,13 @@ function Footer() {
               <li>
                 <h3>Жанрлар</h3>
               </li>
-              <li>
-                <a href="" style={currentThemeColor}>
-                  Триллер
-                </a>
-              </li>
-              <li>
-                <a href="" style={currentThemeColor}>
-                  Хоррор
-                </a>
-              </li>
-              <li>
-                <a href="" style={currentThemeColor}>
-                  Драма
-                </a>
-              </li>
-              <li>
-                <a href="" style={currentThemeColor}>
-                  Жаны
-                </a>
-              </li>
-              <li>
-                <a href="" style={currentThemeColor}>
-                  Сунуштоо
-                </a>
-              </li>
+              {jenres?.slice(0,5)?.map((categ)=>
+                <li key={categ?.id} onClick={((e)=> clickCateg(e,categ?.id))}>
+                  <a style={currentThemeColor}>
+                    {categ?.name}
+                  </a>
+                </li>
+              )}
             </nav>
           </div>
           <div className={styles.infoLinks}>

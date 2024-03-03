@@ -100,6 +100,10 @@ function MyAccount() {
     }
   };
 
+  const deleteAccountUser =()=>{
+    
+  }
+
   useEffect(() => {
     if (!getRefreshToken()) {
       dispatch(setIsOpenModal(true));
@@ -243,7 +247,7 @@ function MyAccount() {
                         {changeAcc.deleteAccount ? (
                           <div className={styles.popupDelete}>
                             <h4>Аккаунтту жок кылуу?</h4>
-                            <p>Аккаунтту жок кылууга макулсузбу?</p>
+                            <p onClick={deleteAccountUser}>Аккаунтту жок кылууга макулсузбу?</p>
                             <div className={styles.btns}>
                               <button onClick={handleClickDeleteAcc}>Баш тартуу</button>
                               <button
