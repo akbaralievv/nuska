@@ -1,7 +1,7 @@
 .wrapper {
   border-radius: 12px;
   background: rgba(187, 187, 187, 0.3);
-  width: 913px;
+  width: 1200px;
   height: 90px;
   margin: 98px auto 40px;
   padding: 0 17px;
@@ -46,7 +46,6 @@
   background: #555;
 }
 .wrapper .genreFilters li {
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,7 +55,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 8px;
+  padding: 4px 30px 6px;
 }
 .wrapper .genreFilters li a {
   color: #000;
@@ -74,6 +73,9 @@
 .wrapper .genreFilters .active {
   border-radius: 10px;
   background: #53A32E;
+}
+.wrapper .genreFilters .active a {
+  color: white !important;
 }
 .wrapper .darkTheme::-webkit-scrollbar {
   width: 2px;
