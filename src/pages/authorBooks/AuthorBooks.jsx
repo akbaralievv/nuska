@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import basket from '../../assets/icons/basket.svg';
+import basketBlack from '../../assets/icons/basketBlack.svg';
 import styles from './AuthorBooks.module.css';
 import image from '../../assets/images/detail/imageBook.png';
 import { NavLink } from 'react-router-dom';
@@ -101,10 +102,10 @@ function AuthorBooks() {
                         : 'Чынгыз Айтматов'}
                     </p> */}
                     <div className={styles.footer}>
-                      <span>Сайтка киргизилген датасы {newFormatData(book.created_at)}</span>
-                      <button style={currentThemeColor} onClick={() => favoriteDelete(book.id)}>
-                        Алып салуу <img src={key === 'dark' ? basket : basketBlack} alt="basket" />
-                      </button>
+                      {/* <span>Сайтка киргизилген датасы {newFormatData(book?.created_at)}</span> */}
+                      <NavLink to={`/detail/${book.id}`} style={currentThemeColor}>
+                        Окуу
+                      </NavLink>
                     </div>
                   </div>
                 </li>
@@ -132,7 +133,7 @@ function AuthorBooks() {
                             : 'Чынгыз Айтматов'}
                         </p>
                         <div className={styles.footer}>
-                          <span>Сайтка киргизилген датасы {newFormatData(book.created_at)}</span>
+                          {/* <span>Сайтка киргизилген датасы {newFormatData(book.created_at)}</span> */}
                           <NavLink to={`/detail/${book.id}`} style={currentThemeColor}>
                             Окуу
                           </NavLink>
