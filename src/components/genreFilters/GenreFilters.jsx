@@ -11,7 +11,7 @@ function GenreFilters() {
   const { jenres, loading, error } = useSelector((state) => state.getGenres);
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
 
-  const [activeGenre, setActiveGenre] = useState(null);
+  const [activeGenre, setActiveGenre] = useState(0);
 
   const dispatch = useDispatch();
   const genreFiltersRef = useRef(null);
@@ -28,12 +28,12 @@ function GenreFilters() {
       if (
         genreFiltersRef.current &&
         !genreFiltersRef.current.contains(event.target) &&
-        activeGenre !== null
+        activeGenre !== 0
       ) {
-        setActiveGenre(null);
-        dispatch(getBooks(null));
-        dispatch(getNewbooks(null));
-        dispatch(getBestsellingBooks(null));
+        // setActiveGenre(null);
+        // dispatch(getBooks(null));
+        // dispatch(getNewbooks(null));
+        // dispatch(getBestsellingBooks(null));
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -56,6 +56,7 @@ function GenreFilters() {
       <ul
         className={`${styles.genreFilters} ${key === 'dark' ? styles.darkTheme : ''}`}
         ref={genreFiltersRef}>
+        <li className={activeGenre === 0 ? styles.active : ''}><a href="#" onClick={(e) => handleGenreClick(0, e)} style={currentThemeColor}>Все</a></li>
         {jenres?.map((genre) => (
           <li key={genre.id} className={activeGenre === genre.id ? styles.active : ''}>
             <a href="#" onClick={(e) => handleGenreClick(genre.id, e)} style={currentThemeColor}>

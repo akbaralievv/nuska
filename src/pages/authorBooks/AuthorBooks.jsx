@@ -95,11 +95,11 @@ function AuthorBooks() {
                   </NavLink>
                   <div className={styles.title}>
                     <h3 style={currentThemeColor}>{book.name ?? 'Кылым карытар бир күн'}</h3>
-                    <p style={currentThemeColor}>
+                    {/* <p style={currentThemeColor}>
                       {book.author[0].first_name || book.author[0].last_name
                         ? `${book.author[0].first_name} ${book.author[0].last_name}`
                         : 'Чынгыз Айтматов'}
-                    </p>
+                    </p> */}
                     <div className={styles.footer}>
                       <span>Сайтка киргизилген датасы {newFormatData(book.created_at)}</span>
                       <button style={currentThemeColor} onClick={() => favoriteDelete(book.id)}>

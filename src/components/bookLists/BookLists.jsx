@@ -157,7 +157,7 @@ function BookLists() {
             </Slider>
           </section>
           <section className={styles.catalog}>
-            <h2 style={currentThemeColor}>Жанылар</h2>
+            <h2 style={currentThemeColor}>Жаңылар</h2>
             <Slider {...settingsNewbooks}>
               {loading
                 ? skeletonBooks
