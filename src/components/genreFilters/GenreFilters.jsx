@@ -26,12 +26,12 @@ function GenreFilters() {
       if (
         genreFiltersRef.current &&
         !genreFiltersRef.current.contains(event.target) &&
-        activeGenre !== null
+        isActiveJenres !== 0
       ) {
-        dispatch(changeIsActiveJenres(null));
-        dispatch(getBooks(null));
-        dispatch(getNewbooks(null));
-        dispatch(getBestsellingBooks(null));
+        // dispatch(changeIsActiveJenres(null));
+        // dispatch(getBooks(null));
+        // dispatch(getNewbooks(null));
+        // dispatch(getBestsellingBooks(null));
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -54,6 +54,7 @@ function GenreFilters() {
       <ul
         className={`${styles.genreFilters} ${key === 'dark' ? styles.darkTheme : ''}`}
         ref={genreFiltersRef}>
+        <li className={isActiveJenres === 0 ? styles.active : ''}><a href="#" onClick={(e) => handleGenreClick(0, e)} style={currentThemeColor}>Все</a></li>
         {jenres?.map((genre) => (
           <li key={genre.id} className={isActiveJenres === genre.id ? styles.active : ''}>
             <a href="#" onClick={(e) => handleGenreClick(genre.id, e)} style={currentThemeColor}>

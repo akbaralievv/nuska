@@ -3,13 +3,20 @@ import axios from 'axios';
 
 import API_URLS from '../../../config/api';
 import { api } from '../../../components/helpers/interceptors';
+import { setIsLogout, setIsOpenMenu } from '../isTrue';
+import { removeAccessToken, removeRefreshToken } from '../../../components/helpers/tokens';
 
 const api_url = API_URLS.delete_account;
 
-export const deleteAccount = createAsyncThunk('deleteAccount', async (id, { rejectWithValue }) => {
+export const deleteAccount = createAsyncThunk('deleteAccount', async (id, { rejectWithValue, dispatch }) => {
   try {
-    const response = await api.delete(api_url + id);
+    const response = await api.delete(api_url);
     const data = response.data;
+
+    dispatch(setIsOpenMenu(false));
+    dispatch(setIsLogout(true));
+    removeAccessToken();
+    removeRefreshToken();
     return data.user;
   } catch (error) {
     if (error.response && error.response.data && error.response.data.error) {
