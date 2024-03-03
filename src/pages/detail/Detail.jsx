@@ -207,7 +207,7 @@ function Detail() {
               <section className={styles.about}>
                 <div className={styles.this}>
                   <div className={styles.aboutBook}>
-                    <h3>Китеп жонундо</h3>
+                    <h3>Китеп жөнүндө</h3>
                     <p style={currentThemeColor}>{infoData?.description}</p>
                   </div>
                   <div
