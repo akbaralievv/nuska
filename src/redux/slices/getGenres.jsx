@@ -17,6 +17,7 @@ export const getGenres = createAsyncThunk('getGenres', async () => {
 
 const initialState = {
   jenres: [],
+  isActiveJenres: null,
   loading: false,
   error: false,
 };
@@ -27,6 +28,9 @@ const getGenresSlice = createSlice({
   reducers: {
     clearDataGenres: (state, action) => {
       state.data = [];
+    },
+    changeIsActiveJenres: (state, action) => {
+      state.isActiveJenres = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -48,5 +52,5 @@ const getGenresSlice = createSlice({
   },
 });
 
-export const { clearDataGenres } = getGenresSlice.actions;
+export const { clearDataGenres, changeIsActiveJenres } = getGenresSlice.actions;
 export default getGenresSlice.reducer;

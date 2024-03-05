@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -22,10 +22,12 @@ import { setIsLogout, setIsOpenMenu, setIsOpenModal } from '../../redux/slices/i
 import { setTheme } from '../../redux/slices/changeTheme';
 import { removeAccessToken, removeRefreshToken } from '../helpers/tokens';
 import ModalWindow from '../modalWindow/ModalWindow';
+import { isUserAuthenticated } from '../helpers/isUserAuthenticated';
 
 function Menu() {
   const { isOpenMenu, isOpenModal } = useSelector((state) => state.isTrue);
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
+  const [isAuthLog, setIsAuthLog] = useState(isUserAuthenticated());
 
   const location = useLocation();
   const menuRef = useRef(null);
@@ -135,12 +137,15 @@ function Menu() {
                 <span>Жардам & Колдоо</span>
               </NavLink>
             </li>
-            <li>
-              <NavLink to={'/'} onClick={handleClickLogout}>
-                <img src={logout} alt="logout" />
-                <span>Чыгуу</span>
-              </NavLink>
-            </li>
+            {
+              isAuthLog &&
+              <li>
+                <NavLink to={'/'} onClick={handleClickLogout}>
+                  <img src={logout} alt="logout" />
+                  <span>Чыгуу</span>
+                </NavLink>
+              </li>
+            }
           </nav>
         </div>
       </div>

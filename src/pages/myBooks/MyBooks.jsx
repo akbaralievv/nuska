@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import basket from '../../assets/icons/basket.svg';
+import basketBlack from '../../assets/icons/basketBlack.svg';
 import styles from './MyBooks.module.css';
 import image from '../../assets/images/detail/imageBook.png';
 import { NavLink } from 'react-router-dom';
@@ -102,21 +103,21 @@ function MyBooks() {
                 <li className={styles.book} key={book.id}>
                   <NavLink to={`/detail/${book.id}`}>
                     <div className={styles.image}>
-                      <img src={book.cover_image ?? image} alt="image" />
+                      <img src={book.book?.cover_image ?? image} alt="image" />
                     </div>
                   </NavLink>
                   <div className={styles.title}>
-                    <h3 style={currentThemeColor}>{book.name ?? 'Кылым карытар бир күн'}</h3>
-                    <p style={currentThemeColor}>
+                    <h3 style={currentThemeColor}>{book.book?.name ?? 'Кылым карытар бир күн'}</h3>
+                    {/* <p style={currentThemeColor}>
                       {book.author[0].first_name || book.author[0].last_name
                         ? `${book.author[0].first_name} ${book.author[0].last_name}`
                         : 'Чынгыз Айтматов'}
-                    </p>
+                    </p> */}
                     <div className={styles.footer}>
-                      <span>Сайтка киргизилген датасы {newFormatData(book.created_at)}</span>
-                      <button style={currentThemeColor} onClick={() => favoriteDelete(book.id)}>
-                        Алып салуу <img src={key === 'dark' ? basket : basketBlack} alt="basket" />
-                      </button>
+                      <span>Сайтка киргизилген датасы {newFormatData(book.order_date)}</span>
+                      <NavLink to={`/detail/${book.book?.id}`} style={currentThemeColor}>
+                        Окуу
+                      </NavLink>
                     </div>
                   </div>
                 </li>
@@ -144,7 +145,7 @@ function MyBooks() {
                             : 'Чынгыз Айтматов'}
                         </p>
                         <div className={styles.footer}>
-                          <span>Сайтка киргизилген датасы {newFormatData(book.created_at)}</span>
+                          {/* <span>Сайтка киргизилген датасы {newFormatData(book.created_at)}</span> */}
                           <NavLink to={`/detail/${book.id}`} style={currentThemeColor}>
                             Окуу
                           </NavLink>
@@ -172,7 +173,7 @@ function MyBooks() {
           )}
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
