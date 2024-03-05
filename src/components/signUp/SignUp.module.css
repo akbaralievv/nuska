@@ -141,25 +141,26 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 7px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-.wrapper .buttons .checkbox input {
-  width: 16px;
-  height: 16px;
-}
-.wrapper .buttons .checkbox label {
+.wrapper .buttons .checkbox p {
   color: #FFF;
   font-family: "Montserrat", sans-serif, sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   width: 200px;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
 }
 .wrapper .buttons .errorCheckbox {
   color: red;
   font-family: "Montserrat", sans-serif, sans-serif;
   margin-top: 10px;
-  font-size: 12px;
+  font-size: 15px;
   margin-bottom: 20px;
 }

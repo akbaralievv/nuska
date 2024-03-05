@@ -61,6 +61,7 @@
   gap: 50px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  min-height: calc(100vh - 593px);
 }
 .wrapper .container .inner .content .notFound {
   font-family: "Montserrat", sans-serif, sans-serif;
@@ -74,6 +75,7 @@
   display: -ms-flexbox;
   display: flex;
   gap: 53px;
+  max-height: 230px;
 }
 .wrapper .container .inner .content .book .image {
   width: 180px;

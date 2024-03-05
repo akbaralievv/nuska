@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearDataRegister } from '../../redux/slices/auth/register';
 import { clearDataLogin } from '../../redux/slices/auth/authorization';
 import ModalWindow from '../../components/modalWindow/ModalWindow';
-import { useLocation, useNavigate } from 'react-router-dom';
+import ModalPublicOffer from '../../components/modalPublicOffer/ModalPublicOffer';
 
 function Main() {
   const {
@@ -31,7 +31,15 @@ function Main() {
     error: codeError,
   } = useSelector((state) => state.codeConfirm);
 
-  const { isOpenModal, isLogout, isOpenModalMain } = useSelector((state) => state.isTrue);
+  const {
+    data: changePasswordData,
+    loading,
+    error: changePasswordError,
+  } = useSelector((state) => state.changePassword);
+
+  const { isOpenModal, isLogout, isOpenModalMain, isOpenModalPublicOffer } = useSelector(
+    (state) => state.isTrue,
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -64,6 +72,8 @@ function Main() {
             loginError ||
             codeData ||
             codeError ||
+            changePasswordData ||
+            changePasswordError ||
             ''
           }
         />

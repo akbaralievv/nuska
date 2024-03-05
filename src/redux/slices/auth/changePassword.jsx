@@ -13,10 +13,8 @@ export const postNewPassword = createAsyncThunk(
     try {
       const response = await api.post(api_url, body);
       const data = await response.data;
-      console.log(data);
-      return data;
+      return data.detail;
     } catch (error) {
-      console.log(error);
       if (error.response && error.response.data) {
         return rejectWithValue(error.response.data.email[0]);
       }

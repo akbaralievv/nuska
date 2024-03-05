@@ -11,11 +11,9 @@ export const codeConfirm = createAsyncThunk('codeConfirm', async (body, { reject
     const response = await axios.post(api, body);
     const data = await response.data;
     handleSuccessfulSignIn(data.tokens.access, data.tokens.refresh);
-    console.log(data);
     return data.message;
   } catch (error) {
     if (error.response && error.response.data) {
-      console.log(error);
       return rejectWithValue(error.response.data.detail);
     }
     return rejectWithValue('Каттоо учурунда белгисиз ката кетти');
@@ -40,7 +38,7 @@ const codeConfirmSlice = createSlice({
   reducers: {
     clearDataCodeConfirm: (state) => {
       state.data = '';
-      state.error = '';
+      state.error = false;
     },
   },
   extraReducers: (builder) => {

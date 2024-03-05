@@ -101,7 +101,7 @@ function MyBooks() {
             <ul className={styles.content}>
               {currentItemsMyBooks?.map((book) => (
                 <li className={styles.book} key={book.id}>
-                  <NavLink to={`/detail/${book.id}`}>
+                  <NavLink to={`/detail/${book.book?.id}`}>
                     <div className={styles.image}>
                       <img src={book.book?.cover_image ?? image} alt="image" />
                     </div>
@@ -173,7 +173,7 @@ function MyBooks() {
           )}
         </div>
       </div>
-    </div >
+    </div>
   );
 }
 

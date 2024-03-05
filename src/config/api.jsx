@@ -23,5 +23,6 @@ const API_URLS = {
   delete_account: 'https://nuska.kg/api/v1/account/delete/account/',
   patch_username: 'https://nuska.kg/api/v1/account/user/update/',
   purchased_books: 'https://nuska.kg/api/v1/orders/purchased/book/',
+  public_offers: 'https://nuska.kg/api/v1/orders/public_offer',
 };
 export default API_URLS;

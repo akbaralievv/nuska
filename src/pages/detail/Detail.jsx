@@ -149,6 +149,15 @@ function Detail() {
     }
   };
 
+  function renderPeople(peopleArray) {
+    let names = [];
+    peopleArray?.forEach((person) => {
+      let fullName = `${person.first_name} ${person.last_name}`;
+      names.push(fullName);
+    });
+    return names?.join(', ');
+  }
+
   const authorName = infoData?.author?.map((author) => `${author.first_name} ${author.last_name}`);
 
   return (
@@ -168,7 +177,7 @@ function Detail() {
                   <div className={styles.text}>
                     <h2 style={currentThemeColor}>{infoData?.name}</h2>
                   </div>
-                  <p style={currentThemeColor}>{authorName}</p>
+                  <p style={currentThemeColor}>{renderPeople(infoData?.author)}</p>
                   <div className={styles.infoNumbers}>
                     <div className={styles.infoNumbers_inner}>
                       <div className={styles.info}>
@@ -176,11 +185,11 @@ function Detail() {
                         <p style={currentThemeColor}>e-китеп</p>
                       </div>
                       <div className={styles.info}>
-                        <span>{infoData?.amount_pages}</span>
+                        <span>{infoData?.amount_pages ?? '300'}</span>
                         <p style={currentThemeColor}>Барактардын саны</p>
                       </div>
                       <div className={styles.info}>
-                        <span>300c</span>
+                        <span>{infoData?.price ?? '300'}c</span>
                         <p style={currentThemeColor}>Баасы</p>
                       </div>
                     </div>
@@ -226,7 +235,7 @@ function Detail() {
                           Дарек:
                         </p>
                         <p style={key === 'light' ? { color: '#404040' } : { color: 'white' }}>
-                          Бишкек, 1
+                          {infoData?.addres ?? 'Бишкек'}
                         </p>
                       </div>
                       <div className={styles.info}>
@@ -234,7 +243,7 @@ function Detail() {
                           Телефон:
                         </p>
                         <p style={key === 'light' ? { color: '#404040' } : { color: 'white' }}>
-                          +996700123456
+                          {infoData?.phone_number ?? '+996700123456'}
                         </p>
                       </div>
                       <div className={styles.info}>
@@ -242,7 +251,7 @@ function Detail() {
                           IG аккаунт:
                         </p>
                         <p style={key === 'light' ? { color: '#404040' } : { color: 'white' }}>
-                          @nuska.book.kg
+                          {infoData?.ig_account ?? '@nuska.book.kg'}
                         </p>
                       </div>
                     </div>

@@ -20,7 +20,7 @@ import { postNewPassword } from '../../redux/slices/auth/changePassword';
 import { useNavigate } from 'react-router-dom';
 
 function ChangePassword() {
-  const { data, loading, error } = useSelector((state) => state.forgoutPassword);
+  const { data, loading, error } = useSelector((state) => state.changePassword);
   const { isOpenModal, isConfirmCode } = useSelector((state) => state.isTrue);
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
 
@@ -72,10 +72,10 @@ function ChangePassword() {
       </div>
       <div className={styles.buttons}>
         <button type="submit" style={currentThemeColor} disabled={loading}>
-          {loading ? <PreloadBtn /> : 'Кодду алуу'}
+          {loading ? <PreloadBtn /> : 'Сырсөздү өзгөртүү'}
         </button>
       </div>
-      {isOpenModal && <ModalWindow message={error ? error : 'Сиз ийгиликтуу кирдиниз'} />}
+      {isOpenModal && <ModalWindow message={error ? error : 'Сырсөз ийгиликтүү өзгөртүлдү'} />}
     </form>
   );
 }

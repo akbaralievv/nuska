@@ -18,16 +18,30 @@ import darkLight from '../../assets/icons/menu/darkLight.svg';
 
 import BurgerMenu from '../burgerMenu/BurgerMenu';
 
-import { setIsLogout, setIsOpenMenu, setIsOpenModal } from '../../redux/slices/isTrue';
+import {
+  setIsLogout,
+  setIsOpenMenu,
+  setIsOpenModal,
+  setIsOpenModalPublicOffer,
+} from '../../redux/slices/isTrue';
 import { setTheme } from '../../redux/slices/changeTheme';
 import { removeAccessToken, removeRefreshToken } from '../helpers/tokens';
 import ModalWindow from '../modalWindow/ModalWindow';
 import { isUserAuthenticated } from '../helpers/isUserAuthenticated';
+import ModalPublicOffer from '../modalPublicOffer/ModalPublicOffer';
+import { getPublicOffers } from '../../redux/slices/getPublicOffers';
 
 function Menu() {
-  const { isOpenMenu, isOpenModal } = useSelector((state) => state.isTrue);
+  const { isOpenMenu, isOpenModal, isOpenModalPublicOffer } = useSelector((state) => state.isTrue);
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
+  const { data: publicOffersData } = useSelector((state) => state.getPublicOffers);
+
   const [isAuthLog, setIsAuthLog] = useState(isUserAuthenticated());
+  const [isPublicOffer, setIsPublicOffer] = useState({
+    aboutApp: false,
+    publicOffer: false,
+    info: false,
+  });
 
   const location = useLocation();
   const menuRef = useRef(null);
@@ -68,6 +82,36 @@ function Menu() {
     window.scrollTo(0, 0);
   };
 
+  const about_website = publicOffersData?.find((info) => info.title === 'about_website');
+  const public_offer = publicOffersData?.find((info) => info.title === 'public_offer');
+  const helps = publicOffersData?.find((info) => info.title === 'help_support');
+
+  const returnPublicOfferText = () => {
+    if (isPublicOffer.aboutApp && about_website) {
+      return about_website.content;
+    } else if (isPublicOffer.publicOffer && public_offer) {
+      return public_offer.content;
+    } else if (isPublicOffer.info && helps) {
+      return helps.content;
+    }
+  };
+
+  const openModalPublicOffer = (e, string) => {
+    e.preventDefault();
+    dispatch(setIsOpenModalPublicOffer(true));
+    document.body.style.overflow = 'hidden';
+    dispatch(getPublicOffers());
+    if (string === 'aboutApp') {
+      setIsPublicOffer((prev) => ({ ...prev, aboutApp: true, publicOffer: false, info: false }));
+    } else if (string === 'publicOffer') {
+      setIsPublicOffer((prev) => ({ ...prev, aboutApp: false, publicOffer: true, info: false }));
+    } else if (string === 'info') {
+      setIsPublicOffer((prev) => ({ ...prev, aboutApp: false, publicOffer: false, info: true }));
+    } else if (!string) {
+      setIsPublicOffer((prev) => ({ ...prev, aboutApp: false, publicOffer: false, info: false }));
+    }
+  };
+
   return (
     <div
       className={`${styles.wrapper} ${isOpenMenu ? styles.openMenu : styles.closeMenu} ${
@@ -77,6 +121,7 @@ function Menu() {
       style={{ background: key === 'light' ? '#595959' : '#3B3B3B' }}>
       <div className={styles.inner}>
         <BurgerMenu />
+        {isOpenModalPublicOffer && <ModalPublicOffer text={returnPublicOfferText()} />}
         <div className={styles.navbar}>
           <nav className={styles.nav}>
             <li>
@@ -120,32 +165,31 @@ function Menu() {
           </nav>
           <nav className={styles.nav}>
             <li>
-              <NavLink>
+              <NavLink onClick={(e) => openModalPublicOffer(e, 'aboutApp')}>
                 <img src={about} alt="about" />
                 <span>Тиркеме жөнүндө</span>
               </NavLink>
             </li>
             <li>
-              <NavLink>
+              <NavLink onClick={(e) => openModalPublicOffer(e, 'publicOffer')}>
                 <img src={privacy} alt="privacy" />
                 <span>Купуялык</span>
               </NavLink>
             </li>
             <li>
-              <NavLink>
+              <NavLink onClick={(e) => openModalPublicOffer(e, 'info')}>
                 <img src={help} alt="help" />
                 <span>Жардам & Колдоо</span>
               </NavLink>
             </li>
-            {
-              isAuthLog &&
+            {isAuthLog && (
               <li>
                 <NavLink to={'/'} onClick={handleClickLogout}>
                   <img src={logout} alt="logout" />
                   <span>Чыгуу</span>
                 </NavLink>
               </li>
-            }
+            )}
           </nav>
         </div>
       </div>

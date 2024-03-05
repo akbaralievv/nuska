@@ -22,6 +22,7 @@ import deleteAccount from './slices/user/deleteAccount';
 import patchUsername from './slices/user/patchUsername';
 import searchBook from './slices/searchBook';
 import getPurchasedBooks from './slices/book/getPurchasedBooks';
+import getPublicOffers from './slices/getPublicOffers';
 
 export const store = configureStore({
   reducer: {
@@ -47,5 +48,6 @@ export const store = configureStore({
     patchUsername,
     searchBook,
     getPurchasedBooks,
+    getPublicOffers,
   },
 });

@@ -4,7 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './ConfirmCode.module.css';
 import PreloadBtn from '../PreloadBtn/PreloadBtn';
-import { setIsConfirmCode, setIsForgoutPassword, setIsOpenModal } from '../../redux/slices/isTrue';
+import {
+  setIsChangePassword,
+  setIsConfirmCode,
+  setIsForgoutPassword,
+  setIsOpenModal,
+} from '../../redux/slices/isTrue';
 import ModalWindow from '../modalWindow/ModalWindow';
 import Code from '../inputs/code/Code';
 import { useNavigate } from 'react-router-dom';
@@ -45,15 +50,16 @@ function ConfirmCode() {
     if (error) {
       dispatch(setIsOpenModal(true));
     } else if (data) {
-      dispatch(setIsOpenModal(true));
+      // dispatch(setIsOpenModal(true));
       dispatch(setIsConfirmCode(false));
-      navigate('/');
+      dispatch(setIsChangePassword(true));
+      // navigate('/');
     }
   }, [data, error]);
 
-  // useEffect(() => {
-  //   return () => dispatch(clearDataCodeConfirm());
-  // }, []);
+  useEffect(() => {
+    return () => dispatch(clearDataCodeConfirm());
+  }, []);
 
   return (
     <form action="" onSubmit={handleSubmit}>

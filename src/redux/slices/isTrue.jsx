@@ -11,6 +11,8 @@ const initialState = {
   isFavorites: false,
   isOpenModalMain: false,
   isDetailCard: false,
+  isOpenModalPublicOffer: false,
+  isCheckPublicOffer: false,
 };
 
 const isTrueSlice = createSlice({
@@ -47,6 +49,12 @@ const isTrueSlice = createSlice({
     setIsDetailCard: (state, action) => {
       state.isDetailCard = action.payload;
     },
+    setIsOpenModalPublicOffer: (state, action) => {
+      state.isOpenModalPublicOffer = action.payload;
+    },
+    setIsCheckPublicOffer: (state, action) => {
+      state.isCheckPublicOffer = action.payload;
+    },
   },
 });
 
@@ -61,5 +69,7 @@ export const {
   setIsFavorites,
   setIsOpenModalMain,
   setIsDetailCard,
+  setIsOpenModalPublicOffer,
+  setIsCheckPublicOffer,
 } = isTrueSlice.actions;
 export default isTrueSlice.reducer;

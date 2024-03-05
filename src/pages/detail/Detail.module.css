@@ -217,6 +217,12 @@
   font-weight: 500;
   line-height: normal;
 }
+.wrapper .container .inner .about .this .available .infos .info p:last-child {
+  width: 375px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .wrapper .container .inner .about .this .available img {
   width: 213px;
   height: 213px;

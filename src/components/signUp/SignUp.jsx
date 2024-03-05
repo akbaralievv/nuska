@@ -10,13 +10,23 @@ import Password from '../inputs/password/Password';
 import { clearDataRegister, register } from '../../redux/slices/auth/register';
 import { setRefreshToken } from '../helpers/tokens';
 import ModalWindow from '../modalWindow/ModalWindow';
-import { setIsAuth, setIsOpenModal } from '../../redux/slices/isTrue';
+import {
+  setIsAuth,
+  setIsCheckPublicOffer,
+  setIsOpenModal,
+  setIsOpenModalPublicOffer,
+} from '../../redux/slices/isTrue';
 import PreloadBtn from '../PreloadBtn/PreloadBtn';
+import ModalPublicOffer from '../modalPublicOffer/ModalPublicOffer';
+import { getPublicOffers } from '../../redux/slices/getPublicOffers';
 
 function SignUp() {
   const { data, loading, error } = useSelector((state) => state.register);
-  const { isOpenModal } = useSelector((state) => state.isTrue);
+  const { isOpenModal, isCheckPublicOffer, isOpenModalPublicOffer } = useSelector(
+    (state) => state.isTrue,
+  );
   const { key, currentThemeColor } = useSelector((state) => state.changeTheme.theme);
+  const { data: publicOffersData } = useSelector((state) => state.getPublicOffers);
 
   const [valueSignUp, setValueSignUp] = useState({
     phone: '+996771007644',
@@ -37,10 +47,10 @@ function SignUp() {
     checkbox: false,
   });
 
-  const [check, setCheck] = useState(false);
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const public_offer = publicOffersData?.find((info) => info.title === 'public_offer');
 
   const isValid =
     valueSignUp.first_name &&
@@ -53,7 +63,7 @@ function SignUp() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (isValid && check) {
+    if (isValid && isCheckPublicOffer) {
       dispatch(register(valueSignUp));
     } else if (!validSignUp.phone) {
       setErrorValid((prev) => ({ ...prev, phone: true }));
@@ -75,15 +85,11 @@ function SignUp() {
     } else {
       setErrorValid((prev) => ({ ...prev, email: false }));
     }
-    if (!check) {
+    if (!isCheckPublicOffer) {
       setErrorValid((prev) => ({ ...prev, checkbox: true }));
     } else {
       setErrorValid((prev) => ({ ...prev, checkbox: false }));
     }
-  };
-
-  const handleCheck = (e) => {
-    setCheck(e.target.checked);
   };
 
   useEffect(() => {
@@ -95,8 +101,19 @@ function SignUp() {
     }
   }, [data, error]);
 
+  useEffect(() => {
+    return () => dispatch(setIsCheckPublicOffer(false));
+  }, []);
+
+  const openModalPublicOffer = () => {
+    dispatch(getPublicOffers());
+    dispatch(setIsOpenModalPublicOffer(true));
+    document.body.style.overflow = 'hidden';
+  };
+
   return (
     <form className={styles.wrapper} onSubmit={handleSubmit}>
+      {isOpenModalPublicOffer && <ModalPublicOffer text={public_offer?.content} isCheck={true} />}
       <h3>Катталуу</h3>
       <div className={styles.inputs}>
         <Username
@@ -128,10 +145,9 @@ function SignUp() {
         </a>
         <div>
           <div className={styles.checkbox}>
-            <input type="checkbox" name="" id="checkbox" onChange={handleCheck} />
-            <label htmlFor="checkbox" style={currentThemeColor}>
+            <p style={currentThemeColor} onClick={openModalPublicOffer}>
               Тиркемени колдонуу боюнча келишим
-            </label>
+            </p>
           </div>
           {errorValid.checkbox && (
             <p className={styles.errorCheckbox}>Сураныч, келишимди окуп чыгыңыз.</p>

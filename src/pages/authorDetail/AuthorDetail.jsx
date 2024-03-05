@@ -85,6 +85,15 @@ function AuthorDetail() {
     }
   };
 
+  function renderPeople(peopleArray) {
+    let names = [];
+    peopleArray?.forEach((person) => {
+      let fullName = `${person.first_name} ${person.last_name}`;
+      names.push(fullName);
+    });
+    return names?.join(', ');
+  }
+
   const authorName = infoData?.author?.map((author) => `${author.first_name} ${author.last_name}`);
 
   return (
@@ -100,7 +109,7 @@ function AuthorDetail() {
               <div className={styles.text}>
                 <h2 style={currentThemeColor}>{infoData?.name}</h2>
               </div>
-              <p style={currentThemeColor}>{authorName}</p>
+              <p style={currentThemeColor}>{renderPeople(infoData?.author)}</p>
               <div className={styles.infoNumbers}>
                 <div className={styles.infoNumbers_inner}>
                   <div className={styles.info}>

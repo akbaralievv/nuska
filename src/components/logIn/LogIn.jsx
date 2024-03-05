@@ -80,10 +80,9 @@ function LogIn() {
         <ForgoutPassword />
       ) : isConfirmCode ? (
         <ConfirmCode />
+      ) : isChangePassword ? (
+        <ChangePassword />
       ) : (
-        // isChangePassword ? (
-        //   <ChangePassword />
-        // ) :
         <form action="" onSubmit={handleSubmit}>
           <div className={styles.inputs}>
             <Email

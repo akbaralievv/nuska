@@ -62,7 +62,6 @@ function MyAccount() {
     if (typeof isDelete === 'boolean') {
       dispatch(deleteAccount(data.id));
     }
-    // console.log(data,"data");
     setChangeAcc((prev) => ({ ...changeAcc, deleteAccount: !changeAcc.deleteAccount }));
   };
 
@@ -76,7 +75,7 @@ function MyAccount() {
     }
     setChangeAcc((prev) => ({ ...changeAcc, logout: !changeAcc.logout }));
   };
-  
+
   const validateName = (name) => {
     const re = /^[a-zA-Zа-яА-Я-]+$/;
     return re.test(String(name));
@@ -101,8 +100,7 @@ function MyAccount() {
     }
   };
 
-  const deleteAccountUser =()=>{
-  }
+  const deleteAccountUser = () => {};
 
   useEffect(() => {
     if (!getRefreshToken()) {
@@ -120,6 +118,17 @@ function MyAccount() {
       document.body.style.overflow = '';
     };
   }, []);
+
+  useEffect(() => {
+    if (!getRefreshToken()) {
+      dispatch(setIsOpenModal(true));
+      document.body.style.overflow = 'hidden';
+      dispatch(setIsLogout(false));
+    } else {
+      dispatch(setIsOpenModal(false));
+      document.body.style.overflow = '';
+    }
+  }, [deleteData]);
 
   useEffect(() => {
     dispatch(getUser());
